@@ -17,10 +17,10 @@ const Navbar = (props) => {
                 justifyContent: "space-between"
             }}>
                 <h1 style={{
-                    fontFamily: "georgia",
-                    fontWeight: "bold",
+                    fontFamily: "fantasy",
+                    fontWeight: 100,
                     fontSize: "2.5em",
-                    margin: "0 20px"
+                    margin: "0 20px",
                 }}>Hooked</h1>
                 <div style={{
                     margin: "0 20px",
