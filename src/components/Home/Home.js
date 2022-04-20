@@ -15,6 +15,16 @@ const Home = () => {
           color: "#f1f1f1",
           height: "100vh",
         }}>
+          <div className='search-box'>
+            <input 
+              type="text"
+              className="search-bar"
+              placeholder="Search..."
+              // onChange={e => setQuery(e.target.value)}
+              // value={}
+              // onKeyPress={search}
+            />
+          </div>
           <h1 style={{ 
             textShadow: '1px 1px black',
             textAlign: 'center',
