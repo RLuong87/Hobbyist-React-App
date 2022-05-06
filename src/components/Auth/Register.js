@@ -30,8 +30,8 @@ const Register = (props) => {
   const onSubmit = () => {
     alert("Submitted");
     const data = newUser;
-    data.name = `${data.fName} ${data.lName}`;
-    data.username = data.email;
+    // data.name = `${data.fName} ${data.lName}`;
+    // data.username = data.email;
 
     // create user, login, create customer
     createUser(data);

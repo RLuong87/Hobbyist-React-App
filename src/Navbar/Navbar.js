@@ -30,7 +30,8 @@ const Navbar = (props) => {
                     textAlign: "right",
                 }}>
                     <NavButton to="/" label="Home " />
-                    <NavButton to="/profile" label=" Profile" />
+                    <NavButton to="/profile" label="Create Profile" />
+                    <NavButton to="/profilepage" label="Your Profile" />
                     <NavButton to="/weather" label="Weather" />
                     <NavButton to="/login" label="Login" />
                     <NavButton to="/signup" label="Sign up" />

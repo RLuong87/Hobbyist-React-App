@@ -36,7 +36,7 @@ const Login = (props) => {
       const res = await axios.post(`${apiHostUrl}/api/auth/signin`, data);
       setAuth({
         token: res.data.token,
-        profile: {data},
+        profile: {},
         roles: res.data.roles,
       })
       console.log(res);

@@ -3,9 +3,10 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../components/Home/Home";
 import Navbar from "../Navbar/Navbar";
 import OpenWeather from "../components/Weather/OpenWeather";
-import Profile from "../components/Auth/Profile";
+import CreateProfile from "../components/Auth/CreateProfile";
 import Register from "../components/Auth/Register";
 import Login from "../components/Auth/Login";
+import ProfilePage from "../components/Profile/ProfilePage";
 
 const AppRouter = () => {
     return (
@@ -16,7 +17,8 @@ const AppRouter = () => {
                 <Route path="/signup" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/weather" element={<OpenWeather />} />
-                <Route path="/profile" element={<Profile /> } />
+                <Route path="/profile" element={<CreateProfile /> } />
+                <Route path="/profilepage" element={<ProfilePage /> } />
             </Routes>
         </div>
     )

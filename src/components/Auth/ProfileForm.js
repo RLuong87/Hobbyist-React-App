@@ -21,9 +21,9 @@ const ProfileForm = (props) => {
                         name="username"
                         id="username"
                         value={newProfile.username}
-                        placeholder={"Full name"}
+                        placeholder={"Name"}
                         onChange={handleChange}
-                        type="username"
+                        type="text"
                     />
                 </InlineInputContainer>
                 <InlineInputContainer>
@@ -33,7 +33,7 @@ const ProfileForm = (props) => {
                         value={newProfile.status}
                         placeholder={"Status"}
                         onChange={handleChange}
-                        type="status"
+                        type="text"
                     />
                 </InlineInputContainer>
                 <InlineInputContainer>
@@ -43,7 +43,7 @@ const ProfileForm = (props) => {
                         value={newProfile.birthday}
                         placeholder={"Birthday"}
                         onChange={handleChange}
-                        type="birthday"
+                        type="text"
                     />
                 </InlineInputContainer>
                 <InlineInputContainer>
@@ -53,7 +53,7 @@ const ProfileForm = (props) => {
                         value={newProfile.location}
                         placeholder={"Location"}
                         onChange={handleChange}
-                        type="location"
+                        type="text"
                     />
                 </InlineInputContainer>
                 <Button>Save Profile</Button>
