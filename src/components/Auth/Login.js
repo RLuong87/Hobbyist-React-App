@@ -4,8 +4,8 @@ import axios from "axios";
 import LoginForm from "./LoginForm";
 import Container from "../common/Container";
 import Splash from "../common/Splash";
-import splashImg from '../../assets/outdoors/hike.jpg';
-import splashImg2 from '../../assets/outdoors/compass.jpg';
+import splashImg from '../../assets/fishing/fishingDude.jpg';
+import splashImg2 from '../../assets/fishing/bait.jpg';
 import { apiHostUrl } from "../../config";
 import { AuthContext } from '../Providers/AuthProvider'
 import FaButton from '../faCommon/FaButton'
@@ -36,10 +36,11 @@ const Login = (props) => {
       const res = await axios.post(`${apiHostUrl}/api/auth/signin`, data);
       setAuth({
         token: res.data.token,
-        profile: {},
+        profile: {data},
         roles: res.data.roles,
       })
-      navigate("/");
+      console.log(res);
+      navigate("/profile");
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
     }
@@ -47,31 +48,31 @@ const Login = (props) => {
 
   return (
     <Container>
-      {/* <FaButton> */}
       <Splash image={splashImg} style={{
-        height: '60vh',
+        height: '80vh',
         color: '#F1F1F1',
       }}>
-        <h1 style={{ 
+        <h1 style={{
           textShadow: '1px 1px black',
           textAlign: 'center',
-          fontSize: 70,
+          fontSize: 90,
           color: 'gold'
         }}
         >Login
         </h1>
       </Splash>
-      <LoginForm
-        newLogin={newLogin}
-        onChange={updateForm}
-        onSubmit={onSubmit}
-      />
+      <FaButton>
+        <LoginForm
+          newLogin={newLogin}
+          onChange={updateForm}
+          onSubmit={onSubmit}
+        />
+      </FaButton>
       <Splash image={splashImg2} style={{
         height: '100vh',
         color: '#F1F1F1'
       }}>
       </Splash>
-      {/* </FaButton> */}
     </Container>
   )
 }

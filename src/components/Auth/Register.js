@@ -84,7 +84,7 @@ const Register = (props) => {
         <h1 style={{ 
           textShadow: '1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
           textAlign: 'center',
-          fontSize: 70,
+          fontSize: 90,
           color: 'gold'
          }}>
           Register
