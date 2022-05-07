@@ -40,7 +40,7 @@ const Login = (props) => {
         roles: res.data.roles,
       })
       console.log(res);
-      navigate("/profile");
+      navigate("/createProfile");
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
     }

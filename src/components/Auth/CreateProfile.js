@@ -9,10 +9,10 @@ import { useNavigate } from "react-router-dom";
 const CreateProfile = (props) => {
 
     const [newProfile, setNewProfile] = useState({
-        // username: "",
-        // status: "",
-        // birthday: "",
-        // location: ""
+        username: "",
+        status: "",
+        birthday: "",
+        location: "",
     })
 
     const [auth, setAuth] = useContext(AuthContext)
@@ -28,12 +28,13 @@ const CreateProfile = (props) => {
     const onSubmit = () => {
         alert("Profile saved");
         const data = newProfile;
+        data.name = `${data.username}`
         createProfile(data)
     }
 
     const createProfile = async (data, token) => {
         try {
-            const res = await axios.post(
+            const res = await axios.put(
                 `${apiHostUrl}/customers`,
                 data,
                 {

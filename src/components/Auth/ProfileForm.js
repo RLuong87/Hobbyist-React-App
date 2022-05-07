@@ -6,11 +6,10 @@ import Input from "../common/Input";
 import Button from "../common/Button";
 
 const ProfileForm = (props) => {
-
-    const { newProfile } = props;
+    const {newProfile} = props;
 
     const handleChange = (e) => {
-        props.onChange(e.target, e.target.value)
+        props.onChange(e.target.id, e.target.value)
     }
 
     return (

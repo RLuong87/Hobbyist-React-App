@@ -7,6 +7,7 @@ import CreateProfile from "../components/Auth/CreateProfile";
 import Register from "../components/Auth/Register";
 import Login from "../components/Auth/Login";
 import ProfilePage from "../components/Profile/ProfilePage";
+import Users from "../components/Users/Users";
 
 const AppRouter = () => {
     return (
@@ -17,8 +18,9 @@ const AppRouter = () => {
                 <Route path="/signup" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/weather" element={<OpenWeather />} />
-                <Route path="/profile" element={<CreateProfile /> } />
+                <Route path="/createProfile" element={<CreateProfile /> } />
                 <Route path="/profilepage" element={<ProfilePage /> } />
+                <Route path="/users" element={<Users /> } />
             </Routes>
         </div>
     )
