@@ -20,16 +20,9 @@ const NewUserForm = ({ onSubmit, onChange, newUser }) => {
             name='fName'
             id='fName'
             value={newUser.fName}
-            placeholder={"First Name"}
+            placeholder={"Full Name"}
             onChange={handleChange}
-            required
-          />
-          <Input
-            name='lName'
-            id='lName'
-            value={newUser.lName}
-            placeholder={"Last Name"}
-            onChange={handleChange}
+            type="name"
             required
           />
         </InlineInputContainer>
@@ -42,7 +35,7 @@ const NewUserForm = ({ onSubmit, onChange, newUser }) => {
             onChange={handleChange}
             type="email"
             required
-            />
+          />
         </InlineInputContainer>
         <InlineInputContainer>
           <Input
@@ -53,7 +46,16 @@ const NewUserForm = ({ onSubmit, onChange, newUser }) => {
             onChange={handleChange}
             type="password"
             required
-            />
+          />
+          <Input
+            name='confirm'
+            id='confirm'
+            value={newUser.confirm}
+            placeholder={"Password"}
+            onChange={handleChange}
+            type="password"
+            required
+          />
         </InlineInputContainer>
         <Button>Submit</Button>
       </Form>

@@ -4,18 +4,17 @@ import { useNavigate } from 'react-router-dom';
 import NewUserForm from './NewUserForm';
 import Container from '../common/Container';
 import Splash from '../common/Splash';
-import splashImg from '../../assets/fishing/fishScenery.jpg';
+import splashImg from '../../assets/fishing/brassReel.jpg';
 import { apiHostUrl } from '../../config';
-import FaButton from '../faCommon/FaButton'
-
+import BorderCard from '../common/BorderCard';
 
 const Register = (props) => {
 
   const [newUser, setNewUser] = useState({
     email: '',
     password: '',
+    confirm: '',
     fName: '',
-    lName: '',
   })
 
   const navigate = useNavigate();
@@ -28,13 +27,18 @@ const Register = (props) => {
   }
 
   const onSubmit = () => {
-    alert("Submitted");
-    const data = newUser;
-    data.name = `${data.fName} ${data.lName}`;
-    data.username = data.email;
 
+    if (newUser.password != newUser.confirm) {
+      alert("Passwords do not match")
+      return;
+    }
+
+    const data = newUser;
+    data.name = `${data.fName}`;
+    data.username = data.email;
     // create user, login, create customer
     createUser(data);
+    alert("Submitted");
   };
 
   const createUser = async (data) => {
@@ -78,25 +82,25 @@ const Register = (props) => {
   return (
     <Container>
       <Splash image={splashImg} style={{
-        height: "60vh",
+        height: "80vh",
         color: "#F1F1F1",
       }}>
-        <h1 style={{ 
+        <h1 style={{
           textShadow: '1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
           textAlign: 'center',
           fontSize: 90,
           color: 'gold'
-         }}>
+        }}>
           Register
         </h1>
       </Splash>
-      <FaButton>
-      <NewUserForm
-        newUser={newUser}
-        onChange={updateForm}
-        onSubmit={onSubmit}
-      />
-      </FaButton>
+      <BorderCard>
+        <NewUserForm
+          newUser={newUser}
+          onChange={updateForm}
+          onSubmit={onSubmit}
+        />
+      </BorderCard>
     </Container>
   )
 }

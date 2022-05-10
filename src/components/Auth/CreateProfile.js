@@ -15,7 +15,7 @@ const CreateProfile = (props) => {
         location: "",
     })
 
-    const [auth, setAuth] = useContext(AuthContext)
+    const [auth] = useContext(AuthContext)
     const navigate = useNavigate();
 
     const updateForm = (field, value) => {
@@ -44,7 +44,7 @@ const CreateProfile = (props) => {
                     }
                 });
                 console.log(res.data);
-                navigate('/profilepage')
+                navigate('/users')
         } catch (err) {
             console.error(err.response ? err.response.data : err.message);
         }

@@ -1,11 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import NavButton from "./NavButton";
+import { AuthContext } from "../components/Providers/AuthProvider";
 
 const Navbar = (props) => {
+    const [auth] = useContext(AuthContext);
+
     return (
         <Fragment>
             <div style={{
-                backgroundColor: "#F1F1F1",
+                backgroundColor: "skyblue",
                 position: "absolute",
                 width: "100%",
                 zIndex: 9999, // making sure the navbar is always at the top of the screen
@@ -30,12 +33,19 @@ const Navbar = (props) => {
                     textAlign: "right",
                 }}>
                     <NavButton to="/" label="Home " />
-                    <NavButton to="/createProfile" label="Create Profile" />
-                    <NavButton to="/profilepage" label="Your Profile" />
                     <NavButton to="/weather" label="Weather" />
-                    <NavButton to="/login" label="Login" />
-                    <NavButton to="/signup" label="Sign up" />
-                    <NavButton to="/users" label="Users" />
+                    {auth.token ?
+                        <Fragment>
+                            <NavButton to="/users" label="Users" />
+                            <NavButton to="/profilepage" label="Your Profile" />
+                            <NavButton to="/createProfile" label="Create Profile" />
+                        </Fragment>
+                        :
+                        <Fragment>
+                            <NavButton to="/login" label="Login" />
+                            <NavButton to="/signup" label="Sign up" />
+                        </Fragment>
+                    }
                 </div>
             </div>
             <div style={{ height: "75px" }} />

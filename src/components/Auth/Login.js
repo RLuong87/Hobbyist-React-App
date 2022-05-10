@@ -8,7 +8,7 @@ import splashImg from '../../assets/fishing/fishingDude.jpg';
 import splashImg2 from '../../assets/fishing/bait.jpg';
 import { apiHostUrl } from "../../config";
 import { AuthContext } from '../Providers/AuthProvider'
-import FaButton from '../faCommon/FaButton'
+import BorderCard from '../common/BorderCard';
 
 const Login = (props) => {
   const [newLogin, setNewLogin] = useState({
@@ -61,13 +61,13 @@ const Login = (props) => {
         >Login
         </h1>
       </Splash>
-      <FaButton>
+      <BorderCard>
         <LoginForm
           newLogin={newLogin}
           onChange={updateForm}
           onSubmit={onSubmit}
         />
-      </FaButton>
+      </BorderCard>
       <Splash image={splashImg2} style={{
         height: '100vh',
         color: '#F1F1F1'

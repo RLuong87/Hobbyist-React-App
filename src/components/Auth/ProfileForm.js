@@ -20,7 +20,7 @@ const ProfileForm = (props) => {
                         name="username"
                         id="username"
                         value={newProfile.username}
-                        placeholder={"Name"}
+                        placeholder={"Display Name"}
                         onChange={handleChange}
                         type="text"
                     />

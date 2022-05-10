@@ -21,7 +21,7 @@ const Users = (props) => {
                 const res = await axios.get(`${apiHostUrl}/customers`,
                     {
                         headers: {
-                            "Authorization": `Bearer ${auth.token}`
+                            Authorization: `Bearer ${auth.token}`
                         }
                     }
                 )
@@ -30,7 +30,8 @@ const Users = (props) => {
                 console.log(err.response.message);
             }
         }
-    })
+        _getUsers();
+    }, [])
 
     return (
         <div style={{
@@ -39,7 +40,8 @@ const Users = (props) => {
             alignItems: 'center',
             minHeight: '100vh',
         }}>
-            <h1>Hello {auth.name}</h1>
+            <h1>Hello</h1>
+            <h2>{auth.name}</h2>
         </div>
     )
 }
