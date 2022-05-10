@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import NewUserForm from './NewUserForm';
@@ -7,6 +7,7 @@ import Splash from '../common/Splash';
 import splashImg from '../../assets/fishing/brassReel.jpg';
 import { apiHostUrl } from '../../config';
 import BorderCard from '../common/BorderCard';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Register = (props) => {
 
@@ -25,6 +26,8 @@ const Register = (props) => {
       [field]: value
     })
   }
+
+  const [auth, setAuth] = useContext(AuthContext);
 
   const onSubmit = () => {
 
@@ -73,6 +76,7 @@ const Register = (props) => {
           }
         })
       console.log(res.data);
+      setAuth({token, name: res.data.name})
       navigate('/login');
     } catch (err) {
       console.error(err.response.data);

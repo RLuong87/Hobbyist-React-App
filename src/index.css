@@ -27,7 +27,7 @@ code {
 }
 
 .app {
-  background-image: url('./assets/weather/cloudy.jpg');
+  background-image: url('./assets/weather/scenery.jpg');
   background-size: cover;
   background-position: center;
   transition: 0.4 ease-out;

@@ -5,8 +5,6 @@ import splashImg from '../../assets/fishing/rods.jpg';
 import { AuthContext } from '../Providers/AuthProvider';
 import BorderCard from '../common/BorderCard';
 
-const demURL = "http://www.dem.ri.gov/programs/managementservices/licenses/fishing-licenses.php";
-
 const Home = () => {
 
   const [auth] = useContext(AuthContext)
@@ -42,7 +40,6 @@ const Home = () => {
         textAlign: 'center',
         fontSize: 50,
         color: "gold",
-        // backgroundColor: "#F1F1F1",
       }}>
         When and Where to Fish?</h1>
         <h2 style={{

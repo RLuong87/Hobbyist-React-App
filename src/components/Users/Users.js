@@ -15,13 +15,13 @@ const Users = (props) => {
     // need bearer token to get the user list
 
     useEffect(() => {
-        const _getUsers = async () => {
+        const _getUsers = async (token) => {
             try {
 
                 const res = await axios.get(`${apiHostUrl}/customers`,
                     {
                         headers: {
-                            Authorization: `Bearer ${auth.token}`
+                            "Authorization": `Bearer ${token}`
                         }
                     }
                 )
@@ -35,13 +35,14 @@ const Users = (props) => {
 
     return (
         <div style={{
+            display: 'flex',
             flex: "1",
             flexDirection: "column",
             alignItems: 'center',
             minHeight: '100vh',
         }}>
             <h1>Hello</h1>
-            <h2>{auth.name}</h2>
+            <h2>Anglers <br/>{auth.name}</h2>
         </div>
     )
 }

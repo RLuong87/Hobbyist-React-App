@@ -15,7 +15,7 @@ const CreateProfile = (props) => {
         location: "",
     })
 
-    const [auth] = useContext(AuthContext)
+    const [auth, setAuth] = useContext(AuthContext)
     const navigate = useNavigate();
 
     const updateForm = (field, value) => {
@@ -40,11 +40,16 @@ const CreateProfile = (props) => {
                 {
                     headers:
                     {
-                        Authorization: `Bearer ${auth.token}`
+                        "Authorization": `Bearer ${auth.token}`
                     }
                 });
+                setAuth({
+                    token: res.data.token,
+                    name: res.data.name,
+                    roles: res.data.roles,
+                  })
                 console.log(res.data);
-                navigate('/users')
+                navigate('/profilepage')
         } catch (err) {
             console.error(err.response ? err.response.data : err.message);
         }
