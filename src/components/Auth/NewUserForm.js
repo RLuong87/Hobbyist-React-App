@@ -51,7 +51,7 @@ const NewUserForm = ({ onSubmit, onChange, newUser }) => {
             name='confirm'
             id='confirm'
             value={newUser.confirm}
-            placeholder={"Password"}
+            placeholder={"Confirm Password"}
             onChange={handleChange}
             type="password"
             required

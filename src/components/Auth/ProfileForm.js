@@ -55,6 +55,16 @@ const ProfileForm = (props) => {
                         type="text"
                     />
                 </InlineInputContainer>
+                <InlineInputContainer>
+                    <Input
+                        name="about"
+                        id="about"
+                        value={newProfile.about}
+                        placeholder={"About Me"}
+                        onChange={handleChange}
+                        type="text"
+                    />
+                </InlineInputContainer>
                 <Button>Save Profile</Button>
             </Form>
         </Container>

@@ -13,6 +13,7 @@ const CreateProfile = (props) => {
         status: "",
         birthday: "",
         location: "",
+        about: "",
     })
 
     const [auth, setAuth] = useContext(AuthContext)
@@ -29,6 +30,10 @@ const CreateProfile = (props) => {
         alert("Profile saved");
         const data = newProfile;
         data.name = `${data.username}`
+        data.status = `${data.status}`
+        data.birthday = `${data.birthday}`
+        data.location = `${data.location}`
+        data.about = `${data.about}`
         createProfile(data)
     }
 
@@ -40,16 +45,18 @@ const CreateProfile = (props) => {
                 {
                     headers:
                     {
-                        "Authorization": `Bearer ${auth.token}`
+                        Authorization: `Bearer ${auth.token}`
                     }
                 });
                 setAuth({
-                    token: res.data.token,
                     name: res.data.name,
-                    roles: res.data.roles,
+                    status: res.data.status,
+                    birthday: res.data.birthday,
+                    location: res.data.location,
+                    about: res.data.about
                   })
                 console.log(res.data);
-                navigate('/profilepage')
+                navigate('/profilecard')
         } catch (err) {
             console.error(err.response ? err.response.data : err.message);
         }

@@ -28,12 +28,22 @@ const Login = (props) => {
 
   const onSubmit = () => {
     const data = newLogin;
+
+    if (newLogin.password) {
+      alert("Incorrect username or password")
+    }
     login(data);
   }
 
   const login = async (data) => {
     try {
-      const res = await axios.post(`${apiHostUrl}/api/auth/signin`, data);
+      const res = await axios.post(`${apiHostUrl}/api/auth/signin`, data,
+        {
+          headers:
+          {
+            Authorization: `Bearer ${auth.token}`
+          }
+        });
       setAuth({
         token: res.data.token,
         name: res.data.name,

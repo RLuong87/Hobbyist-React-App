@@ -8,6 +8,7 @@ import Register from "../components/Auth/Register";
 import Login from "../components/Auth/Login";
 import ProfilePage from "../components/Profile/ProfilePage";
 import Users from "../components/Users/Users";
+import ProfileCard from "../components/Profile/ProfileCard";
 
 const AppRouter = () => {
     return (
@@ -21,6 +22,7 @@ const AppRouter = () => {
                 <Route path="/createProfile" element={<CreateProfile /> } />
                 <Route path="/profilepage" element={<ProfilePage /> } />
                 <Route path="/users" element={<Users /> } />
+                <Route path="/profilecard" element={<ProfileCard /> } />
             </Routes>
         </div>
     )
