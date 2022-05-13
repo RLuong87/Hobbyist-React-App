@@ -1,15 +1,11 @@
 import React, { useState, useContext } from "react";
 import './Card.css';
 import { AuthContext } from "../Providers/AuthProvider";
-
+import { useNavigate } from 'react-router-dom'
+ 
 function Card() {
 
     const [auth] = useContext(AuthContext);
-    const [setName] = useState("Your name")
-    const [status, setStatus] = useState("Status")
-    const [birthday, setBirthday] = useState("Birthday")
-    const [location, setLocation] = useState("Location")
-    const [about, setAbout] = useState("About me")
 
     return (
         <div className="Card">

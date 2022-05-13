@@ -6,7 +6,7 @@ import Input from "../common/Input";
 import Button from "../common/Button";
 
 const LoginForm = (props) => {
-  const {newLogin} = props;
+  const {query} = props;
 
   const handleChange = (e) => {
     props.onChange(e.target.id, e.target.value);
@@ -19,8 +19,8 @@ const LoginForm = (props) => {
           <Input
             name="username"
             id="username"
-            value={newLogin.username}
-            placeholder={"Email"}
+            value={query.username}
+            placeholder={"Email address"}
             onChange={handleChange}
             required
             type="email"
@@ -30,7 +30,7 @@ const LoginForm = (props) => {
           <Input
             name="password"
             id="password"
-            value={newLogin.password}
+            value={query.password}
             placeholder={"Password"}
             onChange={handleChange}
             required

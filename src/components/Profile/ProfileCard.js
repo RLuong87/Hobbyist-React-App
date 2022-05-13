@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from '../Profile/Card';
 
 function ProfileCard() {
+
     return (
-        <div className="Profile">
-            <Card />
+        <div className="social-pic">
+            <div className="Profile">
+                <Card />
+            </div>
         </div>
     )
 }

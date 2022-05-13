@@ -4,11 +4,12 @@
     background: white;
     border-radius: 10px;
     box-shadow: 0px 1px 10px 1px black;
+    overflow: hidden;
 }
 
 .upper-container{
     height: 100px;
-    background: linear-gradient(to left, #2d00f7, #ff0291);
+    background: linear-gradient(to left, #00adf7, #087ef3e2);
 
 }
 
@@ -22,7 +23,7 @@
 }
 
 img{
-    border: 2px solid #8e00b9;
+    border: 2px solid #08f3f3;
 }
 
 .lower-container{
@@ -45,13 +46,32 @@ img{
 }
 
 .lower-container h4{
-    color: #8e00b9;
+    color: #0060b9;
     font-weight: 700;
-    font-size: 1,2rem;
+    font-size: 1.2rem;
 }
 
 .lower-container p{
+    margin: 1rem;
     color: #2f2d2e;
-    font-weight: 600;
-    font-size: 1rem
+    font-size: 1rem;
+}
+
+button{
+    margin: 1rem;
+    margin-top: 1;
+    color: #2f2d2e;
+    font: bold;
+    background-color: white;
+    border: 2px solid #2f2d2e;
+    padding: 0.6rem;
+    border-radius: 6px;
+    transition-duration: 0.5s;
+}
+
+button:hover{
+    background-image: linear-gradient(to left, #2d00f7, #08f3f3);
+    transform: scale(1.1);
+    border: none;
+    color: white;
 }

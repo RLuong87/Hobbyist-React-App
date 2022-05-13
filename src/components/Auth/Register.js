@@ -11,14 +11,16 @@ import { AuthContext } from '../Providers/AuthProvider';
 
 const Register = (props) => {
 
+  let navigate = useNavigate();
+
   const [newUser, setNewUser] = useState({
-    email: '',
+    username: '',
     password: '',
     confirm: '',
-    fName: '',
+    fname: '',
   })
-
-  const navigate = useNavigate();
+  
+  const [auth, setAuth] = useContext(AuthContext);
 
   const updateForm = (field, value) => {
     setNewUser({
@@ -27,7 +29,6 @@ const Register = (props) => {
     })
   }
 
-  const [auth, setAuth] = useContext(AuthContext);
 
   const onSubmit = () => {
 
@@ -37,8 +38,7 @@ const Register = (props) => {
     }
 
     const data = newUser;
-    data.name = `${data.fName}`;
-    data.username = data.email;
+    data.name = `${data.fname}`;
     // create user, login, create customer
     createUser(data);
     alert("Submitted");
@@ -50,7 +50,7 @@ const Register = (props) => {
       console.log(res.data);
       login(data);
     } catch (err) {
-      console.error(err.message);
+      console.error(err.response ? err.response.data : err.message);
     }
   }
 
@@ -60,7 +60,7 @@ const Register = (props) => {
       console.log(res.data);
       createCustomer(data, res.data.token);
     } catch (err) {
-      console.error(err.response.data);
+      console.error(err.response ? err.response.data : err.message);
     }
   }
 
@@ -72,14 +72,15 @@ const Register = (props) => {
         {
           headers:
           {
-            Authorization: `Bearer ${token}`
+            "Authorization": `Bearer ${token}`
           }
         })
       console.log(res.data);
       setAuth({token, name: res.data.name})
-      navigate('/login');
+      alert(res.data.id)
+      navigate('/');
     } catch (err) {
-      console.error(err.response.data);
+      console.error(err.response ? err.response.data : err.message);
     }
   }
 

@@ -64,7 +64,7 @@ main {
 
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 16px 16px 16px 16px;
-  margin-top: -25px;
+  margin-top: 0px;
 
   box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
 
@@ -131,5 +131,11 @@ main {
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+}
 
+.social-pic{
+  background-image: url('./assets/random/smConnect.jpg');
+  background-size: cover;
+  background-position: center;
+  transition: 0.4 ease-out;
 }

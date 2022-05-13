@@ -1,6 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import NavButton from "./NavButton";
 import { AuthContext } from "../components/Providers/AuthProvider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = (props) => {
     const [auth] = useContext(AuthContext);
@@ -8,7 +9,7 @@ const Navbar = (props) => {
     return (
         <Fragment>
             <div style={{
-                backgroundColor: "skyblue",
+                backgroundColor: "#00bbff",
                 position: "absolute",
                 width: "100%",
                 zIndex: 9999, // making sure the navbar is always at the top of the screen
@@ -32,18 +33,27 @@ const Navbar = (props) => {
                     userSelect: "none",
                     textAlign: "right",
                 }}>
-                    <NavButton to="/" label="Home " />
+                    <FontAwesomeIcon icon={["fas", "home"]} />
+                    <NavButton to="/" label="Home" />
+                    <FontAwesomeIcon icon={["fas", "cloud-sun"]} />
                     <NavButton to="/weather" label="Weather" />
                     {auth.token ?
                         <Fragment>
+                            <FontAwesomeIcon icon={["fas", "users"]} />
                             <NavButton to="/users" label="Users" />
+                            <FontAwesomeIcon icon={["fas", "address-card"]} />
                             <NavButton to="/createProfile" label="Create Profile" />
+                            <FontAwesomeIcon icon={["fas", "user"]} />
                             <NavButton to="/profilecard" label="View Profile" />
+                            <NavButton to="/logout" label="Logout" />
                         </Fragment>
                         :
                         <Fragment>
                             <NavButton to="/login" label="Login" />
-                            <NavButton to="/signup" label="Sign up" />
+                            <FontAwesomeIcon icon={["fas", "otter"]} />
+                            <NavButton to="/signup" label="Register" />
+                            <FontAwesomeIcon icon={["fas", "user-plus"]} />
+
                         </Fragment>
                     }
                 </div>

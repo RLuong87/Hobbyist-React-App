@@ -7,7 +7,7 @@ import BorderCard from '../common/BorderCard';
 
 const Home = () => {
 
-  const [auth] = useContext(AuthContext)
+  const [auth, setAuth] = useContext(AuthContext)
 
   return (
     <Container >
@@ -51,7 +51,7 @@ const Home = () => {
           textAlign: "center"
         }}><br />For more information on rules and regulations or to obtain a fishing license in RI, please visit <br />&nbsp;
           <a href='http://www.dem.ri.gov/programs/managementservices/licenses/fishing-licenses.php'>
-            RI DEM
+            www.dem.ri.gov
           </a>
         </h2>
       </BorderCard>

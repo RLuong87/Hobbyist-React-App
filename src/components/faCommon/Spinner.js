@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Spinner = ({ spin, style }) => {
   return (
     <FontAwesomeIcon
-      icon={["fas", "atom"]}
+      icon={["fas", "fish"]}
       spin
       style={{ fontSize: 20, margin: "0 auto", ...style }}
     />

@@ -30,10 +30,6 @@ const CreateProfile = (props) => {
         alert("Profile saved");
         const data = newProfile;
         data.name = `${data.username}`
-        data.status = `${data.status}`
-        data.birthday = `${data.birthday}`
-        data.location = `${data.location}`
-        data.about = `${data.about}`
         createProfile(data)
     }
 
@@ -49,6 +45,7 @@ const CreateProfile = (props) => {
                     }
                 });
                 setAuth({
+                    ...auth,
                     name: res.data.name,
                     status: res.data.status,
                     birthday: res.data.birthday,
