@@ -9,12 +9,13 @@ import { apiHostUrl } from '../../config';
 import BorderCard from '../common/BorderCard';
 import { AuthContext } from '../Providers/AuthProvider';
 
-const Register = (props) => {
+const Register = () => {
 
   let navigate = useNavigate();
 
-  const [newUser, setNewUser] = useState({
+  const [query, setQuery] = useState({
     username: '',
+    email: '',
     password: '',
     confirm: '',
     fname: '',
@@ -23,8 +24,8 @@ const Register = (props) => {
   const [auth, setAuth] = useContext(AuthContext);
 
   const updateForm = (field, value) => {
-    setNewUser({
-      ...newUser,
+    setQuery({
+      ...query,
       [field]: value
     })
   }
@@ -32,13 +33,13 @@ const Register = (props) => {
 
   const onSubmit = () => {
 
-    if (newUser.password != newUser.confirm) {
+    if (query.password !== query.confirm) {
       alert("Passwords do not match")
       return;
     }
 
-    const data = newUser;
-    data.name = `${data.fname}`;
+    const data = query;
+    data.name = `${query.fname}`;
     // create user, login, create customer
     createUser(data);
     alert("Submitted");
@@ -47,7 +48,6 @@ const Register = (props) => {
   const createUser = async (data) => {
     try {
       const res = await axios.post(`${apiHostUrl}/api/auth/signup`, data);
-      console.log(res.data);
       login(data);
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
@@ -65,6 +65,7 @@ const Register = (props) => {
   }
 
   const createCustomer = async (data, token) => {
+    data.email = data.username;
     try {
       const res = await axios.post(
         `${apiHostUrl}/customers`,
@@ -101,7 +102,7 @@ const Register = (props) => {
       </Splash>
       <BorderCard>
         <NewUserForm
-          newUser={newUser}
+          query={query}
           onChange={updateForm}
           onSubmit={onSubmit}
         />

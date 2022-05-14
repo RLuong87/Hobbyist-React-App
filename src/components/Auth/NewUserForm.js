@@ -5,8 +5,8 @@ import InlineInputContainer from '../common/InlineInputContainer';
 import Input from '../common/Input';
 import Button from '../common/Button';
 
-const NewUserForm = ({ onSubmit, onChange, newUser }) => {
-  // const {onSubmit, onChange, newUser} = props
+const NewUserForm = ({ onSubmit, onChange, query }) => {
+  // const {onSubmit, onChange, query} = props
 
   const handleChange = (e) => {
     onChange(e.target.id, e.target.value)
@@ -17,9 +17,9 @@ const NewUserForm = ({ onSubmit, onChange, newUser }) => {
       <Form onSubmit={onSubmit} style={{ marginTop: "1em" }}>
         <InlineInputContainer>
           <Input
-            name='fName'
-            id='fName'
-            value={newUser.fName}
+            name='fname'
+            id='fname'
+            value={query.fname}
             placeholder={"Full Name"}
             onChange={handleChange}
             type="name"
@@ -30,7 +30,7 @@ const NewUserForm = ({ onSubmit, onChange, newUser }) => {
           <Input
             name='email'
             id='email'
-            value={newUser.email}
+            value={query.email}
             placeholder={"Email Address"}
             onChange={handleChange}
             type="email"
@@ -41,7 +41,7 @@ const NewUserForm = ({ onSubmit, onChange, newUser }) => {
           <Input
             name='password'
             id='password'
-            value={newUser.password}
+            value={query.password}
             placeholder={"Password"}
             onChange={handleChange}
             type="password"
@@ -50,7 +50,7 @@ const NewUserForm = ({ onSubmit, onChange, newUser }) => {
           <Input
             name='confirm'
             id='confirm'
-            value={newUser.confirm}
+            value={query.confirm}
             placeholder={"Confirm Password"}
             onChange={handleChange}
             type="password"
