@@ -10,8 +10,8 @@ const LoginForm = (props) => {
   const {query} = props;
   let navigate = useNavigate();
 
-  const onSubmit = (e) => {
-    props.onSubmit(navigate("/signup"))
+  const onSubmit = () => {
+    navigate("/signup");
   }
 
   const handleChange = (e) => {

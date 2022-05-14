@@ -48,7 +48,6 @@ export default function Navbar2() {
                             :
                             <Fragment>
                                 <NavButton to="/login" label="Login" />
-                                {/* <NavButton to="/signup" label="Register" /> */}
                             </Fragment>
                         }
                     </ul>
