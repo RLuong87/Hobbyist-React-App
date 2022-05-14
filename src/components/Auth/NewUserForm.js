@@ -13,24 +13,31 @@ const NewUserForm = ({ onSubmit, onChange, query }) => {
   }
 
   return (
-    <Container>
+    // <Container>
       <Form onSubmit={onSubmit} style={{ marginTop: "1em" }}>
         <InlineInputContainer>
           <Input
             name='fname'
             id='fname'
             value={query.fname}
-            placeholder={"Full Name"}
+            placeholder={"First Name"}
             onChange={handleChange}
-            type="name"
+            required
+          />
+          <Input
+            name='lname'
+            id='lname'
+            value={query.lname}
+            placeholder={"Last Name"}
+            onChange={handleChange}
             required
           />
         </InlineInputContainer>
         <InlineInputContainer>
           <Input
-            name='email'
-            id='email'
-            value={query.email}
+            name='username'
+            id='username'
+            value={query.username}
             placeholder={"Email Address"}
             onChange={handleChange}
             type="email"
@@ -59,7 +66,7 @@ const NewUserForm = ({ onSubmit, onChange, query }) => {
         </InlineInputContainer>
         <Button>Submit</Button>
       </Form>
-    </Container>
+    // </Container>
   )
 }
 

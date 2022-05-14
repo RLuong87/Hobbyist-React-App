@@ -6,7 +6,7 @@ import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
-const CreateProfile = (props) => {
+const CreateProfile = () => {
 
     const [newProfile, setNewProfile] = useState({
         username: "",
@@ -63,6 +63,7 @@ const CreateProfile = (props) => {
         <div className='profile'>
             <Container>
                 <h1 style={{
+                    marginTop: 60,
                     textShadow: '1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
                     textAlign: 'center',
                     fontSize: 50,

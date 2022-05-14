@@ -6,7 +6,6 @@ import Container from '../common/Container';
 import Splash from '../common/Splash';
 import splashImg from '../../assets/fishing/brassReel.jpg';
 import { apiHostUrl } from '../../config';
-import BorderCard from '../common/BorderCard';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const Register = () => {
@@ -15,12 +14,12 @@ const Register = () => {
 
   const [query, setQuery] = useState({
     username: '',
-    email: '',
     password: '',
     confirm: '',
     fname: '',
+    lname: ''
   })
-  
+
   const [auth, setAuth] = useContext(AuthContext);
 
   const updateForm = (field, value) => {
@@ -39,7 +38,7 @@ const Register = () => {
     }
 
     const data = query;
-    data.name = `${query.fname}`;
+    data.name = `${query.fname} ${query.lname}`;
     // create user, login, create customer
     createUser(data);
     alert("Submitted");
@@ -77,8 +76,7 @@ const Register = () => {
           }
         })
       console.log(res.data);
-      setAuth({token, name: res.data.name})
-      alert(res.data.id)
+      setAuth({ token, name: res.data.name })
       navigate('/');
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
@@ -86,12 +84,10 @@ const Register = () => {
   }
 
   return (
-    <Container>
-      <Splash image={splashImg} style={{
-        height: "80vh",
-        color: "#F1F1F1",
-      }}>
+    <div className='register-pic'>
+      <Container>
         <h1 style={{
+          margin: 100,
           textShadow: '1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
           textAlign: 'center',
           fontSize: 90,
@@ -99,15 +95,15 @@ const Register = () => {
         }}>
           Register
         </h1>
-      </Splash>
-      <BorderCard>
-        <NewUserForm
-          query={query}
-          onChange={updateForm}
-          onSubmit={onSubmit}
-        />
-      </BorderCard>
-    </Container>
+        <div className='new-form'>
+          <NewUserForm
+            query={query}
+            onChange={updateForm}
+            onSubmit={onSubmit}
+          />
+        </div>
+      </Container>
+    </div>
   )
 }
 

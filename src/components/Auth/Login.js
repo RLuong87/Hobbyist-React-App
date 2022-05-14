@@ -4,7 +4,6 @@ import axios from "axios";
 import LoginForm from "./LoginForm";
 import Container from "../common/Container";
 import Splash from "../common/Splash";
-import splashImg from '../../assets/fishing/fishingDude.jpg';
 import splashImg2 from '../../assets/fishing/bait.jpg';
 import { apiHostUrl } from "../../config";
 import { AuthContext } from '../Providers/AuthProvider'
@@ -31,7 +30,7 @@ const Login = () => {
     setSubmitting(true);
     try {
       const res = await axios.post(`${apiHostUrl}/api/auth/signin`, query);
-      setAuth({...auth, token: res.data.token})
+      setAuth({ ...auth, token: res.data.token })
       setSubmitting(false)
       console.log(res);
       navigate("/");
@@ -41,12 +40,10 @@ const Login = () => {
   }
 
   return (
-    <Container>
-      <Splash image={splashImg} style={{
-        height: '80vh',
-        color: '#F1F1F1',
-      }}>
+    <div className="login-pic">
+      <Container>
         <h1 style={{
+          margin: 100,
           textShadow: '1px 1px black',
           textAlign: 'center',
           fontSize: 90,
@@ -54,21 +51,16 @@ const Login = () => {
         }}
         >Login
         </h1>
-      </Splash>
-      <div className="new-form">
-        <LoginForm
-          query={query}
-          onChange={updateForm}
-          onSubmit={onSubmit}
-          submitting={submitting}
-        />
+        <div className="new-form">
+          <LoginForm
+            query={query}
+            onChange={updateForm}
+            onSubmit={onSubmit}
+            submitting={submitting}
+          />
         </div>
-      <Splash image={splashImg2} style={{
-        height: '100vh',
-        color: '#F1F1F1'
-      }}>
-      </Splash>
-    </Container>
+      </Container>
+    </div>
   )
 }
 

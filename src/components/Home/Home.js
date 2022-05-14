@@ -16,6 +16,7 @@ const Home = () => {
         height: "100vh",
       }}>
         <h1 style={{
+          margin: 100,
           textShadow: '1px 1px black',
           textAlign: 'center',
           fontSize: 70,
@@ -24,7 +25,6 @@ const Home = () => {
           Welcome to Hooked!
         </h1>
       </Splash>
-          <BorderCard>
       {/* <div className='search-box'>
         <input
           type="text"
@@ -35,13 +35,14 @@ const Home = () => {
         // onKeyPress={search}
         />
       </div> */}
-      <h1 style={{
-        textShadow: '1px 1px black',
-        textAlign: 'center',
-        fontSize: 50,
-        color: "gold",
-      }}>
-        When and Where to Fish?</h1>
+      <div className='box1'>
+        <h1 style={{
+          textShadow: '1px 1px black',
+          textAlign: 'center',
+          fontSize: 50,
+          color: "gold",
+        }}>
+          When and Where to Fish?</h1>
         <h2 style={{
           textAlign: "center",
         }}>
@@ -54,7 +55,7 @@ const Home = () => {
             www.dem.ri.gov
           </a>
         </h2>
-      </BorderCard>
+      </div>
     </Container>
   )
 }

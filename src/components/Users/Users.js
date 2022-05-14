@@ -55,22 +55,24 @@ const Users = (props) => {
             alignItems: 'center',
             minHeight: '100vh',
         }}>
-            <h1>Search for Anglers</h1>
-            {loading ?
-                <Spinner />
-                :
-                // displayUsers()
-                <div className='search-box'>
-                    <input
-                        type="text"
-                        className="search-bar"
-                        placeholder="Search..."
+            <main>
+            <h2>Search for Anglers</h2>
+                {loading ?
+                    <Spinner />
+                    :
+                    // displayUsers()
+                    <div className='search-box'>
+                        <input
+                            type="text"
+                            className="search-bar"
+                            placeholder="Search..."
                         // onChange={e => setQuery(e.target.value)}
                         // value={}
                         // onKeyPress={search}
-                    />
-                </div>}
-            {/* } */}
+                        />
+                    </div>}
+                {/* } */}
+            </main>
         </div>
     )
 }

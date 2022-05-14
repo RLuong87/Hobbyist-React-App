@@ -1,15 +1,17 @@
-.Card{
+.Card {
     width: 300px;
     height: 480px;
     background: white;
     border-radius: 10px;
     box-shadow: 0px 1px 10px 1px black;
     overflow: hidden;
+    margin-top: 80px;
+    margin-left: 10px;
 }
 
 .upper-container{
     height: 100px;
-    background: linear-gradient(to left, #00adf7, #087ef3e2);
+    background: linear-gradient(45deg, rgb(103, 182, 250), midnightblue);
 
 }
 
@@ -74,4 +76,5 @@ button:hover{
     transform: scale(1.1);
     border: none;
     color: white;
+    cursor: pointer;
 }

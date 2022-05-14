@@ -4,6 +4,7 @@
   font-style: italic;
   text-align: center;
   text-shadow: 1px 1px rgb(1, 1, 1);
+  margin-top: 50px;
 }
 
 body {
@@ -28,6 +29,20 @@ code {
 
 .app {
   background-image: url('./assets/weather/scenery.jpg');
+  background-size: cover;
+  background-position: center;
+  transition: 0.4 ease-out;
+}
+
+.login-pic {
+  background-image: url('./assets/fishing/bait.jpg');
+  background-size: cover;
+  background-position: center;
+  transition: 0.4 ease-out;
+}
+
+.register-pic {
+  background-image: url('./assets/fishing/brassReel.jpg');
   background-size: cover;
   background-position: center;
   transition: 0.4 ease-out;
@@ -64,7 +79,7 @@ main {
 
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 16px 16px 16px 16px;
-  margin-top: 0px;
+  margin-top: 20px;
 
   box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
 
@@ -134,7 +149,7 @@ main {
 }
 
 .social-pic {
-  background-image: url('./assets/random/smConnect.jpg');
+  background-image: url('./assets/random/wave.jpg');
   background-size: cover;
   background-position: center;
   transition: 0.4 ease-out;
@@ -147,4 +162,24 @@ main {
   border-radius: 10px;
   box-shadow: 0px 1px 9px 1px black;
   overflow: hidden;
+  background: linear-gradient(45deg, rgb(103, 182, 250), midnightblue);
+}
+
+.box1 {
+  width: 900px;
+  height: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 9px 1px black;
+  overflow: hidden;
+  background: linear-gradient(45deg, rgb(103, 182, 250), midnightblue);
+}
+
+
+
+.logo {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: oblique;
+  font-size: 180%;
+  margin: 0 20px;
 }
