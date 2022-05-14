@@ -63,7 +63,7 @@ const CreateProfile = () => {
         <div className='profile'>
             <Container>
                 <h1 style={{
-                    marginTop: 60,
+                    marginTop: 70,
                     textShadow: '1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
                     textAlign: 'center',
                     fontSize: 50,

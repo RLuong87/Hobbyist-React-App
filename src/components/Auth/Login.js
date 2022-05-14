@@ -57,7 +57,7 @@ const Login = () => {
             onChange={updateForm}
             onSubmit={onSubmit}
             submitting={submitting}
-          />
+            />
         </div>
       </Container>
     </div>

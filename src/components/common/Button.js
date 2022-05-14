@@ -34,7 +34,7 @@ const styles = {
     fontSize: 16,
     paddingTop: 5,
     paddingBottom: 5,
-    fontWeight: "bold",
+    // fontWeight: "bold",
     fontFamily: "sans-serif"
   }
 }
