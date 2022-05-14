@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../components/Home/Home";
+import Navbar2 from "../Navbar/Navbar2";
 import Navbar from "../Navbar/Navbar";
 import OpenWeather from "../components/Weather/OpenWeather";
 import CreateProfile from "../components/Auth/CreateProfile";
@@ -13,8 +14,8 @@ import Logout from '../components/Auth/Logout'
 
 const AppRouter = () => {
     return (
-        <div style={{ width: "100%", flexDirection: "column" }}>
-            <Navbar />
+        <div>
+            <Navbar2 />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/signup" element={<Register />} />

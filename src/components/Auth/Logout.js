@@ -3,11 +3,17 @@ import { useNavigate } from "react-router-dom";
 
 const Logout = () => {
 
-    const navigate = useNavigate();
-
     const logout = () => {
-        navigate("/signup")
+        localStorage.clear();
+        window.location.href = '/login';
     }
+
+    return (
+        <div>
+            <a href="#" onClick={logout()} />
+        </div>
+    )
+    
 }
 
 export default Logout;

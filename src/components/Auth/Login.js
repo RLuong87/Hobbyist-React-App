@@ -8,7 +8,6 @@ import splashImg from '../../assets/fishing/fishingDude.jpg';
 import splashImg2 from '../../assets/fishing/bait.jpg';
 import { apiHostUrl } from "../../config";
 import { AuthContext } from '../Providers/AuthProvider'
-import BorderCard from '../common/BorderCard';
 
 const Login = () => {
 
@@ -56,14 +55,14 @@ const Login = () => {
         >Login
         </h1>
       </Splash>
-      <BorderCard>
+      <div className="new-form">
         <LoginForm
           query={query}
           onChange={updateForm}
           onSubmit={onSubmit}
           submitting={submitting}
         />
-      </BorderCard>
+        </div>
       <Splash image={splashImg2} style={{
         height: '100vh',
         color: '#F1F1F1'

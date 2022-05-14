@@ -16,12 +16,13 @@ const BorderCard = (props) => {
 const styles = {
   card: {
     border: "1px solid #171717",
+    innerHeight: 50,
     borderRadius: 5,
     margin: '10px',
     padding: '10px',
     width: "80%",
     maxWidth: 500,
-    backgroundColor: "#00bbff",
+    backgroundColor: "skyblue",
     boxShadow: '1px 1px 20px rgba(91, 91, 91, 0.5)'
   }
 }
