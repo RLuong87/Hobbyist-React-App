@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext, Fragment } from 'react'
 import NavButton from "./NavButton";
 import { AuthContext } from "../components/Providers/AuthProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import FaLink from '../components/faCommon/FaLink';
 import './Navbar.css'
 
 export default function Navbar2() {
@@ -36,9 +37,10 @@ export default function Navbar2() {
                 </h1>
                 {(toggleMenu || screenWidth > 500) && (
                     <ul className='list'>
-                        <FontAwesomeIcon icon={["fas", "home"]} />
-                        <NavButton to="/" label="Home" />
-                        <FontAwesomeIcon icon={["fas", "cloud-sun"]} />
+                        <FaLink />
+                        {/* <FontAwesomeIcon icon={["fas", "home"]} /> */}
+                        {/* <NavButton to="/" label="Home" /> */}
+                        {/* <FontAwesomeIcon icon={["fas", "cloud-sun"]} /> */}
                         <NavButton to="/weather" label="Weather" />
                         {auth.token ?
                             <Fragment>
@@ -46,10 +48,11 @@ export default function Navbar2() {
                                 <NavButton to="/createProfile" label="Create Profile" />
                                 <NavButton to="/profilecard" label="View Profile" />
                                 <NavButton to="/logout" label="Logout" />
+                                <p className='nav-name'>Hi {auth.name}</p>
                             </Fragment>
                             :
                             <Fragment>
-                                <FontAwesomeIcon icon={["fas", "otter"]} />
+                                {/* <FontAwesomeIcon icon={["fas", "otter"]} /> */}
                                 <NavButton to="/login" label="Login" />
                             </Fragment>
                         }

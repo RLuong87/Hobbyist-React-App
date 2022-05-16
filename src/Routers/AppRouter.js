@@ -11,12 +11,14 @@ import ProfilePage from "../components/Users/User";
 import Users from "../components/Users/Users";
 import ProfileCard from "../components/Profile/ProfileCard";
 import Logout from '../components/Auth/Logout'
+import FaLink from "../components/faCommon/FaLink";
 
 const AppRouter = () => {
     return (
         <div>
             <Navbar2 />
             <Routes>
+                {/* <Route path="/" element={<FaLink />} /> */}
                 <Route path="/" element={<Home />} />
                 <Route path="/signup" element={<Register />} />
                 <Route path="/login" element={<Login />} />

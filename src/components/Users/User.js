@@ -3,7 +3,7 @@ import BorderCard from "../common/BorderCard";
 
 const User = (props) => {
 
-    const [id, name, status, birthday, location, about] = props.user;
+    const {id, name, status, birthday, location, about} = props.user;
 
     return (
         <BorderCard onClick={() => props.onSelect(id)}>

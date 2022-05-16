@@ -61,8 +61,6 @@ const Login = () => {
         </div>
         <footer>
           <div className="footer">
-            <span role='img' aria-label='love'>
-            </span>{' '}
             Create a Page for your catch.
           </div>
         </footer>

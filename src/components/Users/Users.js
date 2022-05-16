@@ -28,9 +28,8 @@ const Users = (props) => {
                     }
                 )
                 console.log(res.data);
-                setAuth({ ...auth, name: res.data.name })
-                setLoading(false)
                 setUsers(res.data)
+                setLoading(false)
             } catch (err) {
                 console.log(err.response ? err.response.data : err.message);
             }
@@ -40,7 +39,7 @@ const Users = (props) => {
     }, [auth.token])
 
     const displayUsers = () => {
-        return users.map(cust => <User customer={cust} key={cust.id} onSelect={onSelect} />)
+        return users.map(u => <User user={u} key={u.id} onSelect={onSelect} />)
     }
 
     const onSelect = (userId) => {
@@ -49,30 +48,17 @@ const Users = (props) => {
 
     return (
         <div style={{
+            margin: "0 20px",
             display: 'flex',
-            flex: "1",
             flexDirection: "column",
             alignItems: 'center',
-            minHeight: '100vh',
         }}>
-            <main>
-            <h2>Search for Anglers</h2>
-                {loading ?
-                    <Spinner />
-                    :
-                    // displayUsers()
-                    <div className='search-box'>
-                        <input
-                            type="text"
-                            className="search-bar"
-                            placeholder="Search..."
-                        // onChange={e => setQuery(e.target.value)}
-                        // value={}
-                        // onKeyPress={search}
-                        />
-                    </div>}
-                {/* } */}
-            </main>
+            <h1 className="greet">Search</h1>
+            {loading ?
+                <Spinner />
+                :
+                displayUsers()
+            }
         </div>
     )
 }
