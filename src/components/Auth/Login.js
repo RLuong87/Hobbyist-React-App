@@ -57,8 +57,15 @@ const Login = () => {
             onChange={updateForm}
             onSubmit={onSubmit}
             submitting={submitting}
-            />
+          />
         </div>
+        <footer>
+          <div className="footer">
+            <span role='img' aria-label='love'>
+            </span>{' '}
+            Create a Page for your catch.
+          </div>
+        </footer>
       </Container>
     </div>
   )

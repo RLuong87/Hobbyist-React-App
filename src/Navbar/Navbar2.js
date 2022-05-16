@@ -36,7 +36,9 @@ export default function Navbar2() {
                 </h1>
                 {(toggleMenu || screenWidth > 500) && (
                     <ul className='list'>
+                        <FontAwesomeIcon icon={["fas", "home"]} />
                         <NavButton to="/" label="Home" />
+                        <FontAwesomeIcon icon={["fas", "cloud-sun"]} />
                         <NavButton to="/weather" label="Weather" />
                         {auth.token ?
                             <Fragment>
@@ -47,6 +49,7 @@ export default function Navbar2() {
                             </Fragment>
                             :
                             <Fragment>
+                                <FontAwesomeIcon icon={["fas", "otter"]} />
                                 <NavButton to="/login" label="Login" />
                             </Fragment>
                         }

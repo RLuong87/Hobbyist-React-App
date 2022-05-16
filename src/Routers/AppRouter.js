@@ -21,11 +21,11 @@ const AppRouter = () => {
                 <Route path="/signup" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/weather" element={<OpenWeather />} />
-                <Route path="/createProfile" element={<CreateProfile /> } />
-                <Route path="/profilepage" element={<ProfilePage /> } />
-                <Route path="/users" element={<Users /> } />
-                <Route path="/profilecard" element={<ProfileCard /> } />
-                <Route path="/logout" element={<Logout /> } />
+                <Route path="/createProfile" element={<CreateProfile />} />
+                <Route path="/profilepage" element={<ProfilePage />} />
+                <Route path="/users" element={<Users />} />
+                <Route path="/profilecard" element={<ProfileCard />} />
+                <Route path="/logout" element={<Logout />} />
             </Routes>
         </div>
     )

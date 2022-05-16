@@ -7,7 +7,7 @@ import Button from "../common/Button";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = (props) => {
-  const {query} = props;
+  const { query } = props;
   let navigate = useNavigate();
 
   const onSubmit = () => {
@@ -17,10 +17,10 @@ const LoginForm = (props) => {
   const handleChange = (e) => {
     props.onChange(e.target.id, e.target.value);
   }
-  
+
   return (
     <Container>
-      <Form onSubmit={props.onSubmit} style={{marginTop: '1em'}} >
+      <Form onSubmit={props.onSubmit} style={{ marginTop: '1em' }} >
         <InlineInputContainer>
           <Input
             name="username"
