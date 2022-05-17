@@ -195,7 +195,7 @@ main {
 }
 
 .btn2:hover{
-  background-image: linear-gradient(to left, #636363, #abafaf);
+  background-image: linear-gradient(to left, #ccda08, #fbffff);
 
   /* transform: scale(1.1); */
   border: none;
