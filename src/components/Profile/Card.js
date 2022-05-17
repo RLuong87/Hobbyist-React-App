@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
-import './Card.css';
+import React, { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import { useNavigate } from 'react-router-dom'
- 
+import { Link } from "react-router-dom";
+import './Card.css';
+
 function Card() {
 
     const [auth] = useContext(AuthContext);
@@ -20,7 +20,9 @@ function Card() {
                 <h4> {auth.birthday} </h4>
                 <h4> {auth.location} </h4>
                 <p> {auth.about} </p>
-                <button>Visit Profile</button>
+                <Link to="/createProfile">
+                    <button className="btn3">Edit profile</button>
+                </Link>
             </div>
         </div>
     )

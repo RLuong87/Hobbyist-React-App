@@ -4,15 +4,10 @@ import Form from '../common/Form';
 import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import Button from "../common/Button";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const LoginForm = (props) => {
   const { query } = props;
-  let navigate = useNavigate();
-
-  const onSubmit = () => {
-    navigate("/signup");
-  }
 
   const handleChange = (e) => {
     props.onChange(e.target.id, e.target.value);
@@ -43,10 +38,12 @@ const LoginForm = (props) => {
             type="password"
           />
         </InlineInputContainer>
-        <Button>Login</Button>
+        <button className="btn2">Login</button>
       </Form>
       <p>____________________________________________________ </p>
-      <button onClick={onSubmit} className='btn2'>Create a new account</button>
+      <Link to='/signup'>
+        <button className="btn2">Create a new account</button>
+      </Link>
     </Container>
   )
 }

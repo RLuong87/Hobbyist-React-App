@@ -3,6 +3,8 @@ import NavButton from "./NavButton";
 import { AuthContext } from "../components/Providers/AuthProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FaLink from '../components/faCommon/FaLink';
+import HoverText from '../components/common/Tooltip';
+import WeatherText from '../components/common/Tooltip2';
 import './Navbar.css'
 
 export default function Navbar2() {
@@ -37,15 +39,15 @@ export default function Navbar2() {
                 </h1>
                 {(toggleMenu || screenWidth > 500) && (
                     <ul className='list'>
-                        <FaLink />
+                        <HoverText />
+                        <WeatherText />
                         {/* <FontAwesomeIcon icon={["fas", "home"]} /> */}
                         {/* <NavButton to="/" label="Home" /> */}
                         {/* <FontAwesomeIcon icon={["fas", "cloud-sun"]} /> */}
-                        <NavButton to="/weather" label="Weather" />
+                        {/* <NavButton to="/weather" label="Weather" /> */}
                         {auth.token ?
                             <Fragment>
                                 <NavButton to="/users" label="Users" />
-                                <NavButton to="/createProfile" label="Create Profile" />
                                 <NavButton to="/profilecard" label="View Profile" />
                                 <NavButton to="/logout" label="Logout" />
                                 <p className='nav-name'>Hi {auth.name}</p>

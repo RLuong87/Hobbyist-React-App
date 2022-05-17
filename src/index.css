@@ -183,9 +183,24 @@ main {
 }
 
 .btn2 {
-  color: #000;
-  font-size: 18px;
-  border-radius: 10px;
+  /* margin: 1rem; */
+  margin-top: 3;
+  color: #0e0d0d;
+  font: bold;
+  background-color: rgba(250, 240, 240, 0.985);
+  border: 2px solid #2f2d2e;
+  padding: 0.6rem;
+  border-radius: 6px;
+  transition-duration: 0.5s;
+}
+
+.btn2:hover{
+  background-image: linear-gradient(to left, #636363, #abafaf);
+
+  /* transform: scale(1.1); */
+  border: none;
+  color: rgba(255, 255, 255, 0.271);
+  cursor: pointer;
 }
 
 footer {

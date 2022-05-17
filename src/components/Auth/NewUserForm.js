@@ -64,7 +64,7 @@ const NewUserForm = ({ onSubmit, onChange, query }) => {
             required
           />
         </InlineInputContainer>
-        <Button>Submit</Button>
+        <button className='btn2'>Submit</button>
       </Form>
     // </Container>
   )
