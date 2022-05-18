@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext, Fragment } from 'react'
 import NavButton from "./NavButton";
 import { AuthContext } from "../components/Providers/AuthProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import FaLink from '../components/faCommon/FaLink';
 import HoverText from '../components/common/Tooltip';
 import WeatherText from '../components/common/Tooltip2';
+import UsersText from '../components/common/ToolTip3';
 import './Navbar.css'
 
 export default function Navbar2() {
@@ -41,20 +41,15 @@ export default function Navbar2() {
                     <ul className='list'>
                         <HoverText />
                         <WeatherText />
-                        {/* <FontAwesomeIcon icon={["fas", "home"]} /> */}
-                        {/* <NavButton to="/" label="Home" /> */}
-                        {/* <FontAwesomeIcon icon={["fas", "cloud-sun"]} /> */}
-                        {/* <NavButton to="/weather" label="Weather" /> */}
                         {auth.token ?
                             <Fragment>
-                                <NavButton to="/users" label="Users" />
-                                <NavButton to="/profilecard" label="View Profile" />
+                                <UsersText />
+                                <NavButton to="/profilepage" label="View Profile" />
                                 <NavButton to="/logout" label="Logout" />
                                 <p className='nav-name'>Hi {auth.name}</p>
                             </Fragment>
                             :
                             <Fragment>
-                                {/* <FontAwesomeIcon icon={["fas", "otter"]} /> */}
                                 <NavButton to="/login" label="Login" />
                             </Fragment>
                         }

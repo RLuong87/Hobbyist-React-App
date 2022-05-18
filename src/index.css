@@ -48,6 +48,11 @@ code {
   transition: 0.4 ease-out;
 }
 
+.users-page {
+  background-image: url('./assets/random/stayConnected.jpg');
+  transition: 0.4 ease-out;
+}
+
 .app.warm {
   background-image: url('./assets/weather/warm.jpg');
 }
@@ -65,11 +70,12 @@ main {
 .search-box {
   width: 100%;
   margin: 0 0 75px;
+  text-align: center;
 }
 
 .search-box .search-bar {
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 50%;
   padding: 12px;
 
   appearance: none;
@@ -155,10 +161,9 @@ main {
   transition: 0.4 ease-out;
 }
 
-.new-form {
+.box-border {
   width: 500px;
   height: 200px;
-  background: white;
   border-radius: 10px;
   box-shadow: 0px 1px 9px 1px black;
   overflow: hidden;
@@ -190,13 +195,13 @@ main {
   background-color: rgba(250, 240, 240, 0.985);
   border: 2px solid #2f2d2e;
   padding: 0.6rem;
+  margin-top: 0.5rem;
   border-radius: 6px;
   transition-duration: 0.5s;
 }
 
-.btn2:hover{
+.btn2:hover {
   background-image: linear-gradient(to left, #ccda08, #fbffff);
-
   /* transform: scale(1.1); */
   border: none;
   color: rgba(255, 255, 255, 0.271);
@@ -204,7 +209,7 @@ main {
 }
 
 footer {
-  color: #ebd80b;
+  color: #fae603;
   min-height: 100px;
   display: flex;
   flex-direction: column;
@@ -212,6 +217,7 @@ footer {
   font-size: 170%;
   text-align: center;
   background: none;
+  font-display: bold;
 }
 
 .nav-name {
@@ -223,6 +229,7 @@ footer {
 
 .greet {
   margin-top: 100px;
-  font-size: 100%;
   font-weight: 500;
+  color: #fae603;
+  text-shadow: 3px 5px rgba(50, 50, 70, 0.5);
 }

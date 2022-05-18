@@ -27,7 +27,6 @@ const Users = (props) => {
                         }
                     }
                 )
-                console.log(res.data);
                 setUsers(res.data)
                 setLoading(false)
             } catch (err) {
@@ -47,18 +46,30 @@ const Users = (props) => {
     }
 
     return (
-        <div style={{
-            margin: "0 20px",
-            display: 'flex',
-            flexDirection: "column",
-            alignItems: 'center',
-        }}>
-            <h1 className="greet">Search</h1>
-            {loading ?
-                <Spinner />
-                :
-                displayUsers()
-            }
+        <div className="users-page">
+            <div style={{
+                margin: "0 20px",
+                display: 'flex',
+                flexDirection: "column",
+                alignItems: 'center',
+            }}>
+                <h1 className="greet">Search for an Angler</h1>
+                <div className="search-box">
+                    <input
+                        type="text"
+                        className="search-bar"
+                        placeholder="Search..."
+                    // onChange={e => setQuery(e.target.value)}
+                    // value={query}
+                    // onKeyPress={search}
+                    />
+                </div>
+                {loading ?
+                    <Spinner />
+                    :
+                    displayUsers()
+                }
+            </div>
         </div>
     )
 }

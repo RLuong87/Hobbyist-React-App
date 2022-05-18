@@ -95,7 +95,7 @@ const Register = () => {
         }}>
           Register
         </h1>
-        <div className='new-form'>
+        <div className='box-border'>
           <NewUserForm
             query={query}
             onChange={updateForm}

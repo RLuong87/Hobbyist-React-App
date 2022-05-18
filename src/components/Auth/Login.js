@@ -4,7 +4,6 @@ import axios from "axios";
 import LoginForm from "./LoginForm";
 import Container from "../common/Container";
 import Splash from "../common/Splash";
-import splashImg2 from '../../assets/fishing/bait.jpg';
 import { apiHostUrl } from "../../config";
 import { AuthContext } from '../Providers/AuthProvider'
 
@@ -51,7 +50,7 @@ const Login = () => {
         }}
         >Login
         </h1>
-        <div className="new-form">
+        <div className="box-border">
           <LoginForm
             query={query}
             onChange={updateForm}

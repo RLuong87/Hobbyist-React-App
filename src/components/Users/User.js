@@ -3,16 +3,20 @@ import BorderCard from "../common/BorderCard";
 
 const User = (props) => {
 
-    const {id, name, status, birthday, location, about} = props.user;
+    const { id, name, status, birthday, location, about } = props.user;
 
     return (
-        <BorderCard onClick={() => props.onSelect(id)}>
-            <h2>{name}</h2>
-            <p>{status}</p>
-            <p>{birthday}</p>
-            <p>{location}</p>
-            <p>{about}</p>
-        </BorderCard>
+        <div className="Card" onClick={() => props.onSelect(id)}>
+            <div className="upper-container">
+            </div>
+            <div className="lower-container">
+                <h3>{name}</h3>
+                <h4>{status}</h4>
+                <h4>{birthday}</h4>
+                <h4>{location}</h4>
+                <p>{about}</p>
+            </div>
+        </div>
     )
 }
 

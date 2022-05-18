@@ -5,7 +5,7 @@ import FaLink from "../faCommon/FaLink";
 export default function HoverText() {
     return (
         <div className="HoverText">
-            <button style={{ background: "transparent", border: "none", margin: 10}} data-tip data-for="registerTip">
+            <button style={{ background: "transparent", border: "none", marginRight: 5 }} data-tip data-for="registerTip">
                 <FaLink />
             </button>
 

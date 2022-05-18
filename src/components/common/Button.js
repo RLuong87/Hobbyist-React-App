@@ -1,13 +1,11 @@
 import React from 'react';
-// fontawesome spinner
-
 
 const Button = (props) => {
 
   return (
     <button
       type={props.type || "submit"}
-      style={{ ...styles.button, ...props.style }}
+      style={{ ...styles.button, ...props.style, }}
       onClick={props.onClick}
       disabled={props.disabled}
     >
@@ -35,7 +33,8 @@ const styles = {
     paddingTop: 5,
     paddingBottom: 5,
     // fontWeight: "bold",
-    fontFamily: "sans-serif"
+    fontFamily: "sans-serif",
+    cursor: "pointer",
   }
 }
 
