@@ -10,17 +10,15 @@ export default function ContentCard() {
 
     return (
         <div className="Content-card">
-            <div className="upper-container">
-                <div className="image-container2">
-                    <img src={splashImg} />
-                </div>
-            </div>
             <div className="lower-container">
                 <Link to="/createContent">
-                    <button className="btn3">Create a post</button>
+                    <button className="content-btn">Create a post</button>
                 </Link>
                 <h1> {auth.name} </h1>
                 <h2>First time ice fishing! #funtimes</h2>
+                <div className="image-container2">
+                    <img src={splashImg} />
+                </div>
             </div>
         </div>
     )

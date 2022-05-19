@@ -209,15 +209,15 @@ main {
 }
 
 footer {
-  color: #fae603;
+  color: white;
   min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: 170%;
+  font-weight: 600;
   text-align: center;
   background: none;
-  font-display: bold;
 }
 
 .nav-name {

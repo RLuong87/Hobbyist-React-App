@@ -1,5 +1,4 @@
 import React from "react";
-import BorderCard from "../common/BorderCard";
 
 const User = (props) => {
 
@@ -16,6 +15,7 @@ const User = (props) => {
                 <h4>{location}</h4>
                 <p>{about}</p>
             </div>
+            <button>Visit profile</button>
         </div>
     )
 }

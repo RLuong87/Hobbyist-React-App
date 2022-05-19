@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../components/Home/Home";
 import Navbar2 from "../Navbar/Navbar2";
-import Navbar from "../Navbar/Navbar";
 import OpenWeather from "../components/Weather/OpenWeather";
 import CreateProfile from "../components/Auth/CreateProfile";
 import Register from "../components/Auth/Register";

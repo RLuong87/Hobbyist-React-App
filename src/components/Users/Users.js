@@ -27,6 +27,7 @@ const Users = (props) => {
                         }
                     }
                 )
+                console.log(res.data);
                 setUsers(res.data)
                 setLoading(false)
             } catch (err) {

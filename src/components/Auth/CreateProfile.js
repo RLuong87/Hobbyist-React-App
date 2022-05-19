@@ -53,7 +53,7 @@ const CreateProfile = () => {
                     about: res.data.about
                   })
                 console.log(res.data);
-                navigate('/profilecard')
+                navigate('/profilepage')
         } catch (err) {
             console.error(err.response ? err.response.data : err.message);
         }
