@@ -35,9 +35,9 @@ const NewUserForm = ({ onSubmit, onChange, query }) => {
         </InlineInputContainer>
         <InlineInputContainer>
           <Input
-            name='username'
-            id='username'
-            value={query.username}
+            name='email'
+            id='email'
+            value={query.email}
             placeholder={"Email Address"}
             onChange={handleChange}
             type="email"

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import LoginForm from "./LoginForm";
 import Container from "../common/Container";
-import Splash from "../common/Splash";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from '../Providers/AuthProvider'
 
@@ -14,7 +13,6 @@ const Login = () => {
     password: '',
   });
 
-  const [submitting, setSubmitting] = useState(false);
   const [auth, setAuth] = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -25,13 +23,24 @@ const Login = () => {
     })
   }
 
-  const onSubmit = async () => {
-    setSubmitting(true);
+  const onSubmit = () => {
+    const data = query;
+    data.name = data.fname;
+    console.log(data);
+    login(data)
+  }
+
+  const login = async (data) => {
     try {
-      const res = await axios.post(`${apiHostUrl}/api/auth/signin`, query);
-      setAuth({ ...auth, token: res.data.token })
-      setSubmitting(false)
-      console.log(res);
+      const res = await axios.post(`${apiHostUrl}/api/auth/signin`,
+       data);
+      setAuth({
+        name: res.data.name,
+        token: res.data.token,
+        profile: {},
+        roles: res.data.roles
+      })
+      console.log(res.data);
       navigate("/");
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
@@ -55,7 +64,6 @@ const Login = () => {
             query={query}
             onChange={updateForm}
             onSubmit={onSubmit}
-            submitting={submitting}
           />
         </div>
         <footer>

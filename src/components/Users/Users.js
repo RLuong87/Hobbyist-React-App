@@ -6,9 +6,9 @@ import axios from "axios";
 import { apiHostUrl } from "../../config";
 import { Navigate } from 'react-router-dom';
 
-const Users = (props) => {
+const Users = () => {
 
-    const [auth, setAuth] = useContext(AuthContext);
+    const [auth] = useContext(AuthContext);
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     let navigate = Navigate;

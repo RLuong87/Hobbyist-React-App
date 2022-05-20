@@ -11,7 +11,7 @@ const Register = () => {
   let navigate = useNavigate();
 
   const [query, setQuery] = useState({
-    username: '',
+    email: '',
     password: '',
     confirm: '',
     fname: '',
@@ -29,6 +29,7 @@ const Register = () => {
 
 
   const onSubmit = () => {
+    alert("Submitted");
 
     if (query.password !== query.confirm) {
       alert("Passwords do not match")
@@ -37,9 +38,8 @@ const Register = () => {
 
     const data = query;
     data.name = `${query.fname} ${query.lname}`;
-    // create user, login, create customer
+    data.username = data.email;
     createUser(data);
-    alert("Submitted");
   };
 
   const createUser = async (data) => {
@@ -54,15 +54,14 @@ const Register = () => {
   const login = async (data) => {
     try {
       const res = await axios.post(`${apiHostUrl}/api/auth/signin`, data);
-      console.log(res.data);
       createCustomer(data, res.data.token);
+      console.log(res.data);
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
     }
   }
 
   const createCustomer = async (data, token) => {
-    data.email = data.username;
     try {
       const res = await axios.post(
         `${apiHostUrl}/customers`,

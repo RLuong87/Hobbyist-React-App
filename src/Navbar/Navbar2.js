@@ -39,18 +39,18 @@ export default function Navbar2() {
                 </h1>
                 {(toggleMenu || screenWidth > 500) && (
                     <ul className='list'>
-                        <HoverText />
-                        <WeatherText />
+                        <li className='items'><HoverText /></li>
+                        <li className='items'><WeatherText /></li>
                         {auth.token ?
                             <Fragment>
-                                <UsersText />
-                                <NavButton to="/profilepage" label="View Profile" />
-                                <NavButton to="/logout" label="Logout" />
+                                <li className='items'><UsersText /></li>
+                                <li className='items'><NavButton to="/profilepage" label="View Profile" /></li>
+                                <li className='items'><NavButton to="/logout" label="Logout" /></li>
                                 <p className='nav-name'>Hi {auth.name}</p>
                             </Fragment>
                             :
                             <Fragment>
-                                <NavButton to="/login" label="Login" />
+                                <li className='items'><NavButton to="/login" label="Login" /></li>
                             </Fragment>
                         }
                     </ul>

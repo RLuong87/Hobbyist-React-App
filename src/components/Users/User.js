@@ -14,8 +14,8 @@ const User = (props) => {
                 <h4>{birthday}</h4>
                 <h4>{location}</h4>
                 <p>{about}</p>
+                <button className="btn3">Visit profile</button>
             </div>
-            <button>Visit profile</button>
         </div>
     )
 }
