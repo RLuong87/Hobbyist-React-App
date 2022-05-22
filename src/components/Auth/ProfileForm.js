@@ -6,6 +6,7 @@ import Input from "../common/Input";
 import Button from "../common/Button";
 import FileUpload from "../UplaodFile/FileUpload";
 import BorderCard from "../common/BorderCard";
+import TextArea from "../common/TextArea";
 
 const ProfileForm = (props) => {
     const { newProfile } = props;
@@ -61,7 +62,7 @@ const ProfileForm = (props) => {
                     />
                 </InlineInputContainer>
                 <InlineInputContainer>
-                    <Input
+                    <TextArea
                         name="about"
                         id="about"
                         value={newProfile.about}
