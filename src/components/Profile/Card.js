@@ -5,7 +5,10 @@ import './Card.css';
 
 export default function Card() {
 
-    const [auth] = useContext(AuthContext);
+    const [auth,setAuth] = useContext(AuthContext);
+
+    
+
 
     return (
         <div className="Card">

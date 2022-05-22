@@ -10,8 +10,6 @@ function ProfilePage() {
                 <Card />
                 <ContentCard />
             </div>
-            <div>
-            </div>
         </div>
     )
 }

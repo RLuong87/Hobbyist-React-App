@@ -25,17 +25,23 @@ const Login = () => {
 
   const onSubmit = () => {
     const data = query;
-    data.name = data.fname;
-    console.log(data);
+    data.password = query.password;
     login(data)
+
+    if (data.password != query.password) {
+      alert("Wrong username or password")
+      return;
+    }
+    alert("Login successful")
+
+    console.log(data);
   }
 
   const login = async (data) => {
     try {
       const res = await axios.post(`${apiHostUrl}/api/auth/signin`,
-       data);
+        data);
       setAuth({
-        name: res.data.name,
         token: res.data.token,
         profile: {},
         roles: res.data.roles

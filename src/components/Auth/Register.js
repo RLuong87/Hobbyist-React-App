@@ -55,6 +55,7 @@ const Register = () => {
     try {
       const res = await axios.post(`${apiHostUrl}/api/auth/signin`, data);
       createCustomer(data, res.data.token);
+      setAuth({ name: res.data.name })
       console.log(res.data);
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
