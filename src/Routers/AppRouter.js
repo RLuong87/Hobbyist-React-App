@@ -9,6 +9,7 @@ import Login from "../components/Auth/Login";
 import Users from "../components/Users/Users";
 import ProfilePage from "../components/Profile/ProfilePage";
 import Logout from '../components/Auth/Logout'
+import Profile from "../components/Profile/Profile";
 
 const AppRouter = () => {
     return (
@@ -23,6 +24,7 @@ const AppRouter = () => {
                 <Route path="/profilepage" element={<ProfilePage />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/logout" element={<Logout />} />
+                <Route path="/users/:userId" element={<Profile />} />
             </Routes>
         </div>
     )

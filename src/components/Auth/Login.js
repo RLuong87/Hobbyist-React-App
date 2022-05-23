@@ -26,15 +26,12 @@ const Login = () => {
   const onSubmit = () => {
     const data = query;
     data.password = query.password;
-    login(data)
 
-    if (data.password != query.password) {
-      alert("Wrong username or password")
+    if (query.password != data.password) {
+      alert("Username or password is incorrect")
       return;
     }
-    alert("Login successful")
-
-    console.log(data);
+    login(data)
   }
 
   const login = async (data) => {
@@ -42,9 +39,10 @@ const Login = () => {
       const res = await axios.post(`${apiHostUrl}/api/auth/signin`,
         data);
       setAuth({
+        ...auth,
         token: res.data.token,
         profile: {},
-        roles: res.data.roles
+        roles: res.data.roles,
       })
       console.log(res.data);
       navigate("/");

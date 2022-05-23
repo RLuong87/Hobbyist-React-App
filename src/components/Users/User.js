@@ -1,11 +1,12 @@
 import React from "react";
+import BorderCard from "../common/BorderCard";
 
 const User = (props) => {
 
     const { id, name, status, birthday, location, about } = props.user;
 
     return (
-        <div className="Card" onClick={() => props.onSelect(id)}>
+        <BorderCard>
             <div className="upper-container">
             </div>
             <div className="lower-container">
@@ -14,9 +15,9 @@ const User = (props) => {
                 <h4>{birthday}</h4>
                 <h4>{location}</h4>
                 <p>{about}</p>
-                <button className="btn3">Visit profile</button>
+                <button className="btn3" onClick={() => props.onSelect(id)}>Visit profile</button>
             </div>
-        </div>
+        </BorderCard>
     )
 }
 

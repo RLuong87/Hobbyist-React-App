@@ -4,14 +4,14 @@ import Spinner from "../faCommon/Spinner";
 import User from './User';
 import axios from "axios";
 import { apiHostUrl } from "../../config";
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Users = () => {
 
     const [auth] = useContext(AuthContext);
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
-    let navigate = Navigate;
+    let navigate = useNavigate();
     // useEffect to pull list of users
     // useState to store the users
     // need bearer token to get the user list

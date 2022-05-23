@@ -31,32 +31,35 @@ export default function Navbar2() {
     }, [])
 
     return (
-        <nav>
-            <div>
-                <h1 className='logo'>
-                    Hooked
-                    <FontAwesomeIcon icon={["fas", "anchor"]} />
-                </h1>
-                {(toggleMenu || screenWidth > 500) && (
-                    <ul className='list'>
-                        <li className='items'><HoverText /></li>
-                        <li className='items'><WeatherText /></li>
-                        {auth.token ?
-                            <Fragment>
-                                <li className='items'><UsersText /></li>
-                                <li className='items'><NavButton to="/profilepage" label="View Profile" /></li>
-                                <li className='items'><NavButton to="/logout" label="Logout" /></li>
-                                <p className='nav-name'>Hi {auth.name}</p>
-                            </Fragment>
-                            :
-                            <Fragment>
-                                <li className='items'><NavButton to="/login" label="Login" /></li>
-                            </Fragment>
-                        }
-                    </ul>
-                )}
-            </div>
-            <button onClick={toggleNav} className='btn'>Menu</button>
-        </nav>
+        <Fragment>
+            <nav>
+                <div>
+                    <h1 className='logo'>
+                        Hooked
+                        <FontAwesomeIcon icon={["fas", "anchor"]} />
+                    </h1>
+                    {(toggleMenu || screenWidth > 500) && (
+                        <ul className='list'>
+                            <li className='items'><HoverText /></li>
+                            <li className='items'><WeatherText /></li>
+                            {auth.token ?
+                                <Fragment>
+                                    <li className='items'><UsersText /></li>
+                                    <li className='items'><NavButton to="/profilepage" label="View Profile" /></li>
+                                    <li className='items'><NavButton to="/logout" label="Logout" /></li>
+                                    <p className='nav-name'>Hi {auth.name}</p>
+                                </Fragment>
+                                :
+                                <Fragment>
+                                    <li className='items'><NavButton to="/login" label="Login" /></li>
+                                </Fragment>
+                            }
+                        </ul>
+                    )}
+                </div>
+                <button onClick={toggleNav} className='btn'>Menu</button>
+            </nav>
+            <div style={{ height: "75px" }} /> {/*very important to have */}
+        </Fragment>
     )
 }
