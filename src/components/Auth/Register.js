@@ -29,7 +29,7 @@ const Register = () => {
 
 
   const onSubmit = () => {
-    alert("Submitted");
+    alert("Registration successful");
 
     if (query.password !== query.confirm) {
       alert("Passwords do not match")

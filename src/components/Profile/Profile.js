@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
 import BorderCard from "../common/BorderCard";
+import Card from './Card';
 
 const Profile = (props) => {
     const params = useParams();
@@ -30,9 +31,11 @@ const Profile = (props) => {
     }, [])
 
     return (
-
-        <p>Profile, {user.name}</p>
-
+        <div className="Card">
+            <h1>{user.name}</h1>
+            <h2>{user.about}</h2>
+            <h4>{user.location}</h4>
+        </div>
     )
 }
 
