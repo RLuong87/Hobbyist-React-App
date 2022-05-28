@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import LoginForm from "./LoginForm";
 import Container from "../common/Container";
@@ -49,6 +49,10 @@ const Login = () => {
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
     }
+  }
+
+  const getUser = (data) => {
+
   }
 
   return (

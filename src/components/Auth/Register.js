@@ -74,7 +74,11 @@ const Register = () => {
           }
         })
       console.log(res.data);
-      setAuth({ token, name: res.data.name })
+      setAuth({
+        token,
+        name: res.data.name,
+        email: res.data.email
+      })
       navigate('/');
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
