@@ -46,8 +46,8 @@ export default function Navbar2() {
                                 <Fragment>
                                     <li className='items'><UsersText /></li>
                                     <li className='items'><NavButton to="/profilepage" label="View Profile" /></li>
-                                    <li className='items'><NavButton to="/logout" label="Logout" /></li>
                                     <li className='items'><NavButton to="/upload" label="Upload" /></li>
+                                    <li className='items'><NavButton to="/logout" label="Logout" /></li>
                                     <p className='nav-name'>Hi {auth.name}</p>
                                 </Fragment>
                                 :

@@ -1,36 +1,49 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import { apiHostUrl } from '../../config'
+import Form from '../common/Form'
 import axios from 'axios'
 
-class UploadImage extends Component {
-    state = {
-        selectedFile: null
-    }
+const UploadImage = () => {
 
-    fileSelectHandler = event => {
-        this.setState({
+    const [selectedFile, setSelectedFile] = useState([])
+
+    const fileSelectHandler = event => {
+        setSelectedFile({
             selectedFile: event.target.files[0]
         })
     }
 
-    fileUploadHandler = () => {
-        const data = new FormData();
-        data.append('image', this.state.selectedFile, this.state.selectedFile.name)
-        axios.post(
-            `${apiHostUrl}/test/uploadImage`)
-            .then(res => {
-                console.log(res);
-            })
+    const onSubmit = () => {
+        const data = selectedFile;
+        fileUploadHandler(data)
     }
 
-    render() {
-        return (
-            <div className='App'>
-                <input type='file' onChange={this.fileSelectHandler} />
-                <button onClick={this.fileUploadHandler}>Upload</button>
-            </div>
-        )
+    const fileUploadHandler = async (data, token) => {
+        try {
+            const res = await axios.post(
+                `${apiHostUrl}/test/uploadImage`,
+                data,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                })
+        } catch (err) {
+            console.error(err.response ? err.response.data : err.message);
+        }
     }
+
+
+    return (
+        <div className='App'>
+            <Form
+                onSubmit={onSubmit}
+            >
+                <input type='file' onChange={fileSelectHandler} />
+                <button onClick={fileUploadHandler}>Upload</button>
+            </Form>
+        </div>
+    )
 }
 
 export default UploadImage;

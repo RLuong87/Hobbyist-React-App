@@ -13,7 +13,7 @@ const CreateProfile = () => {
         status: "",
         birthday: "",
         location: "",
-        about: "",
+        about: ""
     })
 
     const [auth, setAuth] = useContext(AuthContext)
