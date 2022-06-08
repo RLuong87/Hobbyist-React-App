@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Hooked React Frontend
+
+git clone git@github.com:RLuong87/Hobbyist-React-App.git
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
