@@ -3,7 +3,7 @@
 ## Run locally
 
 ```bash
-git clone git@github.com:RLuong87/Hobbyist-React-App.git
+git clone https://github.com/RLuong87/Hobbyist-React-App.git
 ```
 
 ### App Features
