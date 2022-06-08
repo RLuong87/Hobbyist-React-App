@@ -1,6 +1,14 @@
 # Hooked React Frontend
 
+## Run locally
+
+```bash
 git clone git@github.com:RLuong87/Hobbyist-React-App.git
+```
+
+### App Features
+* Openweather api
+* RI DEM link in homepage
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
