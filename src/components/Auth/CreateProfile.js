@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import Container from "../common/Container";
 import ProfileForm from "./ProfileForm";
@@ -16,6 +16,7 @@ const CreateProfile = () => {
         about: ""
     })
 
+    const [users, setUsers] = useState([]);
     const [auth, setAuth] = useContext(AuthContext)
     const navigate = useNavigate();
 
@@ -33,10 +34,21 @@ const CreateProfile = () => {
         createProfile(data)
     }
 
+    useEffect(() => {
+        localStorage.setItem('users', JSON.stringify(users))
+        setUsers({
+            username: auth.name,
+            status: auth.status,
+            birthday: auth.birthday,
+            location: auth.location,
+            about: auth.about
+        })
+    }, [users]);
+
     const createProfile = async (data, token) => {
         try {
             const res = await axios.put(
-                `${apiHostUrl}/customers`,
+                `${apiHostUrl}/api/customers`,
                 data,
                 {
                     headers:
@@ -44,16 +56,18 @@ const CreateProfile = () => {
                         Authorization: `Bearer ${auth.token}`
                     }
                 });
-                setAuth({
-                    ...auth,
-                    name: res.data.name,
-                    status: res.data.status,
-                    birthday: res.data.birthday,
-                    location: res.data.location,
-                    about: res.data.about
-                  })
-                console.log(res.data);
-                navigate('/profilepage')
+
+
+            setAuth({
+                ...auth,
+                name: res.data.name,
+                status: res.data.status,
+                birthday: res.data.birthday,
+                location: res.data.location,
+                about: res.data.about
+            })
+            console.log(res.data);
+            navigate('/profilepage')
         } catch (err) {
             console.error(err.response ? err.response.data : err.message);
         }
