@@ -20,7 +20,7 @@ const Users = () => {
         const _getUsers = async () => {
             try {
 
-                const res = await axios.get(`${apiHostUrl}/customers`,
+                const res = await axios.get(`${apiHostUrl}/api/customers`,
                     {
                         headers: {
                             "Authorization": `Bearer ${auth.token}`

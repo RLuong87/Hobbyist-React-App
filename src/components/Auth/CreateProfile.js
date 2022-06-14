@@ -43,7 +43,7 @@ const CreateProfile = () => {
             location: auth.location,
             about: auth.about
         })
-    }, [users]);
+    }, []);
 
     const createProfile = async (data, token) => {
         try {

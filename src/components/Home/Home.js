@@ -3,7 +3,6 @@ import Container from '../common/Container';
 import Splash from '../common/Splash';
 import splashImg from '../../assets/fishing/rods.jpg';
 import { AuthContext } from '../Providers/AuthProvider';
-import BorderCard from '../common/BorderCard';
 
 const Home = () => {
 
@@ -46,7 +45,7 @@ const Home = () => {
         <h2 style={{
           textAlign: "center",
         }}>
-          Fishing activities have always been heavily dependent on the weather – both in terms of when it’s even possible and safe to engage in the activity, but also when and where to fish to maximize the catch. <br />
+          Fishing activities have always been heavily dependent on the weather, both in terms of when it’s even possible and safe to engage in the activity, but also when and where to fish to maximize the catch. <br />
         </h2>
         <h2 style={{
           textAlign: "center"

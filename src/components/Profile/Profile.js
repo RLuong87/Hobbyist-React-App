@@ -17,7 +17,7 @@ const Profile = (props) => {
 
     useEffect(() => {
         const _getUser = async () => {
-            const res = await axios.get(`${apiHostUrl}/customers/${user.id}`,
+            const res = await axios.get(`${apiHostUrl}/api/customers/${user.id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${auth.token}`
