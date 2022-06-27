@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { AuthContext } from '../Providers/AuthProvider'
 import { apiHostUrl } from '../../config'
 import Form from '../common/Form'
 import axios from 'axios'
 
 const UploadImage = () => {
 
+    const [auth] = useContext(AuthContext);
     const [selectedFile, setSelectedFile] = useState([])
 
     const fileSelectHandler = event => {
@@ -21,11 +23,11 @@ const UploadImage = () => {
     const fileUploadHandler = async (data, token) => {
         try {
             const res = await axios.post(
-                `${apiHostUrl}/test/uploadImage`,
+                `${apiHostUrl}/api/customers/uploadAvatar`,
                 data,
                 {
                     headers: {
-                        Authorization: `Bearer ${token}`
+                        Authorization: `Bearer ${auth.token}`
                     }
                 })
         } catch (err) {
