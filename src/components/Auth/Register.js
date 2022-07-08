@@ -65,7 +65,7 @@ const Register = () => {
   const createCustomer = async (data, token) => {
     try {
       const res = await axios.post(
-        `${apiHostUrl}/customers`,
+        `${apiHostUrl}/api/customers`,
         data,
         {
           headers:

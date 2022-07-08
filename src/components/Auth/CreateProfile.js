@@ -56,8 +56,6 @@ const CreateProfile = () => {
                         Authorization: `Bearer ${auth.token}`
                     }
                 });
-
-
             setAuth({
                 ...auth,
                 name: res.data.name,

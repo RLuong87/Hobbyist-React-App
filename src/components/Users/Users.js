@@ -7,9 +7,9 @@ import { apiHostUrl } from "../../config";
 import { useNavigate } from 'react-router-dom';
 
 const Users = () => {
-
     const [auth] = useContext(AuthContext);
     const [users, setUsers] = useState([]);
+    const [query, setQuery] = useState([]);
     const [loading, setLoading] = useState(true);
     let navigate = useNavigate();
     // useEffect to pull list of users
@@ -46,6 +46,25 @@ const Users = () => {
         navigate(`/users/${userId}`)
     }
 
+    const search = async (e, data, token) => {
+        try {
+            if (e === "Enter") {
+                const res = await axios.get(
+                    `${apiHostUrl}/api/customers/name/${query}`,
+                    data,
+                    {
+                        headers:
+                        {
+                            "Authorization": `Bearer ${auth.token}`
+                        }
+                    })
+                console.log(res.data);
+            }
+        } catch (err) {
+            console.error(err.response ? err.response.data : err.message);
+        }
+    }
+
     return (
         <div className="users-page">
             <div style={{
@@ -60,9 +79,9 @@ const Users = () => {
                         type="text"
                         className="search-bar"
                         placeholder="Search..."
-                    // onChange={e => setQuery(e.target.value)}
-                    // value={query}
-                    // onKeyPress={search}
+                        onChange={e => setQuery(e.target.value)}
+                        value={query}
+                        onKeyPress={search}
                     />
                 </div>
                 {loading ?
