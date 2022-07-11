@@ -32,7 +32,7 @@ function OpenWeather() {
     return (
         <div className={(typeof weatherData.main != "undefined") ? ((weatherData.main.temp > 79) ? "app warm" : "app") : "app"}>
             <main>
-            <div className="welcome">Enter a city to get the latest weather report</div>
+                <div className="welcome">Enter a city to get the latest weather report</div>
                 <div className="search-box">
                     <input
                         type="text"
@@ -44,7 +44,7 @@ function OpenWeather() {
                     />
                 </div>
                 {(typeof weatherData.main != "undefined") ? (
-                    < div >
+                    <div>
                         <div className="location-box">
                             <div className="location">{weatherData.name}, {weatherData.sys.country}</div>
                             <div className="date">{dateBuilder(new Date())}</div>

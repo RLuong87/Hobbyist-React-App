@@ -11,6 +11,7 @@ import ProfilePage from "../components/Profile/ProfilePage";
 import Logout from '../components/Auth/Logout'
 import Profile from "../components/Profile/Profile";
 import UploadImage from "../components/UplaodFile/UploadImage";
+import SearchUser from "../components/Users/SearchUser";
 
 const AppRouter = () => {
     return (
@@ -27,6 +28,7 @@ const AppRouter = () => {
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/users/:userId" element={<Profile />} />
                 <Route path="/upload" element={<UploadImage />} />
+                <Route path="/search" element={<SearchUser />} />
             </Routes>
         </div>
     )
