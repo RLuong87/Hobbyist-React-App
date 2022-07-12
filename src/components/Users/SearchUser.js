@@ -1,47 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { apiHostUrl } from "../../config";
+import { AuthContext } from "../Providers/AuthProvider";
 import axios from "axios";
-
-const localHost = `http://localhost:8080/api/customers/name`
 
 const SearchUser = () => {
 
+    const [auth] = useContext(AuthContext);
     const [userData, setData] = useState([]);
     const [query, setQuery] = useState([]);
 
-    useEffect(() => {
-        search();
-    })
+    // const search = (e, token, data) => {
+    //     fetch(`${apiHostUrl}/test/name/${query}`, {
+    //         method: 'GET',
+    //         headers: {
+    //             'Authorization': `Bearer ${token}`
+    //         },
+    //         body: JSON.stringify(data),
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setData(data);
+    //             setQuery('');
+    //             console.log(data);
+    //         })
+    //         .catch((err) => {
+    //             console.error('Error:', err);
+    //         })
+    // }
 
-    const search = e => {
-        if (e === "Enter") {
-            fetch(`${apiHostUrl}/api/customers/name/${query}`)
-                .then(res => res.json())
-                .then(data => {
-                    setData(data);
-                    setQuery('');
-                });
-        }
+    const onSubmit = () => {
+        search();
     }
 
-    useEffect(() => {
-        // getUserWithFetch();
-        getUserWithAxios();
-    }, [])
 
-    const getUserWithFetch = async () => {
-        const response = await fetch(localHost);
-        const jsonData = await response.json();
-        setData(jsonData);
-    };
-
-    const getUserWithAxios = async () => {
-        const response = await axios.get(localHost);
-        setData(response.data);
+    const search = async () => {
+        const res = await axios.get(`${apiHostUrl}/test/name/${query}`,
+            {
+                Headers: {
+                    "Authorization": `Bearer ${auth.token}`
+                }
+            })
+        setQuery(res.data)
     }
 
     return (
         <div className="search-box">
+            <h1 className="greet">Search for an Angler</h1>
             <input
                 type="text"
                 className="search-bar"
@@ -50,7 +54,7 @@ const SearchUser = () => {
                 value={query}
                 onKeyPress={search}
             />
-            <h1>{userData.name}</h1>
+            <button onClick={onSubmit()}>Go</button>
         </div>
     )
 }

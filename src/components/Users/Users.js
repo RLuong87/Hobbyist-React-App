@@ -53,7 +53,6 @@ const Users = () => {
                 flexDirection: "column",
                 alignItems: 'center',
             }}>
-                <h1 className="greet">Search for an Angler</h1>
                 {loading ?
                     <Spinner />
                     :
