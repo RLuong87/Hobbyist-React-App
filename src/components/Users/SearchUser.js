@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
 import axios from "axios";
@@ -29,18 +29,24 @@ const SearchUser = () => {
     // }
 
     const onSubmit = () => {
-        search();
+        const data = userData;
+        
+        search(data)
     }
 
-
     const search = async () => {
-        const res = await axios.get(`${apiHostUrl}/test/name/${query}`,
-            {
-                Headers: {
-                    "Authorization": `Bearer ${auth.token}`
-                }
-            })
-        setQuery(res.data)
+        try {
+            const res = await axios.get(`${apiHostUrl}/api/customers/name/${query}`,
+                {
+                    headers: {
+                        "Authorization": `Bearer ${auth.token}`
+                    }
+                })
+            setData(res.data)
+            console.log(res.data);
+        } catch (err) {
+            console.error(err.response ? err.response.data : err.message);
+        }
     }
 
     return (
@@ -52,9 +58,8 @@ const SearchUser = () => {
                 placeholder="Search..."
                 onChange={e => setQuery(e.target.value)}
                 value={query}
-                onKeyPress={search}
             />
-            <button onClick={onSubmit()}>Go</button>
+            <button onClick={onSubmit}>Go</button>
         </div>
     )
 }

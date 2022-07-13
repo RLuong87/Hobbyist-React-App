@@ -16,7 +16,7 @@ export default function ContentCard() {
                 <Link to="/createContent">
                     <button className="content-btn">Create a post</button>
                 </Link>
-                <h1> {auth.name} </h1>
+                {/* <h1> {auth.name} </h1> */}
                 <h2>First time ice fishing! #funtimes</h2>
                 <div className="image-container2">
                     <img src={splashImg} />

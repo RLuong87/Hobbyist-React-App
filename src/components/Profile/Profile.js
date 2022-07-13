@@ -3,13 +3,11 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
-import BorderCard from "../common/BorderCard";
-import Card from './Card';
 
 const Profile = (props) => {
+
     const params = useParams();
-    const [loading, setLoading] = useState(true);
-    const [auth] = useContext(AuthContext);
+    const [auth, setAuth] = useContext(AuthContext);
 
     const [user, setUser] = useState({
         id: params.userId
@@ -17,18 +15,24 @@ const Profile = (props) => {
 
     useEffect(() => {
         const _getUser = async () => {
-            const res = await axios.get(`${apiHostUrl}/api/customers/${user.id}`,
-                {
-                    headers: {
-                        Authorization: `Bearer ${auth.token}`
-                    }
-                }
-            )
-            console.log(res.data);
-            setUser(res.data);
+            try {
+                const res = await axios.get(`${apiHostUrl}/api/customers/${user.id}`,
+                    {
+                        headers: {
+                            "Authorization": `Bearer ${auth.token}`
+                        }
+                    })
+                setAuth({
+                    ...auth
+                })
+                setUser(res.data);
+                console.log(res.data);
+            } catch (err) {
+                console.error(err.response ? err.response.data : err.message);
+            }
+            _getUser()
         }
-        _getUser()
-    }, [])
+    })
 
     return (
         <div className="Card">

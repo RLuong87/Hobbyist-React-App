@@ -30,7 +30,7 @@ const Users = () => {
                 setUsers(res.data)
                 setLoading(false)
             } catch (err) {
-                console.log(err.response ? err.response.data : err.message);
+                console.error(err.response ? err.response.data : err.message);
             }
         }
         setLoading(true)

@@ -10,7 +10,7 @@ export default function UsersText() {
             </button>
 
             <ReactTooltip id="usersIcon" place="bottom" effect="solid">
-                Search Users
+                View Users
             </ReactTooltip>
         </div>
     )

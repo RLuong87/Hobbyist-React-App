@@ -12,6 +12,7 @@ import Logout from '../components/Auth/Logout'
 import Profile from "../components/Profile/Profile";
 import UploadImage from "../components/UplaodFile/UploadImage";
 import SearchUser from "../components/Users/SearchUser";
+import CreateContent from "../components/Auth/CreateContent"
 
 const AppRouter = () => {
     return (
@@ -23,6 +24,7 @@ const AppRouter = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/weather" element={<OpenWeather />} />
                 <Route path="/createProfile" element={<CreateProfile />} />
+                <Route path="/createContent" element={<CreateContent />} />
                 <Route path="/profilepage" element={<ProfilePage />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/logout" element={<Logout />} />
