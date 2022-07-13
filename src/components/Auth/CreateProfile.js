@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const CreateProfile = () => {
 
-    const [newProfile, setNewProfile] = useState({
+    const [profile, setProfile] = useState({
         username: "",
         status: "",
         birthday: "",
@@ -21,29 +21,22 @@ const CreateProfile = () => {
     const navigate = useNavigate();
 
     const updateForm = (field, value) => {
-        setNewProfile({
-            ...newProfile,
+        setProfile({
+            ...profile,
             [field]: value
         })
     }
 
     const onSubmit = () => {
         alert("Profile saved");
-        const data = newProfile;
+        const data = profile;
         data.name = `${data.username}`
         createProfile(data)
     }
 
     useEffect(() => {
-        localStorage.setItem('users', JSON.stringify(users))
-        setUsers({
-            username: auth.name,
-            status: auth.status,
-            birthday: auth.birthday,
-            location: auth.location,
-            about: auth.about
-        })
-    }, []);
+        localStorage.setItem('profile', JSON.stringify(profile))
+    }, [profile]);
 
     const createProfile = async (data, token) => {
         try {
@@ -84,7 +77,7 @@ const CreateProfile = () => {
                     Create a profile
                 </h1>
                 <ProfileForm
-                    newProfile={newProfile}
+                    profile={profile}
                     onChange={updateForm}
                     onSubmit={onSubmit}
                 />

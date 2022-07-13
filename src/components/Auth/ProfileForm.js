@@ -9,7 +9,7 @@ import BorderCard from "../common/BorderCard";
 import TextArea from "../common/TextArea";
 
 const ProfileForm = (props) => {
-    const { newProfile } = props;
+    const { profile } = props;
 
     const handleChange = (e) => {
         props.onChange(e.target.id, e.target.value)
@@ -25,7 +25,7 @@ const ProfileForm = (props) => {
                     <Input
                         name="username"
                         id="username"
-                        value={newProfile.username}
+                        value={profile.username}
                         placeholder={"Display Name"}
                         onChange={handleChange}
                         type="text"
@@ -35,7 +35,7 @@ const ProfileForm = (props) => {
                     <Input
                         name="status"
                         id="status"
-                        value={newProfile.status}
+                        value={profile.status}
                         placeholder={"Status"}
                         onChange={handleChange}
                         type="text"
@@ -45,7 +45,7 @@ const ProfileForm = (props) => {
                     <Input
                         name="birthday"
                         id="birthday"
-                        value={newProfile.birthday}
+                        value={profile.birthday}
                         placeholder={"Birthday"}
                         onChange={handleChange}
                         type="text"
@@ -55,7 +55,7 @@ const ProfileForm = (props) => {
                     <Input
                         name="location"
                         id="location"
-                        value={newProfile.location}
+                        value={profile.location}
                         placeholder={"Location"}
                         onChange={handleChange}
                         type="text"
@@ -65,7 +65,7 @@ const ProfileForm = (props) => {
                     <TextArea
                         name="about"
                         id="about"
-                        value={newProfile.about}
+                        value={profile.about}
                         placeholder={"About Me"}
                         onChange={handleChange}
                         type="text"

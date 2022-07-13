@@ -23,9 +23,9 @@ const Profile = (props) => {
                         }
                     })
                 setAuth({
-                    ...auth
+                    ...auth,
+                    username: auth.name
                 })
-                setUser(res.data);
                 console.log(res.data);
             } catch (err) {
                 console.error(err.response ? err.response.data : err.message);
