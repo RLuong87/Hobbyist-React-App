@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import LoginForm from "./LoginForm";
@@ -51,9 +51,30 @@ const Login = () => {
     }
   }
 
-  const getUser = (data) => {
-
-  }
+  useEffect(() => {
+    const _getSelf = async (token) => {
+      try {
+        const res = await axios.get(`${apiHostUrl}/api/customers/self`,
+          {
+            headers: {
+              "Authorization": `Bearer ${auth.token}`
+            }
+          })
+        setAuth({
+          ...auth,
+          name: res.data.name,
+          status: res.data.status,
+          birthday: res.data.birthday,
+          location: res.data.location,
+          about: res.data.about
+        })
+        console.log(res.data);
+      } catch (err) {
+        console.error(err.response ? err.response.data : err.message);
+      }
+    }
+    _getSelf()
+  }, [auth.token])
 
   return (
     <div className="login-pic">

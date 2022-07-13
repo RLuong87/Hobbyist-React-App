@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import { apiHostUrl } from "../../config";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import './Card.css';
@@ -7,6 +8,31 @@ import './Card.css';
 export default function Card() {
 
     const [auth, setAuth] = useContext(AuthContext);
+
+    useEffect(() => {
+        const _getSelf = async () => {
+            try {
+                const res = await axios.get(`${apiHostUrl}/api/customers/self`,
+                    {
+                        headers: {
+                            "Authorization": `Bearer ${auth.token}`
+                        }
+                    })
+                    setAuth({
+                        ...auth,
+                        name: res.data.name,
+                        status: res.data.status,
+                        birthday: res.data.birthday,
+                        location: res.data.location,
+                        about: res.data.about
+                    })
+                console.log(res.data);
+            } catch (err) {
+                console.error(err.response ? err.response.data : err.message);
+            }
+        }
+        _getSelf()
+    }, [auth.token])
 
     return (
         <div className="Card">

@@ -14,18 +14,15 @@ const Profile = (props) => {
     });
 
     useEffect(() => {
-        const _getUser = async () => {
+        const _getUser = async (token) => {
             try {
                 const res = await axios.get(`${apiHostUrl}/api/customers/${user.id}`,
                     {
                         headers: {
-                            "Authorization": `Bearer ${auth.token}`
+                            "Authorization": `Bearer ${token}`
                         }
                     })
-                setAuth({
-                    ...auth,
-                    username: auth.name
-                })
+                    setUser(res.data)
                 console.log(res.data);
             } catch (err) {
                 console.error(err.response ? err.response.data : err.message);

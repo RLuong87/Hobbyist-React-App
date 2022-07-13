@@ -16,7 +16,6 @@ const CreateProfile = () => {
         about: ""
     })
 
-    const [users, setUsers] = useState([]);
     const [auth, setAuth] = useContext(AuthContext)
     const navigate = useNavigate();
 
