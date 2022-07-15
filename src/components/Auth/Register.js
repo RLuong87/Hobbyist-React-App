@@ -37,8 +37,7 @@ const Register = () => {
     }
 
     const data = query;
-    data.name = `${query.fname} ${query.lname}`;
-    data.username = data.email;
+    data.username = `${query.fname} ${query.lname}`;
     createUser(data);
   };
 

@@ -2,9 +2,11 @@ import React, { useState, useEffect, useContext, Fragment } from 'react'
 import NavButton from "./NavButton";
 import { AuthContext } from "../components/Providers/AuthProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactTooltip from 'react-tooltip';
 import HoverText from '../components/common/Tooltip';
 import WeatherText from '../components/common/Tooltip2';
 import UsersText from '../components/common/ToolTip3';
+import { Link } from 'react-router-dom';
 import './Navbar.css'
 
 export default function Navbar2() {
@@ -46,10 +48,13 @@ export default function Navbar2() {
                                 <Fragment>
                                     <li className='items'><UsersText /></li>
                                     <li className='items'><NavButton to="/search" label="Search" /></li>
-                                    <li className='items'><NavButton to="/profilepage" label="View Profile" /></li>
-                                    <li className='items'><NavButton to="/upload" label="Upload" /></li>
+                                    <li className='items'><NavButton to="/profilePage" label="View Profile" /></li>
                                     <li className='items'><NavButton to="/logout" label="Logout" /></li>
-                                    <p className='nav-name'>Hi {auth.name}</p>
+                                    <li className='items' style={{ background: "transparent", border: "none" }}>
+                                        <Link to="/profilePage">
+                                            <p className='nav-name'>{auth.name}</p>
+                                        </Link>
+                                    </li>
                                 </Fragment>
                                 :
                                 <Fragment>

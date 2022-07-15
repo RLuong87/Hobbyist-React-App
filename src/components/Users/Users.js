@@ -22,7 +22,7 @@ const Users = () => {
                     `${apiHostUrl}/api/customers`,
                     {
                         headers: {
-                            "Authorization": `Bearer ${auth.token}`
+                            Authorization: `Bearer ${auth.token}`
                         }
                     }
                 )

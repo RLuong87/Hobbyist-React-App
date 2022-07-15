@@ -37,15 +37,17 @@ nav {
 }
 
 @media screen and (max-width: 500px) {
-    
+
     .list {
         flex-direction: column;
         height: auto;
     }
+
     .items:nth-child(1) {
         border-top: 1px solid rgba(255, 255, 255, 0.555);
         margin-top: 50px;
     }
+
     .items {
         width: 100%;
         border-top: 1px solid rgba(255, 255, 255, 0.555);
@@ -53,7 +55,16 @@ nav {
         margin-right: 0px;
         padding: 20px 0;
     }
+
     .btn {
         display: block;
     }
+}
+
+.nav-name {
+    text-align: right;
+    margin: 0 10px;
+    font-size: 100%;
+    font-weight: 500;
+    color: rgb(250, 249, 249);
 }

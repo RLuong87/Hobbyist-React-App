@@ -39,7 +39,7 @@ const CreateProfile = () => {
 
     const createProfile = async (data, token) => {
         try {
-            const res = await axios.put(
+            const res = await axios.post(
                 `${apiHostUrl}/api/customers`,
                 data,
                 {

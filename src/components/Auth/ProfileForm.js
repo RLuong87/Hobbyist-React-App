@@ -4,7 +4,7 @@ import Form from "../common/Form";
 import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import Button from "../common/Button";
-import FileUpload from "../UplaodFile/FileUpload";
+import FileUpload from "../UploadFile/FileUpload";
 import BorderCard from "../common/BorderCard";
 import TextArea from "../common/TextArea";
 

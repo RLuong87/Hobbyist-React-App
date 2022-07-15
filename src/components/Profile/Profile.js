@@ -4,37 +4,33 @@ import { useParams } from "react-router-dom";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
 
-const Profile = (props) => {
+const Profile = () => {
 
     const params = useParams();
-    const [auth, setAuth] = useContext(AuthContext);
+    const [auth] = useContext(AuthContext);
 
     const [user, setUser] = useState({
         id: params.userId
     });
 
     useEffect(() => {
-        const _getUser = async (token) => {
-            try {
-                const res = await axios.get(`${apiHostUrl}/api/customers/${user.id}`,
-                    {
-                        headers: {
-                            "Authorization": `Bearer ${token}`
-                        }
-                    })
-                    setUser(res.data)
-                console.log(res.data);
-            } catch (err) {
-                console.error(err.response ? err.response.data : err.message);
-            }
-            _getUser()
+        const _getUser = async () => {
+            const res = await axios.get(`${apiHostUrl}/api/customers/${user.id}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${auth.token}`
+                    }
+                })
+            console.log(res.data);
+            setUser(res.data)
         }
-    })
+        _getUser()
+    }, [auth.token])
 
     return (
         <div className="Card">
             <h1>{user.name}</h1>
-            <h2>{user.about}</h2>
+            <h2>{user.status}</h2>
             <h4>{user.location}</h4>
         </div>
     )

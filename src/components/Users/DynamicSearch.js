@@ -20,7 +20,7 @@ const DynamicSearch = () => {
 
     return (
         <div style={{ marginLeft: '40%', marginTop: '60px' }}>
-            <h3>Search for an amployee</h3>
+            <h3>Search for a user</h3>
             <Autocomplete
                 style={{ width: 500 }}
                 freeSolo
@@ -28,7 +28,7 @@ const DynamicSearch = () => {
                 autoHighlight
                 options={myOptions}
                 renderInput={(params) => (
-                    <input {...params}
+                    <Autocomplete {...params}
                         onChange={getDataFromAPI}
                         variant="outlined"
                         label="Search Box"

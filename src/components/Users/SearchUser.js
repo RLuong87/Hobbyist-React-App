@@ -31,7 +31,6 @@ const SearchUser = () => {
 
     const onSubmit = () => {
         const data = userData;
-
         search(data)
     }
 
@@ -40,7 +39,7 @@ const SearchUser = () => {
             const res = await axios.get(`${apiHostUrl}/api/customers/name/${query}`,
                 {
                     headers: {
-                        "Authorization": `Bearer ${auth.token}`
+                        Authorization: `Bearer ${auth.token}`
                     }
                 })
             setData(res.data)
@@ -53,13 +52,13 @@ const SearchUser = () => {
     return (
         <div className="search-box">
             <h1 className="greet">Search for an Angler</h1>
-                <input
-                    type="text"
-                    className="search-bar"
-                    placeholder="Search..."
-                    onChange={e => setQuery(e.target.value)}
-                    value={query}
-                />
+            <input
+                type="text"
+                className="search-bar"
+                placeholder="Search..."
+                onChange={e => setQuery(e.target.value)}
+                value={query}
+            />
             <button className="btn3" onClick={onSubmit}>Go</button>
         </div>
     )

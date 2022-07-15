@@ -1,4 +1,5 @@
 import axios from "axios";
+import { apiHostUrl } from "../../config";
 import React, { Component } from "react";
 
 class FileUpload extends Component {
@@ -14,7 +15,7 @@ class FileUpload extends Component {
 
     };
 
-    onFileUpload = () => {
+    onFileUpload = (token) => {
 
         const formData = new FormData();
 
@@ -26,6 +27,13 @@ class FileUpload extends Component {
 
         console.log(this.state.selectedFile);
 
+        axios.post(`${apiHostUrl}/api/customers/uploadAvatar`,
+            {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        )
     };
     fileData = () => {
 
