@@ -58,7 +58,7 @@ export default function Navbar2() {
                                 </Fragment>
                                 :
                                 <Fragment>
-                                    <li className='items'><NavButton to="/dynamicSearch" label="Dynamic" /></li>
+                                    {/* <li className='items'><NavButton to="/dynamicSearch" label="Dynamic" /></li> */}
                                     <li className='items'><NavButton to="/login" label="Login" /></li>
                                 </Fragment>
                             }

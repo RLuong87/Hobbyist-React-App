@@ -10,7 +10,6 @@ import Users from "../components/Users/Users";
 import ProfilePage from "../components/Profile/ProfilePage";
 import Logout from '../components/Auth/Logout'
 import Profile from "../components/Profile/Profile";
-import UploadImage from "../components/UplaodFile/UploadImage";
 import SearchUser from "../components/Users/SearchUser";
 import CreateContent from "../components/Auth/CreateContent"
 import DynamicSearch from "../components/Users/DynamicSearch";
@@ -30,7 +29,6 @@ const AppRouter = () => {
                 <Route path="/users" element={<Users />} />
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/users/:userId" element={<Profile />} />
-                <Route path="/upload" element={<UploadImage />} />
                 <Route path="/search" element={<SearchUser />} />
                 <Route path="/dynamicSearch" element={<DynamicSearch />} />
             </Routes>
