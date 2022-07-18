@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import BorderCard from "../common/BorderCard";
 
 const User = (props) => {
@@ -10,12 +11,14 @@ const User = (props) => {
             <div className="upper-container">
             </div>
             <div className="lower-container">
-                <h3>{name}</h3>
+                <h2>{name}</h2>
                 <h4>{status}</h4>
                 <h4>{birthday}</h4>
                 <h4>{location}</h4>
                 <p>{about}</p>
-                <button className="btn3" onClick={() => props.onSelect(id)}>Visit profile</button>
+                <Link to="/">
+                    <button className="btn3" onClick={() => props.onSelect(id)}>Visit profile</button>
+                </Link>
             </div>
         </BorderCard>
     )
