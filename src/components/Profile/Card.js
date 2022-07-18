@@ -18,14 +18,14 @@ export default function Card() {
                             "Authorization": `Bearer ${auth.token}`
                         }
                     })
-                    setAuth({
-                        ...auth,
-                        name: res.data.name,
-                        status: res.data.status,
-                        birthday: res.data.birthday,
-                        location: res.data.location,
-                        about: res.data.about
-                    })
+                setAuth({
+                    ...auth,
+                    name: res.data.name,
+                    status: res.data.status,
+                    birthday: res.data.birthday,
+                    location: res.data.location,
+                    about: res.data.about,
+                })
                 console.log(res.data);
             } catch (err) {
                 console.error(err.response ? err.response.data : err.message);

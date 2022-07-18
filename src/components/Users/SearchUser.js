@@ -6,28 +6,9 @@ import axios from "axios";
 
 const SearchUser = () => {
 
-    const [auth] = useContext(AuthContext);
+    const [auth, setAuth] = useContext(AuthContext);
     const [userData, setData] = useState([]);
     const [query, setQuery] = useState([]);
-
-    // const search = (e, token, data) => {
-    //     fetch(`${apiHostUrl}/test/name/${query}`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'Authorization': `Bearer ${token}`
-    //         },
-    //         body: JSON.stringify(data),
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setData(data);
-    //             setQuery('');
-    //             console.log(data);
-    //         })
-    //         .catch((err) => {
-    //             console.error('Error:', err);
-    //         })
-    // }
 
     const onSubmit = () => {
         const data = userData;
@@ -60,6 +41,8 @@ const SearchUser = () => {
                 value={query}
             />
             <button className="btn3" onClick={onSubmit}>Go</button>
+            <div className="Card">
+            </div>
         </div>
     )
 }
