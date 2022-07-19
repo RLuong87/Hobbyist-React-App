@@ -1,12 +1,11 @@
 .Content-card {
     width: 900px;
-    /* height: 480px; */
     background: white;
-    border-radius: 10px;
-    /* box-shadow: 0px 1px 10px 1px black; */
-    /* overflow: hidden; */
-    margin-top: 80px;
+    /* border-radius: 10px; */
+    box-shadow: 0px 1px 10px 1px black;
+    /* margin-top: 50px; */
     margin-left: 10px;
+    align-items: center;
 }
 
 .image-container2 img {

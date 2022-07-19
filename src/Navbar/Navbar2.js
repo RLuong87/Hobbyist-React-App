@@ -58,8 +58,8 @@ export default function Navbar2() {
                                 </Fragment>
                                 :
                                 <Fragment>
-                                    {/* <li className='items'><NavButton to="/dynamicSearch" label="Dynamic" /></li> */}
                                     <li className='items'><NavButton to="/login" label="Login" /></li>
+                                    <li className='items'><NavButton to="/example" label="Example" /></li>
                                 </Fragment>
                             }
                         </ul>
@@ -67,7 +67,7 @@ export default function Navbar2() {
                 </div>
                 <button onClick={toggleNav} className='btn'>Menu</button>
             </nav>
-            <div style={{ height: "75px" }} /> {/*very important to have */}
+            <div style={{ height: "75px" }} />
         </Fragment>
     )
 }

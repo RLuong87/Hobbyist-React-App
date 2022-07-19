@@ -5,8 +5,8 @@ import ContentCard from "./ContentCard";
 const ProfilePage = () => {
 
     return (
-        <div className="social-pic">
-            <div className="Profile">
+        <div className="Profile">
+            <div className="profile-background">
                 <Card />
                 <ContentCard />
             </div>

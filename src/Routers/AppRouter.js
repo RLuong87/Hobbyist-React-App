@@ -12,7 +12,7 @@ import Logout from '../components/Auth/Logout'
 import Profile from "../components/Profile/Profile";
 import SearchUser from "../components/Users/SearchUser";
 import CreateContent from "../components/Auth/CreateContent"
-import DynamicSearch from "../components/Users/DynamicSearch";
+import Example from "../components/Profile/Example";
 
 const AppRouter = () => {
     return (
@@ -30,7 +30,7 @@ const AppRouter = () => {
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/users/:userId" element={<Profile />} />
                 <Route path="/search" element={<SearchUser />} />
-                <Route path="/dynamicSearch" element={<DynamicSearch />} />
+                <Route path="/example" element={<Example />} />
             </Routes>
         </div>
     )

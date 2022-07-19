@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import BorderCard from "../common/BorderCard";
 
-const DisplayContent = (props) => {
+const HomeContent = (props) => {
 
-    const { angler: { name }, id, title, content } = props.contents;
+    const { angler: { name }, title, content } = props.contents;
 
     return (
         <BorderCard>
@@ -13,9 +13,10 @@ const DisplayContent = (props) => {
             <div className="lower-container">
                 <h4>{title}</h4>
                 <h4>{content}</h4>
+                <button className="btn3">Like</button>
             </div>
         </BorderCard>
     )
 }
 
-export default DisplayContent;
+export default HomeContent;

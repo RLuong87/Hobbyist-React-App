@@ -1,12 +1,41 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Container from '../common/Container';
 import Splash from '../common/Splash';
 import splashImg from '../../assets/fishing/rods.jpg';
 import { AuthContext } from '../Providers/AuthProvider';
+import HomeContent from './HomeContent';
+import { apiHostUrl } from '../../config';
+import Spinner from '../faCommon/Spinner';
+import axios from 'axios';
 
 const Home = () => {
 
-  const [auth, setAuth] = useContext(AuthContext)
+  const [auth] = useContext(AuthContext)
+  const [content, setContent] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const _getContent = async () => {
+      try {
+        const res = await axios.get(`${apiHostUrl}/api/content`,
+          {
+            headers: {
+              "Authorization": `Bearer ${auth.token}`
+            }
+          })
+        setContent(res.data)
+        console.log(res.data);
+        setLoading(false);
+      } catch (err) {
+      }
+    }
+    setLoading(true)
+    _getContent()
+  }, [])
+
+  const display = () => {
+    return content.map(con => <HomeContent contents={con} key={con.id} />)
+  }
 
   return (
     <Container >
@@ -23,38 +52,35 @@ const Home = () => {
         }}>
           Welcome to Hooked!
         </h1>
-      </Splash>
-      {/* <div className='search-box'>
-        <input
-          type="text"
-          className="search-bar"
-          placeholder="Search..."
-        // onChange={e => setQuery(e.target.value)}
-        // value={}
-        // onKeyPress={search}
-        />
-      </div> */}
-      <div className='box1'>
-        <h1 style={{
-          textShadow: '1px 1px black',
-          textAlign: 'center',
-          fontSize: 50,
-          color: "gold",
-        }}>
-          When and Where to Fish?</h1>
-        <h2 style={{
-          textAlign: "center",
-        }}>
-          Fishing activities have always been heavily dependent on the weather, both in terms of when it’s even possible and safe to engage in the activity, but also when and where to fish to maximize the catch. <br />
-        </h2>
-        <h2 style={{
-          textAlign: "center"
-        }}><br />For more information on rules and regulations or to obtain a fishing license in RI, please visit <br />&nbsp;
-          <a href='http://www.dem.ri.gov/programs/managementservices/licenses/fishing-licenses.php'>
-            www.dem.ri.gov
-          </a>
-        </h2>
-      </div>
+          </Splash>
+        <div>
+          {loading ?
+            <Spinner />
+            :
+            display()
+          }
+        </div>
+        <div className='box1'>
+          <h1 style={{
+            textShadow: '1px 1px black',
+            textAlign: 'center',
+            fontSize: 50,
+            color: "gold",
+          }}>
+            When and Where to Fish?</h1>
+          <h2 style={{
+            textAlign: "center",
+          }}>
+            Fishing activities have always been heavily dependent on the weather, both in terms of when it’s even possible and safe to engage in the activity, but also when and where to fish to maximize the catch. <br />
+          </h2>
+          <h2 style={{
+            textAlign: "center"
+          }}><br />For more information on rules and regulations or to obtain a fishing license in RI, please visit <br />&nbsp;
+            <a href='http://www.dem.ri.gov/programs/managementservices/licenses/fishing-licenses.php'>
+              www.dem.ri.gov
+            </a>
+          </h2>
+        </div>
     </Container>
   )
 }

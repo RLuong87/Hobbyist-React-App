@@ -154,11 +154,12 @@ main {
   min-height: 100vh;
 }
 
-.social-pic {
+.profile-background {
   background-image: url('./assets/random/wave.jpg');
+  transition: 0.4 ease-out;
   background-size: cover;
   background-position: center;
-  transition: 0.4 ease-out;
+  min-height: 100vh;
 }
 
 .box-border {

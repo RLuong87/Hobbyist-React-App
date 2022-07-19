@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Link } from "react-router-dom";
-import splashImg from '../../assets/fishing/ice-fishing.jpg';
 import TextArea from "../common/TextArea";
 import { apiHostUrl } from "../../config";
 import Content from './Content'
@@ -46,14 +45,13 @@ export default function ContentCard() {
                 <Link to="/createContent">
                     <button className="content-btn">Create a post</button>
                 </Link>
-                <h1> {auth.name} </h1>
                 <div className="image-container2">
-                    {loading ?
-                        <Spinner />
-                        :
-                        displayContent()
-                    }
                 </div>
+                {loading ?
+                    <Spinner />
+                    :
+                    displayContent()
+                }
             </div>
         </div>
     )
