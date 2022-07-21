@@ -2,7 +2,9 @@ import React from 'react';
 import Form from '../common/Form';
 import Input from '../common/Input';
 import Button from '../common/Button';
+import BorderCard from '../common/BorderCard';
 import InlineInputContainer from '../common/InlineInputContainer';
+import TextArea from '../common/TextArea';
 
 const ContentForm = (props) => {
 
@@ -13,29 +15,21 @@ const ContentForm = (props) => {
     }
 
     return (
-        <Form onSubmit={props.onSubmit} stylye={{ marginTop: "1em" }}>
-            <InlineInputContainer>
-                <Input
-                    name='title'
-                    id='title'
-                    value={newContent.title}
-                    placeholder={"Title"}
-                    onChange={handleChange}
-                    required
-                />
-            </InlineInputContainer>
-            <InlineInputContainer>
-                <Input
-                    name='content'
-                    id='content'
-                    value={newContent.content}
-                    placeholder={"Content"}
-                    onChange={handleChange}
-                    required
-                />
-            </InlineInputContainer>
-            <Button>Save content</Button>
-        </Form>
+        <BorderCard>
+            <Form onSubmit={props.onSubmit} stylye={{ marginTop: "1em" }}>
+                <InlineInputContainer>
+                    <TextArea
+                        name='content'
+                        id='content'
+                        value={newContent.content}
+                        placeholder={"What's on your mind?"}
+                        onChange={handleChange}
+                        required
+                    />
+                </InlineInputContainer>
+                <Button>Save content</Button>
+            </Form>
+        </BorderCard>
     )
 }
 

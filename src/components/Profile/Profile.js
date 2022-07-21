@@ -29,9 +29,13 @@ const Profile = () => {
 
     return (
         <div className="Card">
-            <h1>{user.name}</h1>
-            <h2>{user.status}</h2>
-            <h4>{user.location}</h4>
+            <div className="upper-container">
+                <h1>{user.name}</h1>
+            </div>
+            <div className="lower-container">
+                <h2>{user.about}</h2>
+                <h4>{user.location}</h4>
+            </div>
         </div>
     )
 }

@@ -5,12 +5,16 @@ import ContentCard from "./ContentCard";
 const ProfilePage = () => {
 
     return (
-        <div className="Profile">
-            <div className="profile-background">
-                <Card />
-                <ContentCard />
+        <div className="profile-background">
+            <div className="Profile">
+            <Card />
+                <div>
+
+                </div>
             </div>
+            <ContentCard />
         </div>
+
     )
 }
 

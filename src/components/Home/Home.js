@@ -52,35 +52,36 @@ const Home = () => {
         }}>
           Welcome to Hooked!
         </h1>
-          </Splash>
-        <div>
-          {loading ?
-            <Spinner />
-            :
-            display()
-          }
-        </div>
-        <div className='box1'>
-          <h1 style={{
-            textShadow: '1px 1px black',
-            textAlign: 'center',
-            fontSize: 50,
-            color: "gold",
-          }}>
-            When and Where to Fish?</h1>
-          <h2 style={{
-            textAlign: "center",
-          }}>
-            Fishing activities have always been heavily dependent on the weather, both in terms of when it’s even possible and safe to engage in the activity, but also when and where to fish to maximize the catch. <br />
-          </h2>
-          <h2 style={{
-            textAlign: "center"
-          }}><br />For more information on rules and regulations or to obtain a fishing license in RI, please visit <br />&nbsp;
-            <a href='http://www.dem.ri.gov/programs/managementservices/licenses/fishing-licenses.php'>
-              www.dem.ri.gov
-            </a>
-          </h2>
-        </div>
+      </Splash>
+      <div>
+        {typeof content.main != "undefined"
+          ?
+          <Spinner />
+          :
+          display()
+        }
+      </div>
+      <div className='box1'>
+        <h1 style={{
+          textShadow: '1px 1px black',
+          textAlign: 'center',
+          fontSize: 50,
+          color: "gold",
+        }}>
+          When and Where to Fish?</h1>
+        <h2 style={{
+          textAlign: "center",
+        }}>
+          Fishing activities have always been heavily dependent on the weather, both in terms of when it’s even possible and safe to engage in the activity, but also when and where to fish to maximize the catch. <br />
+        </h2>
+        <h2 style={{
+          textAlign: "center"
+        }}><br />For more information on rules and regulations or to obtain a fishing license in RI, please visit <br />&nbsp;
+          <a href='http://www.dem.ri.gov/programs/managementservices/licenses/fishing-licenses.php'>
+            www.dem.ri.gov
+          </a>
+        </h2>
+      </div>
     </Container>
   )
 }

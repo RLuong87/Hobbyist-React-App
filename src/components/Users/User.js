@@ -8,10 +8,10 @@ const User = (props) => {
     return (
         <BorderCard>
             <div className="upper-container">
-            </div>
-            <div className="lower-container">
                 <h1>{id}</h1>
                 <h2>{name}</h2>
+            </div>
+            <div className="lower-container">
                 <h4>{status}</h4>
                 <h4>{birthday}</h4>
                 <h4>{location}</h4>

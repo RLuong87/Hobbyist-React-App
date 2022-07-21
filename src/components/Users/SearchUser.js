@@ -1,17 +1,20 @@
 import React, { useContext, useState } from "react";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
-import { Autocomplete } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
+import Spinner from "../faCommon/Spinner";
+import User from "./User";
 import axios from "axios";
 
 const SearchUser = () => {
 
     const [auth, setAuth] = useContext(AuthContext);
-    const [userData, setData] = useState([]);
+    const [users, setData] = useState([]);
     const [query, setQuery] = useState([]);
+    let navigate = useNavigate();
 
     const onSubmit = () => {
-        const data = userData;
+        const data = users;
         search(data)
     }
 
@@ -30,6 +33,14 @@ const SearchUser = () => {
         }
     }
 
+    const display = () => {
+        return users.map(u => <User user={u} key={u.id} onSelect={onSelect} />)
+    }
+
+    const onSelect = (userName) => {
+        navigate(`/users/${userName}`)
+    }
+
     return (
         <div className="search-box">
             <h1 className="greet">Search for an Angler</h1>
@@ -41,7 +52,12 @@ const SearchUser = () => {
                 value={query}
             />
             <button className="btn3" onClick={onSubmit}>Go</button>
-            <div className="Card">
+            <div>
+                {typeof users.main != "undefined" ?
+                    <Spinner />
+                    :
+                    display()
+                }
             </div>
         </div>
     )

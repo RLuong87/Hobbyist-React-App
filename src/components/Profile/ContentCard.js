@@ -39,14 +39,18 @@ export default function ContentCard() {
     }
 
     return (
-        <div className="Content-card">
+        <div className="image-container2">
             <div className="lower-container">
-                <TextArea />
+            </div>
+            <div className="Content-card">
                 <Link to="/createContent">
                     <button className="content-btn">Create a post</button>
                 </Link>
-                <div className="image-container2">
-                </div>
+            </div>
+            <div style={{
+                alignContent: "center",
+                alignItems: "center"
+            }}>
                 {loading ?
                     <Spinner />
                     :
