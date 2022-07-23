@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Link } from "react-router-dom";
-import TextArea from "../common/TextArea";
 import { apiHostUrl } from "../../config";
-import Content from './Content'
-import axios from "axios";
 import Spinner from "../faCommon/Spinner";
+import DeleteContent from "./DeleteContent";
+import Content from './Content'
 import './ContentCard.css';
+import axios from "axios";
 
 export default function ContentCard() {
 
@@ -40,17 +40,12 @@ export default function ContentCard() {
 
     return (
         <div className="image-container2">
-            <div className="lower-container">
-            </div>
             <div className="Content-card">
                 <Link to="/createContent">
                     <button className="content-btn">Create a post</button>
                 </Link>
             </div>
-            <div style={{
-                alignContent: "center",
-                alignItems: "center"
-            }}>
+            <div className="align-content">
                 {loading ?
                     <Spinner />
                     :

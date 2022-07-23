@@ -7,6 +7,7 @@ import HomeContent from './HomeContent';
 import { apiHostUrl } from '../../config';
 import Spinner from '../faCommon/Spinner';
 import axios from 'axios';
+import BorderCard from '../common/BorderCard';
 
 const Home = () => {
 
@@ -53,14 +54,14 @@ const Home = () => {
           Welcome to Hooked!
         </h1>
       </Splash>
-      <div>
-        {typeof content.main != "undefined"
-          ?
-          <Spinner />
-          :
-          display()
-        }
-      </div>
+        <div>
+          {typeof content.main != "undefined"
+            ?
+            <Spinner />
+            :
+            display()
+          }
+        </div>
       <div className='box1'>
         <h1 style={{
           textShadow: '1px 1px black',
@@ -82,6 +83,18 @@ const Home = () => {
           </a>
         </h2>
       </div>
+      <footer>
+        <div className="footer">
+          <h1>
+            Built
+          </h1>
+          <span role='img' aria-label='love'>
+          </span>
+          with
+          💚
+          by Richies Luong
+        </div>
+      </footer>
     </Container>
   )
 }

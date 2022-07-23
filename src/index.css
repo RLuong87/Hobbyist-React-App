@@ -227,3 +227,9 @@ footer {
   color: #fae603;
   text-shadow: 2px 1px rgba(50, 50, 70, 0.5);
 }
+
+.footer {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0e0d0d;
+}

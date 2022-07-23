@@ -59,7 +59,6 @@ export default function Navbar2() {
                                 :
                                 <Fragment>
                                     <li className='items'><NavButton to="/login" label="Login" /></li>
-                                    <li className='items'><NavButton to="/example" label="Example" /></li>
                                 </Fragment>
                             }
                         </ul>

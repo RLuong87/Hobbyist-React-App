@@ -97,7 +97,12 @@ const Login = () => {
         </div>
         <footer>
           <div className="footer">
-            Create a Page for your catch.
+            <h1 style={{
+              color: "gold",
+              textShadow: '1px 1px black',
+            }}>
+              Create a Page for your catch.
+            </h1>
           </div>
         </footer>
       </Container>

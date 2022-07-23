@@ -5,10 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import Spinner from "../faCommon/Spinner";
 import User from "./User";
 import axios from "axios";
+import BorderCard from "../common/BorderCard";
 
 const SearchUser = () => {
 
-    const [auth, setAuth] = useContext(AuthContext);
+    const [auth] = useContext(AuthContext);
     const [users, setData] = useState([]);
     const [query, setQuery] = useState([]);
     let navigate = useNavigate();
@@ -42,24 +43,26 @@ const SearchUser = () => {
     }
 
     return (
-        <div className="search-box">
-            <h1 className="greet">Search for an Angler</h1>
-            <input
-                type="text"
-                className="search-bar"
-                placeholder="Search..."
-                onChange={e => setQuery(e.target.value)}
-                value={query}
-            />
-            <button className="btn3" onClick={onSubmit}>Go</button>
-            <div>
-                {typeof users.main != "undefined" ?
-                    <Spinner />
-                    :
-                    display()
-                }
+        <BorderCard>
+            <div className="search-box">
+                <h1 className="greet">Search for an Angler</h1>
+                <input
+                    type="text"
+                    className="search-bar"
+                    placeholder="Search..."
+                    onChange={e => setQuery(e.target.value)}
+                    value={query}
+                />
+                <button className="btn3" onClick={onSubmit}>Go</button>
+                <div>
+                    {typeof users.main != "undefined" ?
+                        <Spinner />
+                        :
+                        display()
+                    }
+                </div>
             </div>
-        </div>
+        </BorderCard>
     )
 }
 

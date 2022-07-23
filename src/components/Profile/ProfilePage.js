@@ -7,14 +7,10 @@ const ProfilePage = () => {
     return (
         <div className="profile-background">
             <div className="Profile">
-            <Card />
-                <div>
-
-                </div>
+                <Card />
             </div>
             <ContentCard />
         </div>
-
     )
 }
 

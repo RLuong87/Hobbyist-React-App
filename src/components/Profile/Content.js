@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import BorderCard from "../common/BorderCard";
+import DeleteContent from "./DeleteContent";
 
 const DisplayContent = (props) => {
 

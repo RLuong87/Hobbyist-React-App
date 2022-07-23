@@ -8,7 +8,6 @@ const User = (props) => {
     return (
         <BorderCard>
             <div className="upper-container">
-                <h1>{id}</h1>
                 <h2>{name}</h2>
             </div>
             <div className="lower-container">
