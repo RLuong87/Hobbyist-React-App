@@ -8,16 +8,16 @@ import { useNavigate } from "react-router-dom";
 
 const CreateProfile = () => {
 
-    const [profile, setProfile] = useState({
-        username: "",
-        status: "",
-        birthday: "",
-        location: "",
-        about: ""
-    })
-
     const [auth, setAuth] = useContext(AuthContext)
     const navigate = useNavigate();
+
+    const [profile, setProfile] = useState({
+        username: auth.name ? auth.name : "",
+        status: auth.status ? auth.status : "",
+        birthday: auth.birthday ? auth.birthday : "",
+        location: auth.location ? auth.location : "",
+        about: auth.about ? auth.about : ""
+    })
 
     const updateForm = (field, value) => {
         setProfile({

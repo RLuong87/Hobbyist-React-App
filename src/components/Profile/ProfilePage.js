@@ -9,7 +9,9 @@ const ProfilePage = () => {
             <div className="Profile">
                 <Card />
             </div>
-            <ContentCard />
+            <div className="align-content">
+                <ContentCard />
+            </div>
         </div>
     )
 }

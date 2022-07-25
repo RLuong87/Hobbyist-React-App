@@ -12,6 +12,7 @@ import Logout from '../components/Auth/Logout'
 import Profile from "../components/Profile/Profile";
 import SearchUser from "../components/Users/SearchUser";
 import CreateContent from "../components/Auth/CreateContent"
+import DeleteContent from "../components/Auth/DeleteContent";
 
 const AppRouter = () => {
     return (
@@ -29,6 +30,7 @@ const AppRouter = () => {
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/users/:userId" element={<Profile />} />
                 <Route path="/search" element={<SearchUser />} />
+                <Route path="/delete/:contentId" element={<DeleteContent />} />
             </Routes>
         </div>
     )

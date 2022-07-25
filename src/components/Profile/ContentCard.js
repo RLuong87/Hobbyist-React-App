@@ -3,7 +3,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { Link } from "react-router-dom";
 import { apiHostUrl } from "../../config";
 import Spinner from "../faCommon/Spinner";
-import DeleteContent from "./DeleteContent";
+import DeleteContent from "../Auth/DeleteContent";
 import Content from './Content'
 import './ContentCard.css';
 import axios from "axios";

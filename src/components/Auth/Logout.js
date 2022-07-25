@@ -12,7 +12,6 @@ const Logout = () => {
             <a href="#" onClick={logout()} />
         </div>
     )
-    
 }
 
 export default Logout;
