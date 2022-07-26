@@ -1,7 +1,6 @@
 import React from "react";
 import ReactTooltip from 'react-tooltip';
 import UsersIcon from '../Users/UsersIcon';
-import BorderCard from "./BorderCard";
 
 export default function UsersText() {
     return (

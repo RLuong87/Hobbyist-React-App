@@ -6,8 +6,8 @@ import { AuthContext } from "../Providers/AuthProvider";
 
 const Profile = () => {
 
-    const params = useParams();
     const [auth] = useContext(AuthContext);
+    const params = useParams();
 
     const [user, setUser] = useState({
         id: params.userId
@@ -30,6 +30,7 @@ const Profile = () => {
     return (
         <div className="Card">
             <div className="upper-container">
+                <h1>{user.id}</h1>
                 <h1>{user.name}</h1>
             </div>
             <div className="lower-container">

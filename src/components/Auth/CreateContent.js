@@ -8,14 +8,13 @@ import { useNavigate } from "react-router-dom";
 
 const CreateContent = () => {
 
-    const [newContent, setNewContent] = useState({
-        title: "",
-        content: ""
-    })
-
-    const [users, setUsers] = useState([]);
     const [auth, setAuth] = useContext(AuthContext)
+    const [users, setUsers] = useState([]);
     const navigate = useNavigate();
+
+    const [newContent, setNewContent] = useState({
+        content: auth.content ? auth.content : ""
+    })
 
     const updateForm = (field, value) => {
         setNewContent({
@@ -42,7 +41,6 @@ const CreateContent = () => {
                 })
             setAuth({
                 ...auth,
-                title: res.data.title,
                 content: res.data.content
             })
             console.log(res.data);

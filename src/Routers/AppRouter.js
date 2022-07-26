@@ -13,6 +13,7 @@ import Profile from "../components/Profile/Profile";
 import SearchUser from "../components/Users/SearchUser";
 import CreateContent from "../components/Auth/CreateContent"
 import DeleteContent from "../components/Auth/DeleteContent";
+import UpdateContent from "../components/Auth/UpdateContent";
 
 const AppRouter = () => {
     return (
@@ -31,6 +32,7 @@ const AppRouter = () => {
                 <Route path="/users/:userId" element={<Profile />} />
                 <Route path="/search" element={<SearchUser />} />
                 <Route path="/delete/:contentId" element={<DeleteContent />} />
+                <Route path="/update/:contentId" element={<UpdateContent />} />
             </Routes>
         </div>
     )

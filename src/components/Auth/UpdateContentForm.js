@@ -7,7 +7,7 @@ import InlineInputContainer from '../common/InlineInputContainer';
 import TextArea from '../common/TextArea';
 import { AuthContext } from '../Providers/AuthProvider';
 
-const ContentForm = (props) => {
+const UpdateContentForm = (props) => {
 
     const [auth] = useContext(AuthContext);
     const { newContent } = props;
@@ -24,15 +24,14 @@ const ContentForm = (props) => {
                         name='content'
                         id='content'
                         value={newContent.content}
-                        placeholder={`What's on your mind, ${auth.name}?`}
                         onChange={handleChange}
                         required
                     />
                 </InlineInputContainer>
-                <Button>Save content</Button>
+                <Button>Save</Button>
             </Form>
         </BorderCard>
     )
 }
 
-export default ContentForm;
+export default UpdateContentForm;

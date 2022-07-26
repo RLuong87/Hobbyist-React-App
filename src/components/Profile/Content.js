@@ -11,6 +11,10 @@ const DisplayContent = (props) => {
         navigate(`/delete/${id}`)
     }
 
+    const editPost = () => {
+        navigate(`/update/${id}`)
+    }
+
     return (
         <BorderCard>
             <div className="upper-container">
@@ -19,6 +23,7 @@ const DisplayContent = (props) => {
             <div className="lower-container">
                 <h4>{title}</h4>
                 <h4>{content}</h4>
+                <button className="btn3" onClick={editPost}>Edit Post</button>
                 <button className="btn3" onClick={onClick}>Delete</button>
             </div>
         </BorderCard>

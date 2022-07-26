@@ -2,9 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHostUrl } from "../../config";
 import { useParams, useNavigate } from "react-router-dom";
-import Spinner from '../faCommon/Spinner';
 import axios from "axios";
-import BorderCard from "../common/BorderCard";
 
 const DeleteContent = () => {
 
@@ -16,7 +14,7 @@ const DeleteContent = () => {
         id: params.contentId
     });
 
-    const deleteContent = () => {
+    const deleteContent = async () => {
         try {
             axios.delete(`${apiHostUrl}/api/content/${content.id}`,
                 {
