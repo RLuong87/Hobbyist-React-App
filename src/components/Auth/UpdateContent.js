@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from "../Providers/AuthProvider";
 import UpdateContentForm from "./UpdateContentForm";
@@ -16,7 +16,7 @@ const UpdateContent = () => {
     });
 
     const [newContent, setNewContent] = useState({
-        content: auth.content ? auth.content : ""
+        content: ""
     })
 
     const updateForm = (field, value) => {
@@ -32,6 +32,10 @@ const UpdateContent = () => {
         updateContent(data);
         navigate("/profilePage")
     }
+
+    useEffect(() => {
+        updateContent()
+    })
 
     const updateContent = async (data) => {
         try {

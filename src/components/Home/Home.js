@@ -7,7 +7,6 @@ import HomeContent from './HomeContent';
 import { apiHostUrl } from '../../config';
 import Spinner from '../faCommon/Spinner';
 import axios from 'axios';
-import BorderCard from '../common/BorderCard';
 
 const Home = () => {
 

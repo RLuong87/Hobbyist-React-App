@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 import Form from '../common/Form';
-import Input from '../common/Input';
 import Button from '../common/Button';
 import BorderCard from '../common/BorderCard';
 import InlineInputContainer from '../common/InlineInputContainer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 import TextArea from '../common/TextArea';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const UpdateContentForm = (props) => {
 
-    const [auth] = useContext(AuthContext);
     const { newContent } = props;
 
     const handleChange = (e) => {
@@ -24,11 +24,17 @@ const UpdateContentForm = (props) => {
                         name='content'
                         id='content'
                         value={newContent.content}
+                        placeholder={"Edit Post"}
                         onChange={handleChange}
                         required
                     />
                 </InlineInputContainer>
                 <Button>Save</Button>
+                <Link to="/profilePage">
+                    <button className='btn3'>
+                        <FontAwesomeIcon icon={["fas", "xmark"]} />
+                    </button>
+                </Link>
             </Form>
         </BorderCard>
     )

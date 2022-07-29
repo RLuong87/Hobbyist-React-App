@@ -68,3 +68,10 @@ nav {
     font-weight: 500;
     color: rgb(250, 249, 249);
 }
+
+.logo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
+    font-size: 180%;
+    margin: 0 20px;
+}

@@ -181,13 +181,6 @@ main {
   background: linear-gradient(45deg, rgb(103, 182, 250), midnightblue);
 }
 
-.logo {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: oblique;
-  font-size: 180%;
-  margin: 0 20px;
-}
-
 .btn2 {
   /* margin: 1rem; */
   margin-top: 3;

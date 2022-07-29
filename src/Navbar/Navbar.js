@@ -4,6 +4,7 @@ import { AuthContext } from "../components/Providers/AuthProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = (props) => {
+
     const [auth] = useContext(AuthContext);
 
     return (
@@ -53,7 +54,6 @@ const Navbar = (props) => {
                             <FontAwesomeIcon icon={["fas", "otter"]} />
                             <NavButton to="/signup" label="Register" />
                             <FontAwesomeIcon icon={["fas", "user-plus"]} />
-
                         </Fragment>
                     }
                 </div>

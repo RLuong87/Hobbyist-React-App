@@ -13,7 +13,7 @@ const CreateContent = () => {
     const navigate = useNavigate();
 
     const [newContent, setNewContent] = useState({
-        content: auth.content ? auth.content : ""
+        content: ""
     })
 
     const updateForm = (field, value) => {
@@ -27,6 +27,18 @@ const CreateContent = () => {
         alert("Content saved");
         const data = newContent;
         createContent(data)
+    }
+
+    const dateBuilder = (d) => {
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"];
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+        let day = days[d.getDay()];
+        let date = d.getDate();
+        let month = months[d.getMonth()];
+        let year = d.getFullYear();
+
+        return `${day}, ${month} ${date} ${year}`
     }
 
     const createContent = async (data, token) => {
@@ -67,6 +79,7 @@ const CreateContent = () => {
                     onChange={updateForm}
                     onSubmit={onSubmit}
                 />
+                <div className="date">{dateBuilder(new Date())}</div>
             </Container>
         </div>
     )

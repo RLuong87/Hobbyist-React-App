@@ -4,6 +4,7 @@ import Form from '../common/Form';
 import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import { Link } from "react-router-dom";
+import HorizontalLine from '../common/HorizontalLine'
 
 const LoginForm = (props) => {
   const { query } = props;
@@ -39,7 +40,8 @@ const LoginForm = (props) => {
         </InlineInputContainer>
         <button className="btn2">Login</button>
       </Form>
-      <p>____________________________________________________ </p>
+      <br/>
+      <HorizontalLine style={{width: 400}} />
       <Link to='/signup'>
         <button className="btn2">Create a new account</button>
       </Link>
