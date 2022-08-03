@@ -43,7 +43,9 @@ const SearchUser = () => {
     }
 
     return (
-        <BorderCard>
+        <BorderCard style={{
+            display: "flex", justifyContent: "center"
+        }}>
             <div className="search-box">
                 <h1 className="greet">Search for an Angler</h1>
                 <input

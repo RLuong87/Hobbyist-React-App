@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const CreateProfile = () => {
 
-    const [auth, setAuth] = useContext(AuthContext)
+    const [auth] = useContext(AuthContext)
     const navigate = useNavigate();
 
     const [profile, setProfile] = useState({
@@ -47,15 +47,8 @@ const CreateProfile = () => {
                     {
                         Authorization: `Bearer ${auth.token}`
                     }
-                });
-            setAuth({
-                ...auth,
-                name: res.data.name,
-                status: res.data.status,
-                birthday: res.data.birthday,
-                location: res.data.location,
-                about: res.data.about
-            })
+                }
+            );
             console.log(res.data);
             navigate('/profilepage')
         } catch (err) {

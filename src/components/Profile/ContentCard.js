@@ -39,18 +39,18 @@ export default function ContentCard() {
     }
 
     return (
-        <div className="image-container2">
-            <div className="Content-card">
-                <Link to="/createContent">
-                    <button className="content-btn">Create a post</button>
-                </Link>
-            </div>
+        <div>
             <div className="align-content">
-                {loading ?
-                    <Spinner />
-                    :
-                    displayContent()
-                }
+                <div>
+                    <Link to="/createContent">
+                        <button className="content-btn">Create a post</button>
+                    </Link>
+                    {loading ?
+                        <Spinner />
+                        :
+                        displayContent()
+                    }
+                </div>
             </div>
         </div>
     )

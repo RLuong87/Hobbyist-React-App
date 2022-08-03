@@ -6,7 +6,6 @@ import InlineInputContainer from '../common/InlineInputContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import TextArea from '../common/TextArea';
-import { AuthContext } from '../Providers/AuthProvider';
 
 const UpdateContentForm = (props) => {
 

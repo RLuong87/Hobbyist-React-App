@@ -8,9 +8,9 @@
 }
 
 .align-content {
-    align-items: center;
-    align-content: center;
     text-align: center;
+    justify-content: center;
+    display: flex;
 }
 
 .image-container2 img {
@@ -27,9 +27,7 @@ img {
 }
 
 .upper-container2 {
-    height: 100px;
-    /* background: linear-gradient(45deg, rgb(103, 182, 250), midnightblue); */
-
+    background: linear-gradient(45deg, rgb(103, 182, 250), midnightblue);
 }
 
 .image-container img {

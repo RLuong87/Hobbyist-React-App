@@ -7,7 +7,7 @@ import { apiHostUrl } from "../../config";
 
 const UpdateContent = () => {
 
-    const [auth, setAuth] = useContext(AuthContext);
+    const [auth] = useContext(AuthContext);
     const params = useParams();
     let navigate = useNavigate();
 
@@ -30,12 +30,7 @@ const UpdateContent = () => {
         alert("Success")
         const data = newContent;
         updateContent(data);
-        navigate("/profilePage")
     }
-
-    useEffect(() => {
-        updateContent()
-    })
 
     const updateContent = async (data) => {
         try {
@@ -45,24 +40,26 @@ const UpdateContent = () => {
                     headers: {
                         Authorization: `Bearer ${auth.token}`
                     }
-                })
-            setAuth({
-                ...auth,
-                content: res.data.content
-            })
+                }
+            )
+            navigate("/profilePage")
         } catch (err) {
             console.error(err.response ? err.response.data : err.message);
         }
     }
 
     return (
-        <div>
+        <div style={{
+            textAlign: "center"
+        }}>
             <h1>{auth.name}</h1>
-            <UpdateContentForm
-                newContent={newContent}
-                onChange={updateForm}
-                onSubmit={onSubmit}
-            />
+            <div className="align-content">
+                <UpdateContentForm
+                    newContent={newContent}
+                    onChange={updateForm}
+                    onSubmit={onSubmit}
+                />
+            </div>
         </div>
     )
 }

@@ -5,6 +5,7 @@ import LoginForm from "./LoginForm";
 import Container from "../common/Container";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from '../Providers/AuthProvider'
+import Spinner from "../faCommon/Spinner";
 
 const Login = () => {
 
@@ -14,6 +15,7 @@ const Login = () => {
   });
 
   const [auth, setAuth] = useContext(AuthContext);
+  const [loading] = useState();
   const navigate = useNavigate();
 
   const updateForm = (field, value) => {
@@ -52,29 +54,27 @@ const Login = () => {
   }
 
   useEffect(() => {
-    const _getSelf = async (token) => {
-      try {
-        const res = await axios.get(`${apiHostUrl}/api/customers/self`,
-          {
-            headers: {
-              "Authorization": `Bearer ${auth.token}`
-            }
-          })
-        setAuth({
-          ...auth,
-          name: res.data.name,
-          status: res.data.status,
-          birthday: res.data.birthday,
-          location: res.data.location,
-          about: res.data.about
-        })
-        console.log(res.data);
-      } catch (err) {
-        console.error(err.response ? err.response.data : err.message);
+    <div>
+      {auth.token ?
+        _getSelf() : {}
       }
+    </div>
+  })
+
+  const _getSelf = async (token) => {
+    try {
+      const res = await axios.get(`${apiHostUrl}/api/customers/self`,
+        {
+          headers: {
+            "Authorization": `Bearer ${auth.token}`
+          }
+        }
+      )
+      console.log(res.data);
+    } catch (err) {
+      console.error(err.response ? err.response.data : err.message);
     }
-    _getSelf()
-  }, [auth.token])
+  }
 
   return (
     <div className="login-pic">

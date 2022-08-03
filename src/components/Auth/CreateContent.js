@@ -5,11 +5,11 @@ import ContentForm from "./ContentForm";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import BorderCard from "../common/BorderCard";
 
 const CreateContent = () => {
 
-    const [auth, setAuth] = useContext(AuthContext)
-    const [users, setUsers] = useState([]);
+    const [auth] = useContext(AuthContext)
     const navigate = useNavigate();
 
     const [newContent, setNewContent] = useState({
@@ -50,11 +50,8 @@ const CreateContent = () => {
                     headers: {
                         "Authorization": `Bearer ${auth.token}`
                     }
-                })
-            setAuth({
-                ...auth,
-                content: res.data.content
-            })
+                }
+            )
             console.log(res.data);
             navigate('/profilepage')
         } catch (err) {

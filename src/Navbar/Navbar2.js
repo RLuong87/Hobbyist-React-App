@@ -42,6 +42,7 @@ export default function Navbar2() {
                         <ul className='list'>
                             <li className='items'><HoverText /></li>
                             <li className='items'><WeatherText /></li>
+                            <li className='items'><NavButton to='/fiveDayForecast' label='5 Day Forecast' /></li>
                             {auth.token ?
                                 <Fragment>
                                     <li className='items'><NavButton to="/search" label="Search" /></li>

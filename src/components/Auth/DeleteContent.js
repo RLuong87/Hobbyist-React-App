@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHostUrl } from "../../config";
 import { useParams, useNavigate } from "react-router-dom";
+import BorderCard from "../common/BorderCard";
 import axios from "axios";
 
 const DeleteContent = () => {
@@ -38,10 +39,16 @@ const DeleteContent = () => {
     }
 
     return (
-        <div>
-            <h2>Are you sure you want to delete this post?</h2>
-            <button className="btn3" onClick={onClick}>Confirm</button>
-            <button className="btn3" onClick={cancel}>Cancel</button>
+        <div className="align-content">
+            <BorderCard>
+                <div style={{
+                    textAlign: "center"
+                }}>
+                    <h2>Are you sure you want to delete this post?</h2>
+                    <button className="btn3" onClick={onClick}>Confirm</button>
+                    <button className="btn3" onClick={cancel}>Cancel</button>
+                </div>
+            </BorderCard>
         </div>
     )
 }

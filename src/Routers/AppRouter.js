@@ -13,6 +13,7 @@ import SearchUser from "../components/Users/SearchUser";
 import CreateContent from "../components/Auth/CreateContent"
 import DeleteContent from "../components/Auth/DeleteContent";
 import UpdateContent from "../components/Auth/UpdateContent";
+import WeatherFiveDay from "../components/Weather/WeatherFiveDay";
 
 const AppRouter = () => {
     return (
@@ -31,6 +32,7 @@ const AppRouter = () => {
                 <Route path="/search" element={<SearchUser />} />
                 <Route path="/delete/:contentId" element={<DeleteContent />} />
                 <Route path="/update/:contentId" element={<UpdateContent />} />
+                <Route path="/fiveDayForecast" element={<WeatherFiveDay />} />
             </Routes>
         </div>
     )

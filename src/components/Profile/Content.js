@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const DisplayContent = (props) => {
 
-    const { angler: { name }, id, title, content } = props.contents;
+    const { angler: { name }, id, localDateTime, content } = props.contents;
     let navigate = useNavigate();
 
     const onClick = () => {
@@ -16,12 +16,14 @@ const DisplayContent = (props) => {
     }
 
     return (
-        <BorderCard>
-            <div className="upper-container">
+        <BorderCard style={{
+            width: 500
+        }}>
+            <div className="upper-container2">
+                <p>{localDateTime}</p>
                 <h2>{name}</h2>
             </div>
             <div className="lower-container">
-                <h4>{title}</h4>
                 <h4>{content}</h4>
                 <button className="btn3" onClick={editPost}>Edit Post</button>
                 <button className="btn3" onClick={onClick}>Delete</button>
