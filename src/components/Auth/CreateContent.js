@@ -29,18 +29,6 @@ const CreateContent = () => {
         createContent(data)
     }
 
-    const dateBuilder = (d) => {
-        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"];
-        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
-        let day = days[d.getDay()];
-        let date = d.getDate();
-        let month = months[d.getMonth()];
-        let year = d.getFullYear();
-
-        return `${day}, ${month} ${date} ${year}`
-    }
-
     const createContent = async (data, token) => {
         try {
             const res = await axios.post(
@@ -62,21 +50,11 @@ const CreateContent = () => {
     return (
         <div>
             <Container>
-                <h1 style={{
-                    marginTop: 80,
-                    textShadow: '1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
-                    textAlign: 'center',
-                    fontSize: 50,
-                    color: 'gold'
-                }}>
-                    Create a post
-                </h1>
-                <ContentForm
-                    newContent={newContent}
-                    onChange={updateForm}
-                    onSubmit={onSubmit}
-                />
-                <div className="date">{dateBuilder(new Date())}</div>
+                    <ContentForm
+                        newContent={newContent}
+                        onChange={updateForm}
+                        onSubmit={onSubmit}
+                    />
             </Container>
         </div>
     )

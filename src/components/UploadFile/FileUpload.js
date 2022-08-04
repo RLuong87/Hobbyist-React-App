@@ -1,6 +1,20 @@
 import axios from "axios";
 import { apiHostUrl } from "../../config";
-import React, { Component } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
+import React, { Component, useState, useContext } from "react";
+
+
+const Upload = () => {
+    const [auth] = useContext(AuthContext)
+
+    axios.post(`${apiHostUrl}/api/customers/uploadAvatar`,
+        {
+            headers: {
+                "Authorization": `Bearer ${auth.token}`
+            }
+        }
+    )
+}
 
 class FileUpload extends Component {
 
@@ -15,7 +29,7 @@ class FileUpload extends Component {
 
     };
 
-    onFileUpload = (token) => {
+    onFileUpload = () => {
 
         const formData = new FormData();
 
@@ -25,15 +39,9 @@ class FileUpload extends Component {
             this.state.selectedFile.name
         );
 
+        Upload(this.state.selectedFile)
         console.log(this.state.selectedFile);
 
-        axios.post(`${apiHostUrl}/api/customers/uploadAvatar`,
-            {
-                headers: {
-                    "Authorization": `Bearer ${token}`
-                }
-            }
-        )
     };
     fileData = () => {
 

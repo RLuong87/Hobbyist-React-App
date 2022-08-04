@@ -1,50 +1,55 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../Providers/AuthProvider'
 import { apiHostUrl } from '../../config'
-import Form from '../common/Form'
 import axios from 'axios'
+import ImgUpload from './ImgUpload'
+import Container from "../common/Container";
+import ImageForm from './ImageForm'
 
 const UploadImage = () => {
 
     const [auth] = useContext(AuthContext);
-    const [selectedFile, setSelectedFile] = useState([])
 
-    const fileSelectHandler = event => {
-        setSelectedFile({
-            selectedFile: event.target.files[0]
+    const [newAvatar, setAvatar] = useState({
+        url: ""
+    })
+
+    const updateForm = (field, value) => {
+        setAvatar({
+            ...newAvatar,
+            [field]: value
         })
     }
 
     const onSubmit = () => {
-        const data = selectedFile;
-        fileUploadHandler(data)
+        const data = newAvatar;
+        uploadAvatar(data)
     }
 
-    const fileUploadHandler = async (data, token) => {
+    const uploadAvatar = async (token) => {
         try {
             const res = await axios.post(
                 `${apiHostUrl}/api/customers/uploadAvatar`,
-                data,
                 {
                     headers: {
                         Authorization: `Bearer ${auth.token}`
                     }
                 })
+            console.log(res.data);
+            setAvatar(res.data);
         } catch (err) {
             console.error(err.response ? err.response.data : err.message);
         }
     }
 
-
     return (
-        <div className='App'>
-            <Form
+        <Container>
+            <ImageForm
+                newAvatar={newAvatar}
+                onChange={updateForm}
                 onSubmit={onSubmit}
-            >
-                <input type='file' onChange={fileSelectHandler} />
-                <button onClick={fileUploadHandler}>Upload</button>
-            </Form>
-        </div>
+            />
+        </Container>
     )
 }
 

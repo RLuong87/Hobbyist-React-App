@@ -1,33 +1,37 @@
 import React, { useEffect, useState } from "react";
-import BorderCard from "../common/BorderCard";
+import SearchWeather from "./search/SearchWeather";
+import CurrentWeather from "./current-weather/current-weather";
+import { WEATHER_API_URL, WEATHER_API_KEY } from './search/WeatherAPI'
 
 function WeatherFiveDay() {
 
-    const apiKey = "d76c20b9d4dba9f9925bc410ca269444"
-    const [weather, setWeather] = useState([{}]);
+    const [currentWeather, setCurrentWeather] = useState(null);
+    const [forecast, setForecast] = useState(null);
 
-    const getForecast = (e) => {
-        fetch('https://community-open-weather-map.p.rapidapi.com/forecast?q=san%20francisco%2Cus', weather)
-            .then(response => response.json())
-            .then(data => {
-                setWeather(data);
+    const handleOnSearchChange = (searchData) => {
+        const [lat, lon] = searchData.value.split(" ");
+
+        const currentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${WEATHER_API_KEY}`)
+        const forecastFetch = fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${WEATHER_API_KEY}`)
+
+        Promise.all([currentWeatherFetch, forecastFetch])
+            .then(async (response) => {
+                const weatherResponse = await response[0].json();
+                const forescastResponse = await response[1].json();
+
+                setCurrentWeather({ city: searchData.label, ...weatherResponse });
+                setForecast({ city: searchData.label, ...forescastResponse });
             })
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
+            .catch((err) => console.log(err));
     }
 
-    // useEffect = () => {
-    //     getForecast()
-    // }
+    console.log(currentWeather);
+    console.log(forecast);
 
     return (
-        <BorderCard>
-            <div>
-                {/* {typeof weather.main != "undefined" ?
-                    <p>Loading...</p> :
-                } */}
-            </div>
-        </BorderCard>
+        <div className="container">
+            <SearchWeather onSearchChange={handleOnSearchChange} />
+            {currentWeather && <CurrentWeather data={currentWeather} />}        </div>
     )
 }
 

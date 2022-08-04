@@ -47,6 +47,7 @@ export default function Navbar2() {
                                 <Fragment>
                                     <li className='items'><NavButton to="/search" label="Search" /></li>
                                     <li className='items'><NavButton to="/profilePage" label="View Profile" /></li>
+                                    <li className='items'><NavButton to="/uploadImg" label="Upload an Image" /></li>
                                     <li className='items'><NavButton to="/logout" label="Logout" /></li>
                                     <li className='items' style={{ background: "transparent", border: "none" }}>
                                         <Link to="/profilePage">

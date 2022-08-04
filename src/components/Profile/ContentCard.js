@@ -42,9 +42,6 @@ export default function ContentCard() {
         <div>
             <div className="align-content">
                 <div>
-                    <Link to="/createContent">
-                        <button className="content-btn">Create a post</button>
-                    </Link>
                     {loading ?
                         <Spinner />
                         :

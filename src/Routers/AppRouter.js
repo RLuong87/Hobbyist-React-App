@@ -14,6 +14,7 @@ import CreateContent from "../components/Auth/CreateContent"
 import DeleteContent from "../components/Auth/DeleteContent";
 import UpdateContent from "../components/Auth/UpdateContent";
 import WeatherFiveDay from "../components/Weather/WeatherFiveDay";
+import UploadImage from "../components/UploadFile/UploadImage";
 
 const AppRouter = () => {
     return (
@@ -33,6 +34,7 @@ const AppRouter = () => {
                 <Route path="/delete/:contentId" element={<DeleteContent />} />
                 <Route path="/update/:contentId" element={<UpdateContent />} />
                 <Route path="/fiveDayForecast" element={<WeatherFiveDay />} />
+                <Route path="/uploadImg" element={<UploadImage />} />
             </Routes>
         </div>
     )

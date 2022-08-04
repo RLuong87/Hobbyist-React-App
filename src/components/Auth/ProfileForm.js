@@ -5,6 +5,7 @@ import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import Button from "../common/Button";
 import FileUpload from "../UploadFile/FileUpload";
+import ImgUpload from '../UploadFile/ImgUpload'
 import BorderCard from "../common/BorderCard";
 import TextArea from "../common/TextArea";
 
@@ -18,7 +19,9 @@ const ProfileForm = (props) => {
     return (
         <Container>
             <BorderCard>
-                <FileUpload />
+                <div className="align-content">
+                    <ImgUpload />
+                </div>
             </BorderCard>
             <Form onSubmit={props.onSubmit} style={{ marginTop: '1em' }}>
                 <InlineInputContainer>
