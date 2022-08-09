@@ -11,7 +11,9 @@ const UploadImage = () => {
     const [auth] = useContext(AuthContext);
 
     const [newAvatar, setAvatar] = useState({
-        url: ""
+        avatar: {
+            url: ""
+        }
     })
 
     const updateForm = (field, value) => {

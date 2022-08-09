@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useContext, useState } from 'react';
 import ImageUploading from 'react-images-uploading';
+import { apiHostUrl } from '../../config';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const ImgUpload = () => {
+  const [auth] = useContext(AuthContext)
   const [images, setImages] = useState([]);
   const maxNumber = 69;
 
@@ -10,6 +14,23 @@ const ImgUpload = () => {
     console.log(imageList, addUpdateIndex);
     setImages(imageList);
   };
+
+  const uploadImg = async () => {
+    try {
+      const res = await axios.post(`${apiHostUrl}/api/customers/uploadAvatar`,
+        {
+          headers: {
+            "Authorization": `Bearer ${auth.token}`
+          }
+        }
+      )
+      console.log(res.data);
+    } catch (err) {
+      console.error(err.response ? err.response.data : err.message);
+    }
+  }
+
+  
 
   return (
     <div className="App">

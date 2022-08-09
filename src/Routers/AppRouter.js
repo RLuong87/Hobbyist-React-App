@@ -8,7 +8,7 @@ import Register from "../components/Auth/Register";
 import Login from "../components/Auth/Login";
 import ProfilePage from "../components/Profile/ProfilePage";
 import Logout from '../components/Auth/Logout'
-import Profile from "../components/Profile/Profile";
+import Profile from "../components/Profile/PublicProfile";
 import SearchUser from "../components/Users/SearchUser";
 import CreateContent from "../components/Auth/CreateContent"
 import DeleteContent from "../components/Auth/DeleteContent";

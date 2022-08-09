@@ -1,5 +1,6 @@
 import React from "react";
 import BorderCard from "../common/BorderCard";
+import { Link } from "react-router-dom";
 
 const HomeContent = (props) => {
 
@@ -9,10 +10,12 @@ const HomeContent = (props) => {
         <BorderCard>
             <div className="upper-container">
                 <p>{localDateTime}</p>
-                <h2>{name}</h2>
             </div>
             <div className="lower-container">
-                <h4>{content}</h4>
+                <Link to="/users/:userId">
+                    <h3>{name}</h3>
+                </Link>
+                <p>{content}</p>
                 <button className="btn3">Like</button>
             </div>
         </BorderCard>

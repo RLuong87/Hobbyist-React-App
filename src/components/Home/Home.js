@@ -82,18 +82,6 @@ const Home = () => {
           </a>
         </h2>
       </div>
-      <footer>
-        <div className="footer">
-          <h1>
-            Built
-          </h1>
-          <span role='img' aria-label='love'>
-          </span>
-          with
-          💚
-          by Richies Luong
-        </div>
-      </footer>
     </Container>
   )
 }

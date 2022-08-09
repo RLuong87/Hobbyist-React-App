@@ -1,11 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import LoginForm from "./LoginForm";
 import Container from "../common/Container";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from '../Providers/AuthProvider'
-import Spinner from "../faCommon/Spinner";
 
 const Login = () => {
 
@@ -15,7 +14,6 @@ const Login = () => {
   });
 
   const [auth, setAuth] = useContext(AuthContext);
-  const [loading] = useState();
   const navigate = useNavigate();
 
   const updateForm = (field, value) => {
@@ -53,14 +51,6 @@ const Login = () => {
     }
   }
 
-  useEffect(() => {
-    <div>
-      {auth.token ?
-        _getSelf() : {}
-      }
-    </div>
-  })
-
   const _getSelf = async (token) => {
     try {
       const res = await axios.get(`${apiHostUrl}/api/customers/self`,
@@ -74,6 +64,7 @@ const Login = () => {
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
     }
+    _getSelf()
   }
 
   return (

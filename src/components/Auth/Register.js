@@ -27,7 +27,6 @@ const Register = () => {
     })
   }
 
-
   const onSubmit = () => {
     alert("Registration successful");
 
@@ -95,7 +94,7 @@ const Register = () => {
           fontSize: 90,
           color: 'gold'
         }}>
-          Register
+          Sign Up
         </h1>
         <div className='box-border'>
           <NewUserForm

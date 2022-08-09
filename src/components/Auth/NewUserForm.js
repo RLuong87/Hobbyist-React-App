@@ -1,9 +1,7 @@
 import React from 'react';
-import Container from '../common/Container';
 import Form from '../common/Form';
 import InlineInputContainer from '../common/InlineInputContainer';
 import Input from '../common/Input';
-import Button from '../common/Button';
 
 const NewUserForm = ({ onSubmit, onChange, query }) => {
   // const {onSubmit, onChange, query} = props
@@ -13,7 +11,6 @@ const NewUserForm = ({ onSubmit, onChange, query }) => {
   }
 
   return (
-    // <Container>
       <Form onSubmit={onSubmit} style={{ marginTop: "1em" }}>
         <InlineInputContainer>
           <Input
@@ -66,7 +63,6 @@ const NewUserForm = ({ onSubmit, onChange, query }) => {
         </InlineInputContainer>
         <button className='btn2'>Submit</button>
       </Form>
-    // </Container>
   )
 }
 

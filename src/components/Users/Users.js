@@ -35,7 +35,7 @@ const Users = () => {
         }
         setLoading(true)
         _getUsers();
-    }, [auth.token])
+    })
 
     const displayUsers = () => {
         return users.map(u => <User user={u} key={u.id} onSelect={onSelect} />)

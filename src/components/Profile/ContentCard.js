@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { apiHostUrl } from "../../config";
 import Spinner from "../faCommon/Spinner";
 import DeleteContent from "../Auth/DeleteContent";
@@ -10,7 +10,7 @@ import axios from "axios";
 
 export default function ContentCard() {
 
-    const [auth, setAuth] = useContext(AuthContext);
+    const [auth] = useContext(AuthContext);
     const [content, setContent] = useState([]);
     const [loading, setLoading] = useState(true);
 

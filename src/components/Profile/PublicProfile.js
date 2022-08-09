@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
+import PublicContent from "./PublicContent";
 
 const Profile = () => {
 
@@ -28,14 +29,18 @@ const Profile = () => {
     }, [auth.token])
 
     return (
-        <div className="Card">
-            <div className="upper-container">
-                <h1>{user.id}</h1>
-                <h1>{user.name}</h1>
-            </div>
-            <div className="lower-container">
-                <h2>{user.about}</h2>
-                <h4>{user.location}</h4>
+        <div className="Profile">
+            <div className="Card">
+                <div className="upper-container">
+                </div>
+                <div className="lower-container">
+                    <h3>{user.name}</h3>
+                    <button className="btn2">Add Friend</button>
+                    <h4>{user.status}</h4>
+                    <h4>{user.birthday}</h4>
+                    <h4>{user.location}</h4>
+                    <p>{user.about}</p>
+                </div>
             </div>
         </div>
     )

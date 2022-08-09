@@ -2,13 +2,15 @@ import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { GEO_API_URL, geoApiOptions } from "./WeatherAPI";
 
-const SearchWeather = ({ onSearchChange }) => {
+const SearchCity = ({ onSearchChange }) => {
 
     const [search, setSearch] = useState(null)
 
-    const loadOptions = (inputValue) => {
+    const loadOptions = async (inputValue) => {
         return fetch(
-            `${GEO_API_URL}/cities?minPopulation=200000&namePrefix=${inputValue}`,
+            `${GEO_API_URL}/cities?minPopulation=200000&namePrefix=${inputValue}&units=imperial`,
+            // `${GEO_API_URL}/cities/Q18383/nearbyCities?radius=100&minPopulation=1000000&units=imperial`,
+            // `${GEO_API_URL}/cities/Q18383/nearbyCities?countryIds=US&minPopulation=200000&namePrefix=${inputValue}&units=imperial`,
             geoApiOptions
         )
             .then(response => response.json())
@@ -17,7 +19,7 @@ const SearchWeather = ({ onSearchChange }) => {
                     options: response.data.map((city) => {
                         return {
                             value: `${city.longitude} ${city.latitude}`,
-                            label: `${city.name}, ${city.countryCode}`,
+                            label: `${city.name}, ${city.regionCode}`,
                         }
                     })
                 }
@@ -41,4 +43,4 @@ const SearchWeather = ({ onSearchChange }) => {
     )
 }
 
-export default SearchWeather;
+export default SearchCity;

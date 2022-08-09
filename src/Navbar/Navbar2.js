@@ -42,22 +42,18 @@ export default function Navbar2() {
                         <ul className='list'>
                             <li className='items'><HoverText /></li>
                             <li className='items'><WeatherText /></li>
-                            <li className='items'><NavButton to='/fiveDayForecast' label='5 Day Forecast' /></li>
+                            <li className='items'><NavButton to='/fiveDayForecast' label='7 Day Forecast' /></li>
                             {auth.token ?
                                 <Fragment>
                                     <li className='items'><NavButton to="/search" label="Search" /></li>
                                     <li className='items'><NavButton to="/profilePage" label="View Profile" /></li>
                                     <li className='items'><NavButton to="/uploadImg" label="Upload an Image" /></li>
-                                    <li className='items'><NavButton to="/logout" label="Logout" /></li>
-                                    <li className='items' style={{ background: "transparent", border: "none" }}>
-                                        <Link to="/profilePage">
-                                            <p className='nav-name'>{auth.name}</p>
-                                        </Link>
-                                    </li>
+                                    <li className='items'><NavButton to="/logout" label="Sign Out" /></li>
+                                    <h1>{auth.name}</h1>
                                 </Fragment>
                                 :
                                 <Fragment>
-                                    <li className='items'><NavButton to="/login" label="Login" /></li>
+                                    <li className='items'><NavButton to="/login" label="Sign In" /></li>
                                 </Fragment>
                             }
                         </ul>
