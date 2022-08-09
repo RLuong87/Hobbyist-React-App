@@ -28,10 +28,11 @@ const UploadImage = () => {
         uploadAvatar(data)
     }
 
-    const uploadAvatar = async (token) => {
+    const uploadAvatar = async (data, token) => {
         try {
             const res = await axios.post(
                 `${apiHostUrl}/api/customers/uploadAvatar`,
+                data,
                 {
                     headers: {
                         Authorization: `Bearer ${auth.token}`

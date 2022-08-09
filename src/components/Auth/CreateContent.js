@@ -5,11 +5,10 @@ import ContentForm from "./ContentForm";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
-import BorderCard from "../common/BorderCard";
 
 const CreateContent = () => {
 
-    const [auth] = useContext(AuthContext)
+    const [auth] = useContext(AuthContext);
     const navigate = useNavigate();
 
     const [newContent, setNewContent] = useState({

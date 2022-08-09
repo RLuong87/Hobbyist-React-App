@@ -43,11 +43,9 @@ const SearchUser = () => {
     }
 
     return (
-        <BorderCard style={{
-            display: "flex", justifyContent: "center"
-        }}>
+        <div className="align-content">
             <div className="search-box">
-                <h1 className="greet">Search for an Angler</h1>
+                <h1 className="greet">Search for a Friend</h1>
                 <input
                     type="text"
                     className="search-bar"
@@ -56,7 +54,7 @@ const SearchUser = () => {
                     value={query}
                 />
                 <button className="btn3" onClick={onSubmit}>Go</button>
-                <div>
+                <div style={{display: "flex", justifyContent: "center"}}>
                     {typeof users.main != "undefined" ?
                         <Spinner />
                         :
@@ -64,7 +62,7 @@ const SearchUser = () => {
                     }
                 </div>
             </div>
-        </BorderCard>
+        </div>
     )
 }
 

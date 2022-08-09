@@ -20,6 +20,9 @@ export default function Card() {
                     })
                 setAuth({
                     ...auth,
+                    avatar: {
+                        url: res.data.url
+                    },
                     name: res.data.name,
                     status: res.data.status,
                     birthday: res.data.birthday,
@@ -38,7 +41,7 @@ export default function Card() {
         <div className="Card">
             <div className="upper-container">
                 <div className="image-container">
-                    <img src="https://pbs.twimg.com/profile_images/1237550450/mstom.jpg" />
+                    <img src={auth.url} />
                 </div>
             </div>
             <div className="lower-container">

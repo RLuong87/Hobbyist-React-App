@@ -7,17 +7,17 @@ import {
     FooterLink,
     Heading,
 } from "./FooterStyles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
     return (
         <Box>
-            <h1 style={{
-                color: "navy",
-                textAlign: "center",
-                marginTop: "-50px"
-            }}>
-                Hooked
-            </h1>
+            <div className="align-content">
+                <h1 className='logo'>
+                    Hooked
+                    <FontAwesomeIcon icon={["fas", "anchor"]} />
+                </h1>
+            </div>
             <Container>
                 <Row>
                     <Column>

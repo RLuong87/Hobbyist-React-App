@@ -23,6 +23,7 @@ const ImageForm = (props) => {
                         value={newAvatar.url}
                         placeholder='Image url'
                         onChange={handleChange}
+                        type="file"
                     />
                 </InlineInputContainer>
                 <Button>Save</Button>
