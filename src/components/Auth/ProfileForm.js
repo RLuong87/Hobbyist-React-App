@@ -8,6 +8,7 @@ import FileUpload from "../UploadFile/FileUpload";
 import ImgUpload from '../UploadFile/ImgUpload'
 import BorderCard from "../common/BorderCard";
 import TextArea from "../common/TextArea";
+import ImageUploading from 'react-images-uploading'
 
 const ProfileForm = (props) => {
     const { profile } = props;

@@ -1,7 +1,8 @@
 import React from 'react';
 import Form from '../common/Form';
-import InlineInputContainer from '../common/InlineInputContainer';
 import Input from '../common/Input';
+import Button from '@mui/material/Button';
+import InlineInputContainer from '../common/InlineInputContainer';
 
 const NewUserForm = ({ onSubmit, onChange, query }) => {
   // const {onSubmit, onChange, query} = props
@@ -61,7 +62,9 @@ const NewUserForm = ({ onSubmit, onChange, query }) => {
             required
           />
         </InlineInputContainer>
-        <button className='btn2'>Submit</button>
+        <Button type="submit"
+          // fullWidth
+          variant="contained">Submit</Button>
       </Form>
   )
 }

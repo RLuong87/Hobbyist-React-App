@@ -1,10 +1,13 @@
 import React from "react";
 import Container from "../common/Container";
 import Form from '../common/Form';
-import InlineInputContainer from "../common/InlineInputContainer";
-import Input from "../common/Input";
 import { Link } from "react-router-dom";
-import HorizontalLine from '../common/HorizontalLine'
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 
 const LoginForm = (props) => {
   const { query } = props;
@@ -16,34 +19,41 @@ const LoginForm = (props) => {
   return (
     <Container>
       <Form onSubmit={props.onSubmit} style={{ marginTop: '1em' }} >
-        <InlineInputContainer>
-          <Input
-            name="username"
-            id="username"
-            value={query.username}
-            placeholder={"Email address"}
-            onChange={handleChange}
-            required
-            type="email"
+        <TextField
+          name="username"
+          id="username"
+          value={query.username}
+          placeholder={"Email address"}
+          onChange={handleChange}
+          required
+          type="email"
+        />
+        <TextField
+          name="password"
+          id="password"
+          value={query.password}
+          placeholder={"Password"}
+          onChange={handleChange}
+          type="password"
+          required
+        />
+        <Grid container>
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
           />
-        </InlineInputContainer>
-        <InlineInputContainer>
-          <Input
-            name="password"
-            id="password"
-            value={query.password}
-            placeholder={"Password"}
-            onChange={handleChange}
-            required
-            type="password"
-          />
-        </InlineInputContainer>
-        <button className="btn2">Login</button>
+        </Grid>
+        <Button
+          type="submit"
+          // fullWidth
+          variant="contained"
+        >
+          Sign In
+        </Button>
       </Form>
-      <br/>
-      <HorizontalLine style={{width: 400}} />
-      <Link to='/signup'>
-        <button className="btn2">Create a new account</button>
+      <br />
+      <Link to='/signup' href="#" variant="body2">
+        {"Don't have an account? Sign Up"}
       </Link>
     </Container>
   )

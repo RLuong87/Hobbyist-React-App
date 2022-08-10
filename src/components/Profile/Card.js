@@ -3,6 +3,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHostUrl } from "../../config";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Image from '../../assets/random/mstom.jpg'
 import './Card.css';
 
 export default function Card() {
@@ -20,9 +21,6 @@ export default function Card() {
                     })
                 setAuth({
                     ...auth,
-                    avatar: {
-                        url: res.data.url
-                    },
                     name: res.data.name,
                     status: res.data.status,
                     birthday: res.data.birthday,
@@ -41,7 +39,7 @@ export default function Card() {
         <div className="Card">
             <div className="upper-container">
                 <div className="image-container">
-                    <img src={auth.url} />
+                    <img src={Image} />
                 </div>
             </div>
             <div className="lower-container">

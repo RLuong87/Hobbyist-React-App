@@ -15,9 +15,15 @@ const ImgUpload = () => {
     setImages(imageList);
   };
 
-  const uploadImg = async () => {
+  const onSubmit = () => {
+    const data = images;
+    uploadImg(data)
+  }
+
+  const uploadImg = async (data) => {
     try {
       const res = await axios.post(`${apiHostUrl}/api/customers/uploadAvatar`,
+        data,
         {
           headers: {
             "Authorization": `Bearer ${auth.token}`
@@ -25,12 +31,11 @@ const ImgUpload = () => {
         }
       )
       console.log(res.data);
+      setImages(res.data)
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
     }
   }
-
-  
 
   return (
     <div className="App">
@@ -65,6 +70,7 @@ const ImgUpload = () => {
               <div key={index} className="image-item">
                 <img src={image['data_url']} alt="" width="100" />
                 <div className="image-item__btn-wrapper">
+                  <button onClick={onSubmit}>Save</button>
                   <button onClick={() => onImageUpdate(index)}>Update</button>
                   <button onClick={() => onImageRemove(index)}>Remove</button>
                 </div>

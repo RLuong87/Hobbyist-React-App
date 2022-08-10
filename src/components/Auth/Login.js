@@ -74,10 +74,10 @@ const Login = () => {
           margin: 100,
           textShadow: '1px 1px black',
           textAlign: 'center',
-          fontSize: 90,
+          fontSize: 70,
           color: 'gold'
-        }}
-        >Login
+        }}>
+          Sign in
         </h1>
         <div className="box-border">
           <LoginForm
