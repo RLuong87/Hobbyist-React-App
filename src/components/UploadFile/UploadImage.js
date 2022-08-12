@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../Providers/AuthProvider'
 import { apiHostUrl } from '../../config'
 import axios from 'axios'
-import ImgUpload from './ImgUpload'
 import Container from "../common/Container";
 import ImageForm from './ImageForm'
 

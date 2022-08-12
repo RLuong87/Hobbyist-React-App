@@ -30,7 +30,7 @@ const DeleteContent = () => {
 
     const onClick = () => {
         deleteContent();
-        alert("Post successfully deleted")
+        alert("Deleted")
         navigate("/profilePage")
     }
 

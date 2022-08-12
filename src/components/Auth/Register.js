@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import NewUserForm from './NewUserForm';
 import Container from '../common/Container';
 import { apiHostUrl } from '../../config';
+import Grid from '@mui/material/Grid';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const Register = () => {
@@ -96,7 +98,7 @@ const Register = () => {
         }}>
           Sign Up
         </h1>
-        <div className='box-border'>
+        <div className='box-border2'>
           <NewUserForm
             query={query}
             onChange={updateForm}

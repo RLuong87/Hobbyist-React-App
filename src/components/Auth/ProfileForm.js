@@ -3,12 +3,14 @@ import Container from "../common/Container";
 import Form from "../common/Form";
 import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
-import Button from "../common/Button";
+import Button from '@mui/material/Button';
 import FileUpload from "../UploadFile/FileUpload";
 import ImgUpload from '../UploadFile/ImgUpload'
 import BorderCard from "../common/BorderCard";
 import TextArea from "../common/TextArea";
 import ImageUploading from 'react-images-uploading'
+import UploadImage from "../UploadFile/UploadImage";
+import { Link } from "react-router-dom";
 
 const ProfileForm = (props) => {
     const { profile } = props;
@@ -19,11 +21,14 @@ const ProfileForm = (props) => {
 
     return (
         <Container>
-            <BorderCard>
-                <div className="align-content">
-                    <ImgUpload />
-                </div>
-            </BorderCard>
+            <Link to="/uploadImg">
+                <Button
+                    type="submit"
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                >Upload a profile picture
+                </Button>
+            </Link>
             <Form onSubmit={props.onSubmit} style={{ marginTop: '1em' }}>
                 <InlineInputContainer>
                     <Input

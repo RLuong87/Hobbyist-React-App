@@ -38,7 +38,7 @@ export default function Navbar2() {
                         Hooked
                         <FontAwesomeIcon icon={["fas", "anchor"]} />
                     </h1>
-                    {(toggleMenu || screenWidth > 500) && (
+                    {(toggleMenu || screenWidth > 900) && (
                         <ul className='list'>
                             <li className='items'><HoverText /></li>
                             <li className='items'><WeatherText /></li>
@@ -47,9 +47,10 @@ export default function Navbar2() {
                                 <Fragment>
                                     <li className='items'><NavButton to="/search" label="Search" /></li>
                                     <li className='items'><NavButton to="/profilePage" label="View Profile" /></li>
-                                    <li className='items'><NavButton to="/uploadImg" label="Upload an Image" /></li>
                                     <li className='items'><NavButton to="/logout" label="Sign Out" /></li>
-                                    <h1>{auth.name}</h1>
+                                    <Link to="/profilePage">
+                                        <h1>{auth.name}</h1>
+                                    </Link>
                                 </Fragment>
                                 :
                                 <Fragment>
@@ -59,7 +60,7 @@ export default function Navbar2() {
                         </ul>
                     )}
                 </div>
-                <button onClick={toggleNav} className='btn'>Menu</button>
+                <button onClick={toggleNav} className='btn'><FontAwesomeIcon icon={["fas", "bars"]} /></button>
             </nav>
             <div style={{ height: "75px" }} />
         </Fragment>

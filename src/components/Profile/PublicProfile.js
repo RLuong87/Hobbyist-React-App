@@ -42,6 +42,7 @@ const Profile = () => {
                     <p>{user.about}</p>
                 </div>
             </div>
+            <PublicContent />
         </div>
     )
 }

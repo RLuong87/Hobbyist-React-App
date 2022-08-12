@@ -47,14 +47,12 @@ const CreateContent = () => {
     }
 
     return (
-        <div>
-            <Container>
-                    <ContentForm
-                        newContent={newContent}
-                        onChange={updateForm}
-                        onSubmit={onSubmit}
-                    />
-            </Container>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+            <ContentForm
+                newContent={newContent}
+                onChange={updateForm}
+                onSubmit={onSubmit}
+            />
         </div>
     )
 }

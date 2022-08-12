@@ -38,37 +38,18 @@ const Home = () => {
   }
 
   return (
-    <Container >
-      <Splash image={splashImg} style={{
-        color: "#f1f1f1",
-        height: "100vh",
-      }}>
-        <h1 style={{
-          margin: 100,
-          textShadow: '1px 1px black',
-          textAlign: 'center',
-          fontSize: 70,
-          color: "gold",
-        }}>
-          Welcome to Hooked!
-        </h1>
-      </Splash>
-        <div>
-          {typeof content.main != "undefined"
-            ?
-            <Spinner />
-            :
-            display()
-          }
-        </div>
+    <div>
       <div className='box1'>
-        <h1 style={{
-          textShadow: '1px 1px black',
-          textAlign: 'center',
-          fontSize: 50,
-          color: "gold",
-        }}>
-          When and Where to Fish?</h1>
+        <div>
+          <h1 style={{
+            textShadow: '1px 1px black',
+            textAlign: 'center',
+            fontSize: 50,
+            color: "gold",
+          }}>
+            When and Where to Fish?
+          </h1>
+        </div>
         <h2 style={{
           textAlign: "center",
         }}>
@@ -82,7 +63,13 @@ const Home = () => {
           </a>
         </h2>
       </div>
-    </Container>
+      {typeof content.main != "undefined"
+        ?
+        <Spinner />
+        :
+        display()
+      }
+    </div>
   )
 }
 

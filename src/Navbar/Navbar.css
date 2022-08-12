@@ -26,17 +26,19 @@ nav {
 
 .btn {
     display: none;
+    background-color: transparent;
     cursor: pointer;
     border-radius: 5px;
+    border-color: rgb(3, 10, 94);
     position: absolute;
     right: 10px;
     top: 7px;
     padding: 5px;
-    color: #000;
+    color: #838aef;
     font-size: 18px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
 
     .list {
         flex-direction: column;

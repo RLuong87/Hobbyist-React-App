@@ -2,10 +2,10 @@ import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './Routers/AppRouter';
 import { AuthProvider } from './components/Providers/AuthProvider';
-import {library, Library} from '@fortawesome/fontawesome-svg-core';
-import {fas} from '@fortawesome/free-solid-svg-icons'
-import footer from '../src/components/footer/Footer'
+import { library, Library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import Footer from '../src/components/footer/Footer';
+import StickyFooter from './components/footer/StickyFooter';
 
 library.add(fas);
 
@@ -19,7 +19,7 @@ function App() {
         {/* Employee pages */}
         <AppRouter />
       </AuthProvider>
-        <Footer />
+      <StickyFooter />
     </BrowserRouter>
   );
 }

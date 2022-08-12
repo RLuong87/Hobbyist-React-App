@@ -4,6 +4,8 @@ import axios from "axios";
 import LoginForm from "./LoginForm";
 import Container from "../common/Container";
 import { apiHostUrl } from "../../config";
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Avatar from '@mui/material/Avatar';
 import { AuthContext } from '../Providers/AuthProvider'
 
 const Login = () => {
@@ -26,11 +28,6 @@ const Login = () => {
   const onSubmit = () => {
     const data = query;
     data.password = query.password;
-
-    if (query.password != data.password) {
-      alert("Username or password is incorrect")
-      return;
-    }
     login(data)
   }
 
@@ -51,27 +48,30 @@ const Login = () => {
     }
   }
 
-  const _getSelf = async (token) => {
-    try {
-      const res = await axios.get(`${apiHostUrl}/api/customers/self`,
-        {
+  useEffect(() => {
+    const _getSelf = async (token) => {
+      try {
+        const res = await axios.get(`${apiHostUrl}/api/customers/self`, {
           headers: {
             "Authorization": `Bearer ${auth.token}`
           }
         }
-      )
-      console.log(res.data);
-    } catch (err) {
-      console.error(err.response ? err.response.data : err.message);
+        )
+        console.log(res.data);
+      } catch (err) {
+        console.error(err.response ? err.response.data : err.message);
+      }
     }
     _getSelf()
-  }
+  }, [auth.token])
 
   return (
     <div className="login-pic">
       <Container>
+        <Avatar sx={{ m: 5, bgcolor: 'black' }}>
+          <LockOutlinedIcon />
+        </Avatar>
         <h1 style={{
-          margin: 100,
           textShadow: '1px 1px black',
           textAlign: 'center',
           fontSize: 70,

@@ -4,7 +4,7 @@ import Container from "../common/Container";
 import ProfileForm from "./ProfileForm";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const CreateProfile = () => {
 

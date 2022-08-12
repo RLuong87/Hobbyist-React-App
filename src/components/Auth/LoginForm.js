@@ -7,7 +7,6 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
 
 const LoginForm = (props) => {
   const { query } = props;
@@ -17,22 +16,25 @@ const LoginForm = (props) => {
   }
 
   return (
-    <Container>
+    <div>
       <Form onSubmit={props.onSubmit} style={{ marginTop: '1em' }} >
         <TextField
+          fullWidth
+          margin="normal"
           name="username"
           id="username"
           value={query.username}
-          placeholder={"Email address"}
+          label="Email address"
           onChange={handleChange}
           required
           type="email"
         />
         <TextField
+          fullWidth
           name="password"
           id="password"
           value={query.password}
-          placeholder={"Password"}
+          label="Password"
           onChange={handleChange}
           type="password"
           required
@@ -44,18 +46,27 @@ const LoginForm = (props) => {
           />
         </Grid>
         <Button
+          fullWidth
           type="submit"
-          // fullWidth
           variant="contained"
+          sx={{ mt: 3, mb: 2 }}
         >
           Sign In
         </Button>
+        <Grid container>
+          <Grid item xs>
+            <Link to="/resetPassword" variant="body2">
+              Forgot password?
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/signup" variant="body2">
+              {"Don't have an account? Sign Up"}
+            </Link>
+          </Grid>
+        </Grid>
       </Form>
-      <br />
-      <Link to='/signup' href="#" variant="body2">
-        {"Don't have an account? Sign Up"}
-      </Link>
-    </Container>
+    </div>
   )
 }
 

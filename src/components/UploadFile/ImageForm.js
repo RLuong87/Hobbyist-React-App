@@ -14,7 +14,7 @@ const ImageForm = (props) => {
     }
 
     return (
-        <BorderCard>
+        <div>
             <Form onSubmit={props.onSubmit} style={{ marginTop: "1em" }}>
                 <InlineInputContainer>
                     <Input
@@ -23,12 +23,12 @@ const ImageForm = (props) => {
                         value={newAvatar.url}
                         placeholder='Image url'
                         onChange={handleChange}
-                        type="file"
+                        type="text"
                     />
                 </InlineInputContainer>
                 <Button>Save</Button>
             </Form>
-        </BorderCard>
+        </div>
     )
 }
 

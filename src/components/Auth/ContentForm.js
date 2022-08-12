@@ -6,6 +6,7 @@ import BorderCard from '../common/BorderCard';
 import InlineInputContainer from '../common/InlineInputContainer';
 import TextArea from '../common/TextArea';
 import { AuthContext } from '../Providers/AuthProvider';
+import { Grid } from '@mui/material';
 
 const ContentForm = (props) => {
 
@@ -30,7 +31,7 @@ const ContentForm = (props) => {
 
     return (
         <BorderCard>
-            <Form onSubmit={props.onSubmit} stylye={{ marginTop: "1em" }}>
+            <Form onSubmit={props.onSubmit} style={{ marginTop: "1em" }}>
                 <InlineInputContainer>
                     <TextArea
                         name='content'
@@ -44,6 +45,12 @@ const ContentForm = (props) => {
                 <div className="date">{dateBuilder(new Date())}</div>
                 <Button>Save content</Button>
             </Form>
+            <div style={{
+                display: "flex",
+                justifyContent: "center"
+            }}>
+                <Button>Upload a photo</Button>
+            </div>
         </BorderCard>
     )
 }
