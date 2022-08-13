@@ -30,10 +30,14 @@ export default function StickyFooter() {
       <CssBaseline />
       <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
         <Typography variant="h2" component="h1" gutterBottom>
+          Contact Us
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom>
+          Customer Support
         </Typography>
         <Typography variant="body1"></Typography>
+        Available 24/7
+        1-(800)-232-4533
       </Container>
       <Box
         component="footer"
@@ -49,6 +53,7 @@ export default function StickyFooter() {
       >
         <Container maxWidth="sm">
           <Typography variant="body1">
+            Thanks for visiting
           </Typography>
           <Copyright />
         </Container>

@@ -80,7 +80,7 @@ const Register = () => {
         name: res.data.name,
         email: res.data.email
       })
-      navigate('/');
+      navigate('/profilePage');
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
     }
@@ -106,6 +106,15 @@ const Register = () => {
           />
         </div>
       </Container>
+      <h2 style={{
+        margin: 100,
+        textShadow: '1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
+        textAlign: 'center',
+        fontSize: 40,
+        color: 'gold'
+      }}>
+        Create an account to connect with friends
+      </h2>
     </div>
   )
 }

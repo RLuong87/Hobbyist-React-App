@@ -48,6 +48,13 @@ code {
   transition: 0.4 ease-out;
 }
 
+.home-pic {
+  background-image: url('./assets/fishing/rods.jpg');
+  
+  /* background-position: center; */
+  transition: 0.4 ease-out;
+}
+
 .register-pic {
   background-image: url('./assets/fishing/brassReel.jpg');
   background-size: cover;

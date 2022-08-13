@@ -46,7 +46,6 @@ export default function Navbar2() {
                             {auth.token ?
                                 <Fragment>
                                     <li className='items'><NavButton to="/search" label="Search" /></li>
-                                    <li className='items'><NavButton to="/profilePage" label="View Profile" /></li>
                                     <li className='items'><NavButton to="/logout" label="Sign Out" /></li>
                                     <Link to="/profilePage">
                                         <h1>{auth.name}</h1>

@@ -42,7 +42,7 @@ const Login = () => {
         roles: res.data.roles,
       })
       console.log(res.data);
-      navigate("/");
+      navigate("/profilePage");
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
     }

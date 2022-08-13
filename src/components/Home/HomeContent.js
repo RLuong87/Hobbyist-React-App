@@ -7,7 +7,7 @@ const HomeContent = (props) => {
     const { angler: { avatar, name }, localDateTime, content, picture } = props.contents;
 
     return (
-        <BorderCard>
+        <div className="Content-card">
             <div className="upper-container">
                 <h3>{name}</h3>
                 <p>{localDateTime}</p>
@@ -24,7 +24,7 @@ const HomeContent = (props) => {
                 </div>
             </div>
             <button className="btn3">Like</button>
-        </BorderCard>
+        </div>
     )
 }
 

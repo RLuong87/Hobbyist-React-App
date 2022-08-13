@@ -23,7 +23,13 @@ const ResetPassword = () => {
     }
 
     return (
-        <Container>
+        <div style={{
+            display: "flex",
+            justifyContent: "center"
+        }}>
+            <h1>
+                
+            </h1>
             <div className="box-border3">
                 <ResetPasswordForm
                     query={query}
@@ -31,7 +37,7 @@ const ResetPassword = () => {
                     onSubmit={onSubmit}
                 />
             </div>
-        </Container>
+        </div>
     )
 }
 

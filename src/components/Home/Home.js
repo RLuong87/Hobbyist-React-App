@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Container from '../common/Container';
-import Splash from '../common/Splash';
 import splashImg from '../../assets/fishing/rods.jpg';
 import { AuthContext } from '../Providers/AuthProvider';
 import HomeContent from './HomeContent';
@@ -29,7 +28,6 @@ const Home = () => {
       } catch (err) {
       }
     }
-    setLoading(true)
     _getContent()
   }, [])
 
@@ -38,7 +36,7 @@ const Home = () => {
   }
 
   return (
-    <Container>
+    <div className='home-pic'>
       <div>
         {typeof content.main != "undefined"
           ?
@@ -71,7 +69,9 @@ const Home = () => {
           </a>
         </h2>
       </div>
-    </Container>
+      <div className='home-pic'>
+      </div>
+    </div>
   )
 }
 
