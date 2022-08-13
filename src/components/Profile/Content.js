@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const DisplayContent = (props) => {
 
-    const { angler: { name }, id, localDateTime, content } = props.contents;
+    const { angler: { avatar, name }, id, localDateTime, content, picture } = props.contents;
     let navigate = useNavigate();
 
     const onClick = () => {
@@ -19,15 +19,21 @@ const DisplayContent = (props) => {
         <BorderCard style={{
             width: 500
         }}>
-            <div className="upper-container2">
-                <p>{localDateTime}</p>
+            <div className="upper-container">
                 <h2>{name}</h2>
+                <p>{localDateTime}</p>
+                <div className="image-container2">
+                    <img src={avatar} />
+                </div>
             </div>
             <div className="lower-container">
                 <h4>{content}</h4>
-                <button className="btn3" onClick={editPost}>Edit Post</button>
-                <button className="btn3" onClick={onClick}>Delete</button>
+                <div className="image-container3">
+                    <img src={picture} />
+                </div>
             </div>
+            <button className="btn3" onClick={editPost}>Edit Post</button>
+            <button className="btn3" onClick={onClick}>Delete</button>
         </BorderCard>
     )
 }

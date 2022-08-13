@@ -16,7 +16,8 @@ const UpdateContent = () => {
     });
 
     const [newContent, setNewContent] = useState({
-        content: ""
+        picture: auth.picture ? auth.picture : "",
+        content: auth.content ? auth.content : ""
     })
 
     const updateForm = (field, value) => {

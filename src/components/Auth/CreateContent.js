@@ -12,6 +12,7 @@ const CreateContent = () => {
     const navigate = useNavigate();
 
     const [newContent, setNewContent] = useState({
+        picture: "",
         content: ""
     })
 

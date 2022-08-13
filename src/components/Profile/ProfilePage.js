@@ -1,7 +1,7 @@
 import React from "react";
-import Card from './Card';
 import CreateContent from "../Auth/CreateContent";
 import ContentCard from "./ContentCard";
+import Card from './Card';
 
 const ProfilePage = () => {
 
@@ -10,7 +10,7 @@ const ProfilePage = () => {
             <div className="Profile">
                 <Card />
             </div>
-                <CreateContent />
+            <CreateContent />
             <div className="align-content">
                 <ContentCard />
             </div>

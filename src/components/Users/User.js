@@ -3,14 +3,17 @@ import BorderCard from "../common/BorderCard";
 
 const User = (props) => {
 
-    const { id, name, status, birthday, location, about } = props.user;
+    const { id, avatar, name, status, birthday, location, about } = props.user;
 
     return (
         <BorderCard>
             <div className="upper-container">
-                <h3>{name}</h3>
+                <div className="image-container">
+                    <img src={avatar} />
+                </div>
             </div>
             <div className="lower-container">
+                <h2>{name}</h2>
                 <h4>{status}</h4>
                 <h4>{birthday}</h4>
                 <h4>{location}</h4>

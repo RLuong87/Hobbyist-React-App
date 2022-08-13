@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import Form from '../common/Form';
-import Input from '../common/Input';
 import Button from '../common/Button';
 import BorderCard from '../common/BorderCard';
-import InlineInputContainer from '../common/InlineInputContainer';
 import TextArea from '../common/TextArea';
 import { AuthContext } from '../Providers/AuthProvider';
-import { Grid } from '@mui/material';
+import { TextField } from '@mui/material';
+import InlineInputContainer from '../common/InlineInputContainer';
 
 const ContentForm = (props) => {
 
@@ -41,16 +40,17 @@ const ContentForm = (props) => {
                         onChange={handleChange}
                         required
                     />
+                    <TextField
+                        name='picture'
+                        id='picture'
+                        value={newContent.picture}
+                        placeholder="Photo"
+                        onChange={handleChange}
+                    />
                 </InlineInputContainer>
                 <div className="date">{dateBuilder(new Date())}</div>
                 <Button>Save content</Button>
             </Form>
-            <div style={{
-                display: "flex",
-                justifyContent: "center"
-            }}>
-                <Button>Upload a photo</Button>
-            </div>
         </BorderCard>
     )
 }

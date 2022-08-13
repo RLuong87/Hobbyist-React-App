@@ -3,18 +3,12 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHostUrl } from "../../config";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Image from '../../assets/random/mstom.jpg'
-import { useParams } from "react-router-dom";
 import './Card.css';
+import UploadAndDisplayImage from "../UploadFile/UploadAndDisplayImage";
 
 export default function Card() {
 
     const [auth, setAuth] = useContext(AuthContext);
-    const params = useParams();
-
-    const [avatar, setAvatar] = useState({
-        id: params.avatarId
-    });
 
     useEffect(() => {
         const _getSelf = async () => {
@@ -27,6 +21,7 @@ export default function Card() {
                     })
                 setAuth({
                     ...auth,
+                    avatar: res.data.avatar,
                     name: res.data.name,
                     status: res.data.status,
                     birthday: res.data.birthday,
@@ -41,29 +36,11 @@ export default function Card() {
         _getSelf()
     }, [auth.token])
 
-    const _getAvatar = async (data, token) => {
-        try {
-            const res = await axios.get(`${apiHostUrl}/api/customers/avatar/${avatar.id}`,
-                data,
-                {
-                    headers: {
-                        Authorization: `Bearer ${auth.token}`
-                    }
-                }
-            )
-            console.log(res.data);
-            setAvatar(res.data)
-        } catch (err) {
-            console.error(err.response ? err.response.data : err.message);
-        }
-        _getAvatar()
-    }
-
     return (
         <div className="Card">
             <div className="upper-container">
                 <div className="image-container">
-                    <img src={auth.url} />
+                    <img src={auth.avatar} />
                 </div>
             </div>
             <div className="lower-container">

@@ -4,20 +4,26 @@ import { Link } from "react-router-dom";
 
 const HomeContent = (props) => {
 
-    const { angler: { name }, localDateTime, content } = props.contents;
+    const { angler: { avatar, name }, localDateTime, content, picture } = props.contents;
 
     return (
         <BorderCard>
             <div className="upper-container">
+                <h3>{name}</h3>
                 <p>{localDateTime}</p>
+                <div className="image-container4">
+                    <img src={avatar} />
+                    <Link to="/users/:userId">
+                    </Link>
+                </div>
             </div>
             <div className="lower-container">
-                <Link to="/users/:userId">
-                    <h3>{name}</h3>
-                </Link>
                 <p>{content}</p>
-                <button className="btn3">Like</button>
+                <div className="image-container3">
+                    <img src={picture} />
+                </div>
             </div>
+            <button className="btn3">Like</button>
         </BorderCard>
     )
 }

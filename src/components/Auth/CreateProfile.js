@@ -12,6 +12,7 @@ const CreateProfile = () => {
     const navigate = useNavigate();
 
     const [profile, setProfile] = useState({
+        avatar: auth.avatar ? auth.avatar : "",
         username: auth.name ? auth.name : "",
         status: auth.status ? auth.status : "",
         birthday: auth.birthday ? auth.birthday : "",

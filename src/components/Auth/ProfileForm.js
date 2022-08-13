@@ -1,16 +1,10 @@
 import React from "react";
-import Container from "../common/Container";
 import Form from "../common/Form";
 import InlineInputContainer from "../common/InlineInputContainer";
-import Input from "../common/Input";
 import Button from '@mui/material/Button';
-import FileUpload from "../UploadFile/FileUpload";
-import ImgUpload from '../UploadFile/ImgUpload'
-import BorderCard from "../common/BorderCard";
-import TextArea from "../common/TextArea";
-import ImageUploading from 'react-images-uploading'
-import UploadImage from "../UploadFile/UploadImage";
-import { Link } from "react-router-dom";
+import { TextField } from "@mui/material";
+import Grid from '@mui/material/Grid';
+import InputLabel from '@mui/material/InputLabel';
 
 const ProfileForm = (props) => {
     const { profile } = props;
@@ -20,69 +14,84 @@ const ProfileForm = (props) => {
     }
 
     return (
-        <Container>
-            <Link to="/uploadImg">
+        <div className="box-border2">
+            <Form onSubmit={props.onSubmit} style={{ marginTop: '1em' }}>
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                        <TextField
+                            variant="outlined"
+                            fullWidth
+                            name="avatar"
+                            id="avatar"
+                            value={profile.avatar}
+                            label="Profile picture"
+                            onChange={handleChange}
+                        />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <TextField
+                            margin="normal"
+                            name="username"
+                            id="username"
+                            value={profile.username}
+                            label="Display Name"
+                            onChange={handleChange}
+                            type="text"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            margin="normal"
+                            name="status"
+                            id="status"
+                            value={profile.status}
+                            label="Status"
+                            onChange={handleChange}
+                            type="text"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            name="birthday"
+                            id="birthday"
+                            value={profile.birthday}
+                            label="Birthday"
+                            onChange={handleChange}
+                            type="text"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            name="location"
+                            id="location"
+                            value={profile.location}
+                            label="Location"
+                            onChange={handleChange}
+                            type="text"
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <TextField
+                            margin="normal"
+                            fullWidth
+                            name="about"
+                            id="about"
+                            value={profile.about}
+                            label="About Me"
+                            onChange={handleChange}
+                            type="text"
+                        />
+                    </Grid>
+                </Grid>
                 <Button
                     type="submit"
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
-                >Upload a profile picture
+                >
+                    Save Profile
                 </Button>
-            </Link>
-            <Form onSubmit={props.onSubmit} style={{ marginTop: '1em' }}>
-                <InlineInputContainer>
-                    <Input
-                        name="username"
-                        id="username"
-                        value={profile.username}
-                        placeholder={"Display Name"}
-                        onChange={handleChange}
-                        type="text"
-                    />
-                </InlineInputContainer>
-                <InlineInputContainer>
-                    <Input
-                        name="status"
-                        id="status"
-                        value={profile.status}
-                        placeholder={"Status"}
-                        onChange={handleChange}
-                        type="text"
-                    />
-                </InlineInputContainer>
-                <InlineInputContainer>
-                    <Input
-                        name="birthday"
-                        id="birthday"
-                        value={profile.birthday}
-                        placeholder={"Birthday"}
-                        onChange={handleChange}
-                        type="text"
-                    />
-                </InlineInputContainer>
-                <InlineInputContainer>
-                    <Input
-                        name="location"
-                        id="location"
-                        value={profile.location}
-                        placeholder={"Location"}
-                        onChange={handleChange}
-                        type="text"
-                    />
-                </InlineInputContainer>
-                <InlineInputContainer>
-                    <TextArea
-                        name="about"
-                        id="about"
-                        value={profile.about}
-                        placeholder={"About Me"}
-                        onChange={handleChange}
-                        type="text"
-                    />
-                </InlineInputContainer>
-                <Button>Save Profile</Button>
             </Form>
-        </Container>
+        </div>
     )
 }
 

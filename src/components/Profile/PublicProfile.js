@@ -29,20 +29,23 @@ const Profile = () => {
     }, [auth.token])
 
     return (
-        <div className="Profile">
-            <div className="Card">
-                <div className="upper-container">
-                </div>
-                <div className="lower-container">
-                    <h3>{user.name}</h3>
-                    <button className="btn2">Add Friend</button>
-                    <h4>{user.status}</h4>
-                    <h4>{user.birthday}</h4>
-                    <h4>{user.location}</h4>
-                    <p>{user.about}</p>
+        <div className="Card">
+            <div className="upper-container">
+                <div classsName="image-container">
+                    <img
+                        src={user.avatar}
+                        height={100}
+                        />
                 </div>
             </div>
-            <PublicContent />
+            <div className="lower-container">
+                <h3>{user.name}</h3>
+                <button className="btn2">Add Friend</button>
+                <h4>{user.status}</h4>
+                <h4>{user.birthday}</h4>
+                <h4>{user.location}</h4>
+                <p>{user.about}</p>
+            </div>
         </div>
     )
 }

@@ -38,7 +38,15 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <Container>
+      <div>
+        {typeof content.main != "undefined"
+          ?
+          <Spinner />
+          :
+          display()
+        }
+      </div>
       <div className='box1'>
         <div>
           <h1 style={{
@@ -63,13 +71,7 @@ const Home = () => {
           </a>
         </h2>
       </div>
-      {typeof content.main != "undefined"
-        ?
-        <Spinner />
-        :
-        display()
-      }
-    </div>
+    </Container>
   )
 }
 
