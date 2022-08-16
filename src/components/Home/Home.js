@@ -36,7 +36,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div className='home-pic'>
       <div>
         {typeof content.main != "undefined"
           ?
@@ -63,7 +63,7 @@ const Home = () => {
         </h2>
         <h2 style={{
           textAlign: "center"
-        }}><br />For more information on rules and regulations or to obtain a fishing license in RI, please visit <br />&nbsp;
+        }}><br />For more information on how to obtain a fishing license in RI, please visit <br />&nbsp;
           <a href='http://www.dem.ri.gov/programs/managementservices/licenses/fishing-licenses.php'>
             www.dem.ri.gov
           </a>

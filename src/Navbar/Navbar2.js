@@ -54,17 +54,12 @@ export default function Navbar2() {
                                             textAlign: "center"
                                         }}>
                                             {auth.name}
+                                            <Link to="/profilePage">
+                                                <div className='image-container5'>
+                                                    <img src={auth.avatar} />
+                                                </div>
+                                            </Link>
                                         </h1>
-                                        <MenuItem>
-                                            <Button onClick={() => { navigate("/profilePage") }}>
-                                                <h2 style={{
-                                                    color: "black",
-                                                    fontFamily: "monospace"
-                                                }}>
-                                                    Profile
-                                                </h2>
-                                            </Button>
-                                        </MenuItem>
                                         <MenuItem>
                                             <Button onClick={() => { navigate("/forecast") }}>
                                                 <h2 style={{

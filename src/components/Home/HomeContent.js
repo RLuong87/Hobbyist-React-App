@@ -13,8 +13,8 @@ const HomeContent = (props) => {
                     <h3>{name}</h3>
                     <p>{localDateTime}</p>
                     <div className="image-container4">
-                        <img src={avatar} />
                         <Link to="/users/:userId">
+                            <img src={avatar} />
                         </Link>
                     </div>
                 </div>

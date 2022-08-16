@@ -14,7 +14,6 @@ const NewUserForm = ({ onSubmit, onChange, query }) => {
 
   return (
     <div>
-
       <Form onSubmit={onSubmit} noValidate style={{ marginTop: "1em" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>

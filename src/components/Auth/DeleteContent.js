@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHostUrl } from "../../config";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import BorderCard from "../common/BorderCard";
 import axios from "axios";
+import { Container } from "@mui/system";
 
 const DeleteContent = () => {
 
@@ -39,16 +40,27 @@ const DeleteContent = () => {
     }
 
     return (
-        <div className="align-content">
-            <BorderCard>
-                <div style={{
-                    textAlign: "center"
-                }}>
-                    <h2>Are you sure you want to delete this post?</h2>
-                    <button className="btn3" onClick={onClick}>Confirm</button>
-                    <button className="btn3" onClick={cancel}>Cancel</button>
-                </div>
-            </BorderCard>
+        <div style={{
+            marginTop: "50px"
+        }}>
+            <div className="align-content">
+                <Link to="/profilePage">
+                    <div className="image-container5">
+                        <img src={auth.avatar} />
+                    </div>
+                </Link>
+            </div>
+            <div className="align-content">
+                <BorderCard>
+                    <div style={{
+                        textAlign: "center"
+                    }}>
+                        <h2>Are you sure you want to delete this post, {auth.name}?</h2>
+                        <button className="btn3" onClick={onClick}>Confirm</button>
+                        <button className="btn3" onClick={cancel}>Cancel</button>
+                    </div>
+                </BorderCard>
+            </div>
         </div>
     )
 }

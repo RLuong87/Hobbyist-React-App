@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from "../Providers/AuthProvider";
 import UpdateContentForm from "./UpdateContentForm";
 import axios from "axios";
@@ -51,9 +51,15 @@ const UpdateContent = () => {
 
     return (
         <div style={{
-            textAlign: "center"
+            textAlign: "center",
+            marginTop: "20px"
         }}>
             <h1>{auth.name}</h1>
+            <Link to="/profilePage">
+                <div className="image-container5">
+                    <img src={auth.avatar} />
+                </div>
+            </Link>
             <div className="align-content">
                 <UpdateContentForm
                     newContent={newContent}
