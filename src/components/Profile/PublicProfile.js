@@ -3,11 +3,13 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
+import Content from './Content'
 import PublicContent from "./PublicContent";
 
 const Profile = () => {
 
     const [auth] = useContext(AuthContext);
+    const [content, setContent] = useState([]);
     const params = useParams();
 
     const [user, setUser] = useState({
@@ -28,6 +30,10 @@ const Profile = () => {
         _getUser()
     }, [auth.token])
 
+    const displayContent = () => {
+        return content.content.map(con => <Content contents={con} key={con.id} />)
+    }
+
     return (
         <div className="Card">
             <div className="upper-container">
@@ -35,7 +41,7 @@ const Profile = () => {
                     <img
                         src={user.avatar}
                         height={100}
-                        />
+                    />
                 </div>
             </div>
             <div className="lower-container">

@@ -36,7 +36,7 @@ const Home = () => {
   }
 
   return (
-    <div className='home-pic'>
+    <div>
       <div>
         {typeof content.main != "undefined"
           ?
@@ -68,8 +68,6 @@ const Home = () => {
             www.dem.ri.gov
           </a>
         </h2>
-      </div>
-      <div className='home-pic'>
       </div>
     </div>
   )

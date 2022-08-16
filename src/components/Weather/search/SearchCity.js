@@ -1,3 +1,4 @@
+import { Container } from "@mui/system";
 import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { GEO_API_URL, geoApiOptions } from "./WeatherAPI";
@@ -33,13 +34,19 @@ const SearchCity = ({ onSearchChange }) => {
     };
 
     return (
-        <AsyncPaginate
-            placeholder="Search for city"
-            debounceTimeout={600}
-            value={search}
-            onChange={handleOnChange}
-            loadOptions={loadOptions}
-        />
+        <Container>
+            <div style={{
+                marginTop: "30px"
+            }}>
+                <AsyncPaginate
+                    placeholder="Search for city"
+                    debounceTimeout={600}
+                    value={search}
+                    onChange={handleOnChange}
+                    loadOptions={loadOptions}
+                />
+            </div>
+        </Container>
     )
 }
 

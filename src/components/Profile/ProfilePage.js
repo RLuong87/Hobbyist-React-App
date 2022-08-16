@@ -11,9 +11,7 @@ const ProfilePage = () => {
                 <Card />
             </div>
             <CreateContent />
-            <div className="align-content">
-                <ContentCard />
-            </div>
+            <ContentCard />
         </div>
     )
 }

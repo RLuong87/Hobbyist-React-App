@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import Spinner from "../faCommon/Spinner";
 import User from "./User";
 import axios from "axios";
-import BorderCard from "../common/BorderCard";
 
 const SearchUser = () => {
 
@@ -47,6 +46,7 @@ const SearchUser = () => {
             <div className="search-box">
                 <h1 className="greet">Search for a Friend</h1>
                 <input
+                    autoComplete="users"
                     type="text"
                     className="search-bar"
                     placeholder="Search..."
@@ -54,7 +54,7 @@ const SearchUser = () => {
                     value={query}
                 />
                 <button className="btn3" onClick={onSubmit}>Go</button>
-                <div style={{display: "flex", justifyContent: "center"}}>
+                <div style={{ display: "flex", justifyContent: "center" }}>
                     {typeof users.main != "undefined" ?
                         <Spinner />
                         :

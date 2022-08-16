@@ -34,7 +34,7 @@ const AppRouter = () => {
                 <Route path="/search" element={<SearchUser />} />
                 <Route path="/delete/:contentId" element={<DeleteContent />} />
                 <Route path="/update/:contentId" element={<UpdateContent />} />
-                <Route path="/fiveDayForecast" element={<WeatherFiveDay />} />
+                <Route path="/forecast" element={<WeatherFiveDay />} />
                 <Route path="/uploadImg" element={<UploadImage />} />
                 <Route path="/resetPassword" element={<ResetPassword />} />
             </Routes>
