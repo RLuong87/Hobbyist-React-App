@@ -2,14 +2,17 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
+import CreateContent from "../Auth/CreateContent";
+import ContentForm from "../Auth/ContentForm";
+import Content from './Content';
 import Container from "../common/Container";
-import './Card.css';
 import axios from "axios";
-import BorderCard from "../common/BorderCard";
+import './Card.css';
 
 const Profile = () => {
 
     const [auth] = useContext(AuthContext);
+    const [content, setContent] = useState([]);
     const params = useParams();
 
     const [user, setUser] = useState({
@@ -30,6 +33,10 @@ const Profile = () => {
         _getUser()
     }, [auth.token])
 
+    const displayContent = () => {
+        return content.content.map(con => <Content contents={con} key={con.id} />)
+    }
+
     return (
         <Container>
             <div style={{ marginTop: "30px" }}>
@@ -46,9 +53,6 @@ const Profile = () => {
                         <h4>{user.birthday}</h4>
                         <h4>{user.location}</h4>
                         <p>{user.about}</p>
-                        <BorderCard>
-                            {user.content}
-                        </BorderCard>
                     </div>
                     <div>
                     </div>
