@@ -1,6 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Container from '../common/Container';
-import splashImg from '../../assets/fishing/rods.jpg';
 import { AuthContext } from '../Providers/AuthProvider';
 import HomeContent from './HomeContent';
 import { apiHostUrl } from '../../config';

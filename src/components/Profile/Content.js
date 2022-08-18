@@ -1,10 +1,12 @@
 import React from "react";
 import BorderCard from "../common/BorderCard";
+import moment from "moment";
 import { useNavigate } from 'react-router-dom';
 
 const DisplayContent = (props) => {
 
     const { angler: { avatar, name }, id, localDateTime, content, picture } = props.contents;
+
     let navigate = useNavigate();
 
     const onClick = () => {
@@ -21,7 +23,7 @@ const DisplayContent = (props) => {
         }}>
             <div className="upper-container">
                 <h2>{name}</h2>
-                <p>{localDateTime}</p>
+                <p>{moment(localDateTime).format('MMMM D YYYY, h:mm a')}</p>
                 <div className="image-container2">
                     <img src={avatar} />
                 </div>

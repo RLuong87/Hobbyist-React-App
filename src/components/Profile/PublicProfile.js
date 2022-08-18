@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
-import Content from './Content'
-import PublicContent from "./PublicContent";
+import Container from "../common/Container";
+import './Card.css';
+import axios from "axios";
+import BorderCard from "../common/BorderCard";
 
 const Profile = () => {
 
     const [auth] = useContext(AuthContext);
-    const [content, setContent] = useState([]);
     const params = useParams();
 
     const [user, setUser] = useState({
@@ -30,29 +30,31 @@ const Profile = () => {
         _getUser()
     }, [auth.token])
 
-    const displayContent = () => {
-        return content.content.map(con => <Content contents={con} key={con.id} />)
-    }
-
     return (
-        <div className="Card">
-            <div className="upper-container">
-                <div classsName="image-container">
-                    <img
-                        src={user.avatar}
-                        height={100}
-                    />
+        <Container>
+            <div style={{ marginTop: "30px" }}>
+                <div className="Card">
+                    <div className="upper-container">
+                        <div className="image-container">
+                            <img src={user.avatar} height={100} />
+                        </div>
+                    </div>
+                    <div className="lower-container">
+                        <button className="btn2">Add Friend</button>
+                        <h3>{user.name}</h3>
+                        <h4>{user.status}</h4>
+                        <h4>{user.birthday}</h4>
+                        <h4>{user.location}</h4>
+                        <p>{user.about}</p>
+                        <BorderCard>
+                            {user.content}
+                        </BorderCard>
+                    </div>
+                    <div>
+                    </div>
                 </div>
             </div>
-            <div className="lower-container">
-                <h3>{user.name}</h3>
-                <button className="btn2">Add Friend</button>
-                <h4>{user.status}</h4>
-                <h4>{user.birthday}</h4>
-                <h4>{user.location}</h4>
-                <p>{user.about}</p>
-            </div>
-        </div>
+        </Container>
     )
 }
 

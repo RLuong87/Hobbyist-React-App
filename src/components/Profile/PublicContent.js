@@ -10,20 +10,20 @@ const PublicContent = () => {
     const [auth] = useContext(AuthContext);
     const params = useParams();
 
-    const [user, setUser] = useState({
+    const [content, setContent] = useState({
         id: params.contentId
     });
 
     useEffect(() => {
         const _getPublicContent = async () => {
-            const res = await axios.get(`${apiHostUrl}/api/user/customers/${user.id}`,
+            const res = await axios.get(`${apiHostUrl}/api/user/customers/${content.id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${auth.token}`
                     }
                 })
             console.log(res.data);
-            setUser(res.data)
+            setContent(res.data)
         }
         _getPublicContent()
     }, [auth.token])
@@ -33,11 +33,11 @@ const PublicContent = () => {
             width: 500
         }}>
             <div className="upper-container2">
-                <p>{user.localDateTime}</p>
-                <h2>{user.name}</h2>
+                <p>{content.localDateTime}</p>
+                <h2>{content.name}</h2>
             </div>
             <div className="lower-container">
-                <h4>{user.user}</h4>
+                <h4>{content.user}</h4>
             </div>
         </BorderCard>
     )

@@ -4,7 +4,6 @@ import { apiHostUrl } from "../../config";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import './Card.css';
-import UploadAndDisplayImage from "../UploadFile/UploadAndDisplayImage";
 
 export default function Card() {
 

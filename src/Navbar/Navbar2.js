@@ -6,7 +6,8 @@ import HoverText from '../components/common/Tooltip';
 import WeatherText from '../components/common/Tooltip2';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'
-import { Button, MenuItem, MenuList, Select } from '@mui/material';
+import { Button, InputLabel, MenuItem, MenuList, Select } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import BorderCard from '../components/common/BorderCard';
 import { BorderStyle } from '@mui/icons-material';
 
@@ -38,45 +39,50 @@ export default function Navbar2() {
         <Fragment>
             <nav>
                 <div>
-                    <h1 className='logo'>
-                        Hooked
-                        <FontAwesomeIcon icon={["fas", "anchor"]} />
-                    </h1>
+                    <Grid container>
+                        <h1 className='nav-name'>Hooked</h1>
+                        <div className='logo'>
+                            <FontAwesomeIcon icon={["fas", "anchor"]} />
+                        </div>
+                        {auth.token ?
+                            <Link to="/profilePage">
+                                <div className='image-container5'>
+                                    <img src={auth.avatar} />
+                                </div>
+                            </Link>
+                            :
+                            auth.token
+                        }
+                    </Grid>
                     {(toggleMenu || screenWidth > 900) && (
                         <ul className='list'>
-                            <li className='items'><HoverText /></li>
-                            <li className='items'><WeatherText /></li>
+                            <div className='border-style'>
+                                <li className='items'><HoverText /></li>
+                            </div>
+                            <div className='border-style'>
+                                <li className='items'><WeatherText /></li>
+                            </div>
                             {auth.token ?
                                 <Fragment>
                                     <Select>
-                                        <h1 style={{
-                                            color: "coral",
-                                            textAlign: "center"
-                                        }}>
-                                            {auth.name}
-                                            <Link to="/profilePage">
-                                                <div className='image-container5'>
-                                                    <img src={auth.avatar} />
-                                                </div>
-                                            </Link>
-                                        </h1>
-                                        <MenuItem>
-                                            <Button onClick={() => { navigate("/forecast") }}>
-                                                <h2 style={{
-                                                    color: "black",
-                                                    fontFamily: "monospace"
-                                                }}>
-                                                    Forecast
-                                                </h2>
-                                            </Button>
-                                        </MenuItem>
+                                        <h2 style={{ color: "coral", textAlign: "center" }}>{auth.name}</h2>
                                         <MenuItem>
                                             <Button onClick={() => { navigate("/search") }}>
                                                 <h2 style={{
                                                     color: "black",
-                                                    fontFamily: "monospace"
+                                                    fontFamily: "inherit",
                                                 }}>
                                                     Search
+                                                </h2>
+                                            </Button>
+                                        </MenuItem>
+                                        <MenuItem>
+                                            <Button onClick={() => { navigate("/forecast") }}>
+                                                <h2 style={{
+                                                    color: "black",
+                                                    fontFamily: "inherit"
+                                                }}>
+                                                    Forecast
                                                 </h2>
                                             </Button>
                                         </MenuItem>
@@ -84,7 +90,7 @@ export default function Navbar2() {
                                             <Button onClick={() => { navigate("/logout") }}>
                                                 <h2 style={{
                                                     color: "black",
-                                                    fontFamily: "monospace"
+                                                    fontFamily: "inherit"
                                                 }}>
                                                     Sign out
                                                 </h2>
@@ -94,7 +100,9 @@ export default function Navbar2() {
                                 </Fragment>
                                 :
                                 <Fragment>
-                                    <li className='items'><NavButton to="/login" label="Sign In" /></li>
+                                    <div className='border-style'>
+                                        <li className='items'><NavButton to="/login" label="Sign In" /></li>
+                                    </div>
                                 </Fragment>
                             }
                         </ul>

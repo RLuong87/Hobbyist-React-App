@@ -1,19 +1,26 @@
-import React from "react";
-import BorderCard from "../common/BorderCard";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
+import moment from "moment";
+import User from "../Users/User";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomeContent = (props) => {
+    
+    let navigate = useNavigate();
 
-    const { angler: { avatar, name }, localDateTime, content, picture } = props.contents;
+    const { angler: { id, avatar, name }, localDateTime, content, picture } = props.contents;
+
+    const onSelect = (userId) => {
+        navigate(`/users/${userId}`)
+    }
 
     return (
         <div className="align-content">
             <div className="Content-card">
                 <div className="upper-container">
                     <h3>{name}</h3>
-                    <p>{localDateTime}</p>
-                    <div className="image-container4">
-                        <Link to="/users/:userId">
+                    <p>{moment(localDateTime).format('MMMM Do YYYY, h:mm a')}</p>
+                    <div className="image-container2">
+                        <Link to="/users/:userId" onClick={() => (onSelect(id))}>
                             <img src={avatar} />
                         </Link>
                     </div>

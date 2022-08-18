@@ -8,7 +8,7 @@ const User = (props) => {
     return (
         <BorderCard>
             <div className="upper-container">
-                <div className="image-container">
+                <div className="image-container4">
                     <img src={avatar} />
                 </div>
             </div>
