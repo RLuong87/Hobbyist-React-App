@@ -2,17 +2,18 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { apiHostUrl } from "../../config";
 import { AuthContext } from "../Providers/AuthProvider";
-import CreateContent from "../Auth/CreateContent";
-import ContentForm from "../Auth/ContentForm";
-import Content from './Content';
 import Container from "../common/Container";
 import axios from "axios";
+import "./ContentCard.css";
 import './Card.css';
+import User from "../Users/User";
+import BorderCard from "../common/BorderCard";
+import HomeContent from "../Home/HomeContent";
+import moment from "moment";
 
-const Profile = () => {
+const Profile = (props) => {
 
     const [auth] = useContext(AuthContext);
-    const [content, setContent] = useState([]);
     const params = useParams();
 
     const [user, setUser] = useState({
@@ -34,12 +35,12 @@ const Profile = () => {
     }, [auth.token])
 
     const displayContent = () => {
-        return content.content.map(con => <Content contents={con} key={con.id} />)
+        return user.map(u => <User contents={u} key={u.id} />)
     }
 
     return (
         <Container>
-            <div style={{ marginTop: "30px" }}>
+            <div style={{ marginTop: "45px" }}>
                 <div className="Card">
                     <div className="upper-container">
                         <div className="image-container">
@@ -54,7 +55,19 @@ const Profile = () => {
                         <h4>{user.location}</h4>
                         <p>{user.about}</p>
                     </div>
-                    <div>
+                </div>
+            </div>
+            <div className="Content-card">
+                <div className="upper-container">
+                    <p>{moment(user.localDateTime).format('MMMM D YYYY, h:mm a')}</p>
+                    <div className="image-container2">
+                        <img src={user.avatar} />
+                    </div>
+                </div>
+                <div className="lower-container">
+                    {/* <h4>{user.content}</h4> */}
+                    <div className="image-container3">
+                        <img src={user.picture} />
                     </div>
                 </div>
             </div>

@@ -16,6 +16,7 @@ import UpdateContent from "../components/Auth/UpdateContent";
 import WeatherFiveDay from "../components/Weather/WeatherFiveDay";
 import UploadImage from "../components/UploadFile/UploadImage";
 import ResetPassword from "../components/Auth/ResetPassword";
+import SideNav from "../Navbar/SideNav";
 
 const AppRouter = () => {
     return (
@@ -37,6 +38,10 @@ const AppRouter = () => {
                 <Route path="/forecast" element={<WeatherFiveDay />} />
                 <Route path="/uploadImg" element={<UploadImage />} />
                 <Route path="/resetPassword" element={<ResetPassword />} />
+            </Routes>
+            <SideNav />
+            <Routes>
+                <Route path="/search" element={<SearchUser />} />
             </Routes>
         </div>
     )

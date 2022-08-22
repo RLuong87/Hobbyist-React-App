@@ -8,11 +8,9 @@ const HomeContent = (props) => {
     let navigate = useNavigate();
 
     const { angler: { id, avatar, name }, localDateTime, content, picture } = props.contents;
-    // console.log(props.centents);
 
     const onSelect = (userId) => {
         navigate(`/users/${userId}`)
-        // console.log(userId);
     }
 
     return (

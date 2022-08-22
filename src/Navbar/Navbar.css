@@ -11,6 +11,7 @@ nav {
     background: linear-gradient(45deg, rgb(103, 182, 250), midnightblue);
     height: 100%;
     display: flex;
+    text-transform: uppercase;
     justify-content: center;
     align-items: center;
     position: relative;

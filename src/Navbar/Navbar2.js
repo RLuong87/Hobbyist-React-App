@@ -40,7 +40,9 @@ export default function Navbar2() {
             <nav>
                 <div>
                     <Grid container>
-                        <h1 className='nav-name'>Hooked</h1>
+                        <div style={{cursor: "pointer"}} onClick={() => {navigate("/")}}>
+                            <h1 className='nav-name'>Hooked</h1>
+                        </div>
                         <div className='logo'>
                             <FontAwesomeIcon icon={["fas", "anchor"]} />
                         </div>
