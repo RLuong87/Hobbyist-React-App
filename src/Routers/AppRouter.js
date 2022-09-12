@@ -40,9 +40,6 @@ const AppRouter = () => {
                 <Route path="/resetPassword" element={<ResetPassword />} />
             </Routes>
             <SideNav />
-            <Routes>
-                <Route path="/search" element={<SearchUser />} />
-            </Routes>
         </div>
     )
 }

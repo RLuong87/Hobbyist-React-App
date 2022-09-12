@@ -42,7 +42,7 @@ const SearchUser = () => {
     }
 
     return (
-        <div className="align-content">
+        <div>
             <div className="search-box">
                 <h1 className="greet">Search for a Friend</h1>
                 <input

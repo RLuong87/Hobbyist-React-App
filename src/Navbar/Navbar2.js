@@ -8,8 +8,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'
 import { Button, InputLabel, MenuItem, MenuList, Select } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import BorderCard from '../components/common/BorderCard';
-import { BorderStyle } from '@mui/icons-material';
 
 export default function Navbar2() {
     const [auth] = useContext(AuthContext);
@@ -67,7 +65,7 @@ export default function Navbar2() {
                             {auth.token ?
                                 <Fragment>
                                     <Select>
-                                        <h2 style={{ color: "coral", textAlign: "center" }}>{auth.name}</h2>
+                                        <h2 onClick={() => navigate("/profilePage")} style={{ color: "coral", textAlign: "center", cursor: "pointer" }}>{auth.name}</h2>
                                         <MenuItem>
                                             <Button onClick={() => { navigate("/search") }}>
                                                 <h2 style={{
